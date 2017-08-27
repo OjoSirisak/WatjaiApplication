@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\Project\SmartHeart4Project\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="093d3999e4df9ada8108153555ac3f1e184d278d">
+        <dex dex="E:\Project\SmartHeart4Project\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_69d46f8b1df28d17b5d45179f05937c70cc03c7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SirisakPks\.android\build-cache\b7305f986dc7d8aa9ee66676e48eeb20271112c2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="987adec819c9a98faf215814f41195da48fc724e">
+        <dex dex="E:\Project\SmartHeart4Project\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7058326c392c39fa0357ae404230af322a7bc19c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Project\SmartHeart4Project\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\Project\SmartHeart4Project\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a0c8e1c7d2f364fe82a214a7857b4efd80d2a80d\classes.dex" />
+    </item>
+
+</items>

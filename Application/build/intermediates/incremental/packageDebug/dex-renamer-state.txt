@@ -1,0 +1,7 @@
+#Sun Aug 27 23:03:50 ICT 2017
+base.0=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a0c8e1c7d2f364fe82a214a7857b4efd80d2a80d
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_69d46f8b1df28d17b5d45179f05937c70cc03c7b\\classes.dex
+base.1=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_69d46f8b1df28d17b5d45179f05937c70cc03c7b
+file.0=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a0c8e1c7d2f364fe82a214a7857b4efd80d2a80d\\classes.dex
