@@ -131,23 +131,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/postcode"
-                style="@style/SizeTextviewProfile"
-                android:textStyle="bold"
-                android:layout_marginRight="5dp"/>
-
-            <EditText
-                android:id="@+id/edtPostcode"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
-                android:inputType="text"
-                android:maxLength="5"
-                style="@style/SizeTextviewProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,24 +145,6 @@
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:inputType="phone"
-                style="@style/SizeTextviewProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/underlying"
-                style="@style/SizeTextviewProfile"
-                android:textStyle="bold"
-                android:layout_marginRight="5dp"/>
-
-            <EditText
-                android:id="@+id/edtUnderlying"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
-                android:inputType="text"
                 style="@style/SizeTextviewProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

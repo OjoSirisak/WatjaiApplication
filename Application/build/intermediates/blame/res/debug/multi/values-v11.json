@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "outputFile": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -503,7 +503,7 @@
                     "endOffset": 14137
                 },
                 "from": {
-                    "file": "E:\\Project\\SmartHeart4Project\\Application\\src\\main\\res\\values-v11\\template-styles.xml",
+                    "file": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\values-v11\\template-styles.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,

@@ -1,7 +1,7 @@
-#Sun Aug 27 23:03:50 ICT 2017
-base.0=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a0c8e1c7d2f364fe82a214a7857b4efd80d2a80d
+#Wed Aug 30 01:10:06 ICT 2017
+base.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ffb94134dfa95cb4270aea92054a8dad505f64ea
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_69d46f8b1df28d17b5d45179f05937c70cc03c7b\\classes.dex
-base.1=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_69d46f8b1df28d17b5d45179f05937c70cc03c7b
-file.0=E\:\\Project\\SmartHeart4Project\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a0c8e1c7d2f364fe82a214a7857b4efd80d2a80d\\classes.dex
+file.1=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fd69f8ba38734bb323444afae07d04ce22b62e8a\\classes.dex
+base.1=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fd69f8ba38734bb323444afae07d04ce22b62e8a
+file.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ffb94134dfa95cb4270aea92054a8dad505f64ea\\classes.dex

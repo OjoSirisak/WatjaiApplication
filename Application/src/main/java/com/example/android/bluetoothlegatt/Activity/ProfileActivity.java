@@ -56,8 +56,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     tvAddress.setText(dao.getAddress()+" "+
                             dao.getSubDistrict()+" "+
                             dao.getDistrict()+" "+
-                            dao.getProvince()+" "+
-                            dao.getPostcode());
+                            dao.getProvince());
                     tvTel.setText(dao.getPatTel());
                     tvBloodType.setText(dao.getBloodType());
 
@@ -113,6 +112,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
             intent.putExtra("dao", dao);
             startActivity(intent);
+            finish();
         }
     }
 }

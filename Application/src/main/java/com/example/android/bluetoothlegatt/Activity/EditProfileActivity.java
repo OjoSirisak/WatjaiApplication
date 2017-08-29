@@ -50,9 +50,9 @@ public class EditProfileActivity extends AppCompatActivity {
         edtSubDistrict.setText(dao.getSubDistrict());
         edtDistrict.setText(dao.getDistrict());
         edtProvince.setText(dao.getProvince());
-        edtPostcode.setText(dao.getPostcode());
+
         edtMobile.setText(dao.getPatTel());
-        edtUnderlying.setText(dao.getUnderlyingDisease());
+
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +63,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {
                         if (response.isSuccessful()) {
-
+                            Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
                         } else {
                             try {
                                 Toast.makeText(EditProfileActivity.this, response.errorBody().string()
@@ -83,6 +83,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -98,9 +99,9 @@ public class EditProfileActivity extends AppCompatActivity {
         dao.setSubDistrict(edtSubDistrict.getText().toString());
         dao.setDistrict(edtDistrict.getText().toString());
         dao.setProvince(edtProvince.getText().toString());
-        dao.setPostcode(edtPostcode.getText().toString());
+
         dao.setPatTel(edtMobile.getText().toString());
-        dao.setUnderlyingDisease(edtUnderlying.getText().toString());
+
 
 
 
@@ -115,9 +116,9 @@ public class EditProfileActivity extends AppCompatActivity {
         edtSubDistrict = (EditText) findViewById(R.id.edtSubDistrict);
         edtDistrict = (EditText) findViewById(R.id.edtDistrict);
         edtProvince = (EditText) findViewById(R.id.edtProvince);
-        edtPostcode = (EditText) findViewById(R.id.edtPostcode);
+
         edtMobile = (EditText) findViewById(R.id.edtMobile);
-        edtUnderlying = (EditText) findViewById(R.id.edtUnderlying);
+
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
     }
 }

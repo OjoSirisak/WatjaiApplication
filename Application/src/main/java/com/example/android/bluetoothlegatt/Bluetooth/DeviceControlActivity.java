@@ -41,6 +41,7 @@ import com.example.android.bluetoothlegatt.Activity.EditProfileActivity;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
+
 import com.example.android.bluetoothlegatt.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
@@ -260,6 +261,11 @@ public class DeviceControlActivity extends AppCompatActivity {
         soButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 doStopService();
+
+                if(watjaiNormal!=null){
+                    watjaiNormal = null;
+                }
+                watjaiNormal = new WatjaiNormal();
                 watjaiNormal.setMeasureData(ecgData);
                 watjaiNormal.setPatId("PA1708001");
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
@@ -267,6 +273,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                         if (response.isSuccessful()) {
+                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {
@@ -330,7 +337,7 @@ public class DeviceControlActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.gatt_services, menu);
         if (mConnected) {
-            menu.findItem(R.id.menu_connect).setVisible(false);
+            menu.findItem(R.id.menu_connect).setVisible(false);;
             menu.findItem(R.id.menu_disconnect).setVisible(true);
         } else {
             menu.findItem(R.id.menu_connect).setVisible(true);
