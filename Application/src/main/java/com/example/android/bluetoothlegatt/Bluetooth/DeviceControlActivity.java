@@ -248,12 +248,12 @@ public class DeviceControlActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         //mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
         //mGattServicesList.setOnChildClickListener(servicesListClickListner);
-        stButton = (Button)findViewById(R.id.startbt);
+        /*stButton = (Button)findViewById(R.id.startbt);
         soButton = (Button)findViewById(R.id.stopbt);
         mConnectionState = (TextView) findViewById(R.id.connection_state);
-        mDataField = (TextView) findViewById(R.id.data_value);
+        mDataField = (TextView) findViewById(R.id.data_value);*/
 
-        stButton.setOnClickListener(new View.OnClickListener(){
+        /*stButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 doStartService();
             }
@@ -292,7 +292,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        });*/
 
         getSupportActionBar().setTitle(mDeviceName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
