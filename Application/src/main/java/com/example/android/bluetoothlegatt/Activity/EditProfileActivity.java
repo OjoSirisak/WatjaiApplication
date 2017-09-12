@@ -16,14 +16,15 @@ import com.example.android.bluetoothlegatt.R;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EditProfileActivity extends AppCompatActivity {
-    EditText edtFirstName, edtLastName, edtBirthDay, edtAddress, edtSubDistrict,
-            edtDistrict, edtProvince, edtPostcode, edtMobile, edtUnderlying;
+    EditText edtFirstName, edtLastName, edtAddress, edtSubDistrict,
+            edtDistrict, edtProvince, edtMobile;
     Button btnSubmit;
     PatientItemDao dao;
 
@@ -31,13 +32,9 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
         dao = getIntent().getParcelableExtra("dao");
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         findId();
-
         initInstance();
 
     }
@@ -45,7 +42,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private void initInstance() {
         edtFirstName.setText(dao.getPatFirstName());
         edtLastName.setText(dao.getPatLastName());
-        //edtBirthDay.setText(dao.getBirthDay().toString());
         edtAddress.setText(dao.getAddress());
         edtSubDistrict.setText(dao.getSubDistrict());
         edtDistrict.setText(dao.getDistrict());
@@ -58,12 +54,17 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setUpdateData();
-                Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao);
+                Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao, dao.getPatId());
                 call.enqueue(new Callback<PatientItemDao>() {
                     @Override
                     public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {
                         if (response.isSuccessful()) {
-                            Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
+                            if(Locale.getDefault().getLanguage().equals("en")) {
+                                Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(EditProfileActivity.this, "แก้ไขข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+                            }
+
                         } else {
                             try {
                                 Toast.makeText(EditProfileActivity.this, response.errorBody().string()
@@ -95,30 +96,20 @@ public class EditProfileActivity extends AppCompatActivity {
         dao.setPatFirstName(edtFirstName.getText().toString());
         dao.setPatLastName(edtLastName.getText().toString());
         dao.setAddress(edtAddress.getText().toString());
-        //edtBirthDay.setText(dao.getBirthDay().toString());
         dao.setSubDistrict(edtSubDistrict.getText().toString());
         dao.setDistrict(edtDistrict.getText().toString());
         dao.setProvince(edtProvince.getText().toString());
-
         dao.setPatTel(edtMobile.getText().toString());
-
-
-
-
-
     }
 
     private void findId() {
         edtFirstName = (EditText) findViewById(R.id.edtFirstName);
         edtLastName = (EditText) findViewById(R.id.edtLastName);
-        //edtBirthDay = (EditText) findViewById(R.id.edtBirthDay);
         edtAddress = (EditText) findViewById(R.id.edtAddress);
         edtSubDistrict = (EditText) findViewById(R.id.edtSubDistrict);
         edtDistrict = (EditText) findViewById(R.id.edtDistrict);
         edtProvince = (EditText) findViewById(R.id.edtProvince);
-
         edtMobile = (EditText) findViewById(R.id.edtMobile);
-
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
     }
 }

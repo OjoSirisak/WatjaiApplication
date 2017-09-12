@@ -267,7 +267,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 }
                 watjaiNormal = new WatjaiNormal();
                 watjaiNormal.setMeasureData(ecgData);
-                watjaiNormal.setPatId("PA1708001");
+                watjaiNormal.setPatId("PA1709001");
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:16:1-87:12
+ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:16:1-83:12
 	package
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:17:5-50
 	android:versionName
@@ -44,7 +44,7 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:39:22-76
 application
-ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:41:5-85:19
+ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:41:5-81:19
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\5df96e97d73daba91ae8739d6d3a21a1e14a3822\output\AndroidManifest.xml:29:5-20
@@ -115,28 +115,18 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:73:13-67
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:72:13-51
-activity#com.example.android.bluetoothlegatt.Activity.ProfileActivity
-ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:74:9-78:60
-	android:screenOrientation
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:75:13-49
-	android:label
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:77:13-49
-	android:theme
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:78:13-57
-	android:name
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:76:13-53
 activity#com.example.android.bluetoothlegatt.Activity.EditProfileActivity
-ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:79:9-84:69
+ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:75:9-80:69
 	android:screenOrientation
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:80:13-49
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:76:13-49
 	android:label
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:82:13-49
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:78:13-49
 	android:windowSoftInputMode
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:83:13-67
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:79:13-67
 	android:theme
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:84:13-57
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:80:13-57
 	android:name
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:81:13-57
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:77:13-57
 uses-sdk
 INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:21:5-23:55

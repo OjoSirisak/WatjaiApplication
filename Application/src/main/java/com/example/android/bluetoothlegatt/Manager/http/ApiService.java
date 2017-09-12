@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by SirisakPks on 24/8/2560.
@@ -16,12 +17,12 @@ import retrofit2.http.POST;
 
 public interface ApiService {
 
-    @GET("patients/PA1708001")
-    Call<PatientItemDao> loadPatient();
+    @GET("patients/{id}")
+    Call<PatientItemDao> loadPatient(@Path("id") String id);
 
-    @PATCH("patients/PA1708001" )
+    @PATCH("patients/{id}" )
     @Headers({"Content-Type: application/json"})
-    Call<PatientItemDao> updatePatient(@Body PatientItemDao dao);
+    Call<PatientItemDao> updatePatient(@Body PatientItemDao dao, @Path("id") String id);
 
     @POST("watjainormal" )
     @Headers({"Content-Type: application/json"})

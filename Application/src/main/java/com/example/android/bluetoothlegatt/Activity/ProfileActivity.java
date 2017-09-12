@@ -41,7 +41,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private void initInstances() {
         findId();
 
-        Call<PatientItemDao> call = HttpManager.getInstance().getService().loadPatient();
+        Call<PatientItemDao> call = HttpManager.getInstance().getService().loadPatient("PA1709001");
         call.enqueue(new Callback<PatientItemDao>() {
             @Override
             public void onResponse(Call<PatientItemDao> call,
