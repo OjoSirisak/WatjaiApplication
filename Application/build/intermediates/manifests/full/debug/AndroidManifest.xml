@@ -68,6 +68,7 @@
             android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name="com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/AppThemeWithActionBar" />
 
         <service
@@ -79,6 +80,11 @@
             android:name="com.example.android.bluetoothlegatt.Activity.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.ProfileActivity"
+            android:label="@string/menu_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name="com.example.android.bluetoothlegatt.Activity.EditProfileActivity"
             android:label="@string/edit_profile"
