@@ -53,7 +53,7 @@ public class DeviceScanActivity extends ListActivity {
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
     private Handler mHandler;
-    private ListView listapapter;
+    private ListView listView;
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
@@ -145,6 +145,7 @@ public class DeviceScanActivity extends ListActivity {
         }
 
         // Initializes list view adapter.
+        listView = (ListView) findViewById(R.id.scanList);
         mLeDeviceListAdapter = new LeDeviceListAdapter();
         setListAdapter(mLeDeviceListAdapter);
         scanLeDevice(true);
