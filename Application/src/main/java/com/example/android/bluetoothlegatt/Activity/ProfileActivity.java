@@ -34,13 +34,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         dao = null;
         setContentView(R.layout.activity_profile);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initInstances();
     }
 
     private void initInstances() {
         findId();
+        getProfile();
 
+    }
+
+    private void getProfile() {
         Call<PatientItemDao> call = HttpManager.getInstance().getService().loadPatient("PA1709001");
         call.enqueue(new Callback<PatientItemDao>() {
             @Override
@@ -85,8 +89,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         .show();
             }
         });
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private  void findId() {

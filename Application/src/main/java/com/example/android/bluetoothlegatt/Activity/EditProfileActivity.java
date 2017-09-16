@@ -49,45 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         edtMobile.setText(dao.getPatTel());
 
-
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setUpdateData();
-                Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao, dao.getPatId());
-                call.enqueue(new Callback<PatientItemDao>() {
-                    @Override
-                    public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {
-                        if (response.isSuccessful()) {
-                            if(Locale.getDefault().getLanguage().equals("en")) {
-                                Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(EditProfileActivity.this, "แก้ไขข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
-                            }
-
-                        } else {
-                            try {
-                                Toast.makeText(EditProfileActivity.this, response.errorBody().string()
-                                        , Toast.LENGTH_LONG).show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<PatientItemDao> call, Throwable throwable) {
-                        Toast.makeText(EditProfileActivity.this, throwable.toString()
-                                , Toast.LENGTH_LONG).show();
-                    }
-                });
-
-                Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
+        btnSubmit.setOnClickListener(submitEditProfile);
 
     }
 
@@ -112,4 +74,47 @@ public class EditProfileActivity extends AppCompatActivity {
         edtMobile = (EditText) findViewById(R.id.edtMobile);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
     }
+
+    /******
+     *  Listener
+     */
+
+    View.OnClickListener submitEditProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            setUpdateData();
+            Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao, dao.getPatId());
+            call.enqueue(new Callback<PatientItemDao>() {
+                @Override
+                public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {
+                    if (response.isSuccessful()) {
+                        if (Locale.getDefault().getLanguage().equals("en")) {
+                            Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(EditProfileActivity.this, "แก้ไขข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else {
+                        try {
+                            Toast.makeText(EditProfileActivity.this, response.errorBody().string()
+                                    , Toast.LENGTH_LONG).show();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PatientItemDao> call, Throwable throwable) {
+                    Toast.makeText(EditProfileActivity.this, throwable.toString()
+                            , Toast.LENGTH_LONG).show();
+                }
+            });
+
+            Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    };
 }
