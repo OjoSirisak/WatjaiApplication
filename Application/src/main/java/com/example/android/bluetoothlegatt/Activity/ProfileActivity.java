@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.net.ParseException;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,10 +13,13 @@ import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Dao.Doctor;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
+import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -50,9 +54,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     dao = response.body();
                     tvFirstName.setText(dao.getPatFirstName());
                     tvLastName .setText(dao.getPatLastName());
-                    Date now = new Date();
-                    Number age = now.getYear() - dao.getBirthDay().getYear();
-                    tvAge.setText(age.toString()+" ปี");
+                    tvAge.setText(calAge(dao.getBirthDay())+" ปี");
                     tvAddress.setText(dao.getAddress()+" "+
                             dao.getSubDistrict()+" "+
                             dao.getDistrict()+" "+
@@ -66,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     tvDoctor.setText(name);
                 } else {
                     try {
-                        Toast.makeText(ProfileActivity.this,
+                        Toast.makeText(Contextor.getInstance().getContext(),
                                 response.errorBody().string(),
                                 Toast.LENGTH_SHORT)
                                 .show();
@@ -79,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onFailure(Call<PatientItemDao> call,
                                   Throwable t) {
-                Toast.makeText(ProfileActivity.this,
+                Toast.makeText(Contextor.getInstance().getContext(),
                         t.toString(),
                         Toast.LENGTH_SHORT)
                         .show();
@@ -115,4 +117,30 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             finish();
         }
     }
+
+    private int age;
+    private int calAge(Date dobs) {
+        Calendar now = Calendar.getInstance();
+        Calendar dob = Calendar.getInstance();
+        dob.setTime(dobs);
+        if (dob.after(now)) {
+            throw new IllegalArgumentException("Can't be born in the future");
+        }
+        int year1 = now.get(Calendar.YEAR);
+        int year2 = dob.get(Calendar.YEAR);
+        age = year1 - year2;
+        int month1 = now.get(Calendar.MONTH);
+        int month2 = dob.get(Calendar.MONTH);
+        if (month2 > month1) {
+            age--;
+        } else if (month1 == month2) {
+            int day1 = now.get(Calendar.DAY_OF_MONTH);
+            int day2 = dob.get(Calendar.DAY_OF_MONTH);
+            if (day2 > day1) {
+                age--;
+            }
+        }
+        return age;
+    }
+
 }

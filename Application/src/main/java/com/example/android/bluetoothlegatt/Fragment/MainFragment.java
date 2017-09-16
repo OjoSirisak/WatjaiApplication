@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.example.android.bluetoothlegatt.Activity.MainActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
+import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.MainApplication;
 import com.example.android.bluetoothlegatt.R;
@@ -21,7 +22,8 @@ import com.example.android.bluetoothlegatt.R;
  * Created by nuuneoi on 11/16/2014.
  */
 public class MainFragment extends Fragment implements View.OnClickListener {
-    ImageButton buttonProfile, buttonMeasure, buttonHistory, buttonSetting, buttonHelp, buttonLogout;
+    private ImageButton buttonProfile, buttonMeasure, buttonHistory, buttonSetting, buttonHelp, buttonLogout;
+    private boolean isConnectBluetooth = false;
 
     public MainFragment() {
         super();
@@ -68,8 +70,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         buttonHelp = (ImageButton) rootView.findViewById(R.id.btnHelp);
         buttonLogout = (ImageButton) rootView.findViewById(R.id.btnLogout);
 
+        //isConnectBluetooth = getIntent().getBooleanExtra("bluetoothStatus", false);
+
         buttonMeasure.setOnClickListener(this);
         buttonProfile.setOnClickListener(this);
+
+
 
     }
 
@@ -79,6 +85,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getContext(), ProfileActivity.class);
             startActivity(intent);
         } else if (v == buttonMeasure) {
+            /*if (isConnectBluetooth) {
+                Intent intent = new Intent(getContext(), DeviceControlActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(getContext(), DeviceScanActivity.class);
+                startActivity(intent);
+            }*/
             Intent intent = new Intent(getContext(), DeviceScanActivity.class);
             startActivity(intent);
         }
