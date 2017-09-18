@@ -68,7 +68,7 @@
             android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name="com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
 
         <service

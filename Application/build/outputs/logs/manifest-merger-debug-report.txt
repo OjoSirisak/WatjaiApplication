@@ -96,7 +96,7 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 activity#com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:60:9-63:60
 	android:screenOrientation
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:61:13-50
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:61:13-49
 	android:theme
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:63:13-57
 	android:name

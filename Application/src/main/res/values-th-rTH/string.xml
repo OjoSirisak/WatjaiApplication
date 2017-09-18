@@ -29,4 +29,5 @@
     <string name="district">อำเถอ/เขต</string>
     <string name="province">จังหวัด</string>
     <string name="postcode">รหัสไปรษณีย์</string>
+    <string name="scandevice">ค้นหาอุปกรณ์</string>
 </resources>

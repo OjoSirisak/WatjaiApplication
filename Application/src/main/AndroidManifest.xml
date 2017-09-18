@@ -58,7 +58,7 @@
             android:name=".Bluetooth.DeviceScanActivity"
             android:theme="@style/AppThemeWithActionBar" />
         <activity
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:name=".Bluetooth.DeviceControlActivity"
             android:theme="@style/AppThemeWithActionBar" />
 

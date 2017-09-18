@@ -88,10 +88,10 @@ public class EditProfileActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {
                     if (response.isSuccessful()) {
-                        if (Locale.getDefault().getLanguage().equals("en")) {
-                            Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
-                        } else {
+                        if (Locale.getDefault().getLanguage().equals("th")) {
                             Toast.makeText(EditProfileActivity.this, "แก้ไขข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(EditProfileActivity.this, "Edit success", Toast.LENGTH_SHORT).show();
                         }
 
                     } else {

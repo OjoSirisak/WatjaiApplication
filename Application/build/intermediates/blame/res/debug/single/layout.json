@@ -100,10 +100,6 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\bluetooth_description.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\bluetooth_device.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\bluetooth_device.xml"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },

@@ -31,24 +31,29 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.R;
+import com.example.android.bluetoothlegatt.View.BluetoothNameListItem;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
-public class DeviceScanActivity extends ListActivity {
+public class DeviceScanActivity extends AppCompatActivity {
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
@@ -63,6 +68,7 @@ public class DeviceScanActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.listitem_device);
         //getSupportActionBar().setTitle(R.string.title_devices);
         mHandler = new Handler();
 
@@ -99,6 +105,10 @@ public class DeviceScanActivity extends ListActivity {
             });
             builder.show();
         }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.scandevice);
+
     }
 
     @Override
@@ -147,8 +157,23 @@ public class DeviceScanActivity extends ListActivity {
         // Initializes list view adapter.
         listView = (ListView) findViewById(R.id.scanList);
         mLeDeviceListAdapter = new LeDeviceListAdapter();
-        setListAdapter(mLeDeviceListAdapter);
+        listView.setAdapter(mLeDeviceListAdapter);
         scanLeDevice(true);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
+                if (device == null) return;
+                final Intent intent = new Intent(DeviceScanActivity.this, DeviceControlActivity.class);
+                intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
+                intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+                if (mScanning) {
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                    mScanning = false;
+                }
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -168,7 +193,7 @@ public class DeviceScanActivity extends ListActivity {
         mLeDeviceListAdapter.clear();
     }
 
-    @Override
+    /*@Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
         if (device == null) return;
@@ -180,7 +205,7 @@ public class DeviceScanActivity extends ListActivity {
             mScanning = false;
         }
         startActivity(intent);
-    }
+    }*/
 
     private void scanLeDevice(final boolean enable) {
         if (enable) {
@@ -211,7 +236,7 @@ public class DeviceScanActivity extends ListActivity {
         public LeDeviceListAdapter() {
             super();
             mLeDevices = new ArrayList<BluetoothDevice>();
-            mInflator = DeviceScanActivity.this.getLayoutInflater();
+            //mInflator = DeviceScanActivity.this.getLayoutInflater();
         }
 
         public void addDevice(BluetoothDevice device) {
@@ -244,6 +269,35 @@ public class DeviceScanActivity extends ListActivity {
         }
 
         @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            BluetoothNameListItem item;
+            if (convertView == null) {
+                item = new BluetoothNameListItem(Contextor.getInstance().getContext()) ;
+            } else {
+                item = new BluetoothNameListItem(parent.getContext());
+            }
+
+            BluetoothDevice device = mLeDevices.get(position);
+            final String deviceName = device.getName();
+
+            if (deviceName != null && deviceName.length() > 0) {
+                item.setBluetoothNameText(device.getName());
+            }
+
+            else {
+                if (Locale.getDefault().getLanguage().equals("th")) {
+                    item.setBluetoothNameText("อุปกรณ์ไม่รู้จัก");
+                } else {
+                    item.setBluetoothNameText("Unknow Device");
+                }
+            }
+
+            item.setBluetootAddressText(device.getAddress());
+
+            return item;
+        }
+
+        /*@Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder;
             // General ListView optimization code.
@@ -265,7 +319,9 @@ public class DeviceScanActivity extends ListActivity {
                 viewHolder.deviceName.setText(R.string.unknown_device);
             viewHolder.deviceAddress.setText(device.getAddress());
             return view;
-        }
+        }*/
+
+
     }
 
     // Device scan callback.
