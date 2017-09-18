@@ -64,7 +64,7 @@ public class PatientItemDao implements Parcelable {
     @Expose
     private List<Doctor> doctor = null;
 
-    protected  PatientItemDao(Parcel in) {
+    public PatientItemDao(Parcel in) {
         id = in.readString();
         patFirstName = in.readString();
         patLastName = in.readString();
@@ -92,6 +92,10 @@ public class PatientItemDao implements Parcelable {
             return new PatientItemDao[size];
         }
     };
+
+    public PatientItemDao() {
+
+    }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {

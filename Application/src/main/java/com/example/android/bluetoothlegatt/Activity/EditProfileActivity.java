@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,6 +74,15 @@ public class EditProfileActivity extends AppCompatActivity {
         edtProvince = (EditText) findViewById(R.id.edtProvince);
         edtMobile = (EditText) findViewById(R.id.edtMobile);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /******

@@ -1,4 +1,4 @@
-#Sun Sep 17 18:23:12 ICT 2017
+#Mon Sep 18 20:57:15 ICT 2017
 base.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_3
 renamed.0=classes.dex
 file.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_3\\classes.dex

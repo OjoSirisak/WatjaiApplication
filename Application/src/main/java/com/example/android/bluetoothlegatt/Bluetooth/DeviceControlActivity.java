@@ -71,6 +71,7 @@ public class DeviceControlActivity extends AppCompatActivity {
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
     private LineGraphSeries<DataPoint> series;
+    private LineGraphSeries<DataPoint> series1;
     private int lastX = 0;
 
     private TextView mConnectionState;
@@ -124,11 +125,12 @@ public class DeviceControlActivity extends AppCompatActivity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
-                updateConnectionState(R.string.connected);
+               // updateConnectionState(true);
                 invalidateOptionsMenu();
+
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
-                updateConnectionState(R.string.disconnected);
+               // updateConnectionState(false);
                 invalidateOptionsMenu();
                 clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
@@ -175,8 +177,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     };*/
 
     private void clearUI() {
-        mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
-        mDataField.setText(R.string.no_data);
+       // mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
+      //  mDataField.setText(R.string.no_data);
     }
     private void doStartService(){
         BluetoothGattService serv = mBluetoothLeService.getUUID();
@@ -246,13 +248,13 @@ public class DeviceControlActivity extends AppCompatActivity {
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
         // Sets up UI references.
-        ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
+       // ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         //mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
         //mGattServicesList.setOnChildClickListener(servicesListClickListner);
         stButton = (Button)findViewById(R.id.btnstart);
         soButton = (Button)findViewById(R.id.stopbt);
-        mConnectionState = (TextView) findViewById(R.id.connection_state);
-        mDataField = (TextView) findViewById(R.id.data_value);
+        //mConnectionState  = (TextView) findViewById(R.id.connection_state);
+       // mDataField = (TextView) findViewById(R.id.data_value);
 
         stButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -305,8 +307,11 @@ public class DeviceControlActivity extends AppCompatActivity {
         graph.addSeries(series);
         Viewport viewport = graph.getViewport();
         viewport.setYAxisBoundsManual(true);
+        viewport.setXAxisBoundsManual(true);
         viewport.setMinY(0);
         viewport.setMaxY(5);
+        viewport.setMinX(0);
+        viewport.setMaxX(80);
         viewport.setScrollable(true);
         graph.getViewport().setScalableY(true);
     }
@@ -335,27 +340,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.gatt_services, menu);
-        if (mConnected) {
-            menu.findItem(R.id.menu_connect).setVisible(false);;
-            menu.findItem(R.id.menu_disconnect).setVisible(true);
-        } else {
-            menu.findItem(R.id.menu_connect).setVisible(true);
-            menu.findItem(R.id.menu_disconnect).setVisible(false);
-        }
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-            case R.id.menu_connect:
-                mBluetoothLeService.connect(mDeviceAddress);
-                return true;
-            case R.id.menu_disconnect:
-                mBluetoothLeService.disconnect();
-                return true;
             case android.R.id.home:
                 onBackPressed();
                 return true;
@@ -363,21 +349,26 @@ public class DeviceControlActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void updateConnectionState(final int resourceId) {
+    private void updateConnectionState(final boolean status) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mConnectionState.setText(resourceId);
+               if(status){
+                   doStartService();
+               }{
+                    doStopService();
+                }
             }
         });
     }
 
     private void displayData(String data) {
         if (data != null) {
-            mDataField.setText(data);
+           // mDataField.setText(data);
             collectData(data);
         }
     }
+
 
     private void collectData(String data){
         if(ecgData == null){
@@ -387,7 +378,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             float ecg = Float.parseFloat(data);
             ecgData.add(ecg);
             Log.e(TAG,"ECG SIZE : " + ecgData.size());
-            series.appendData(new DataPoint(lastX++, ecg), true, 5);
+            series.appendData(new DataPoint(lastX++, ecg), true, 512);
         }catch(Exception e){
             Log.e(TAG,"error : " + e + "\n DATA : " + data);
         }

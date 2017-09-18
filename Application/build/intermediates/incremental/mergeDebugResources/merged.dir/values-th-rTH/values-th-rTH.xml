@@ -4,7 +4,7 @@
     <string name="age">อายุ</string>
     <string name="blood_type">หมู่เลือด</string>
     <string name="btn_login">เข้าสู่ระบบ</string>
-    <string name="district">อำเถอ/เขต</string>
+    <string name="district">อำเภอ/เขต</string>
     <string name="doctor">แพทย์ประจำตัว</string>
     <string name="edit_profile">แก้ไขข้อมูลส่วนตัว</string>
     <string name="first_name">ชื่อ</string>
@@ -25,7 +25,7 @@
     <string name="postcode">รหัสไปรษณีย์</string>
     <string name="province">จังหวัด</string>
     <string name="scandevice">ค้นหาอุปกรณ์</string>
-    <string name="sub_district">ตำบาล/แขวง</string>
+    <string name="sub_district">ตำบล/แขวง</string>
     <string name="submit">ยืนยัน</string>
     <string name="underlying">โรคประจำตัว</string>
     <string name="watjai">วัดใจ</string>

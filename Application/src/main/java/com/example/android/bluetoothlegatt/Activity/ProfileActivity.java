@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import com.example.android.bluetoothlegatt.R;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -83,10 +85,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onFailure(Call<PatientItemDao> call,
                                   Throwable t) {
-                Toast.makeText(ProfileActivity.this,
-                        t.toString(),
-                        Toast.LENGTH_SHORT)
-                        .show();
+                if (Locale.getDefault().getLanguage().equals("th")) {
+                    Toast.makeText(ProfileActivity.this, "กรุณาเชื่อมต่ออินเทอร์เน็ต", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Disconnect internet", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -107,14 +110,31 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         btnEditProfile.setOnClickListener(this);
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onClick(View v) {
         if (v==btnEditProfile) {
             Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
-            intent.putExtra("dao", dao);
-            startActivity(intent);
-            finish();
+
+            if (dao != null) {
+                intent.putExtra("dao", dao);
+                startActivity(intent);
+                finish();
+            } else {
+                PatientItemDao newDao = new PatientItemDao();
+                intent.putExtra("dao", newDao);
+                startActivity(intent);
+                finish();
+            }
+
         }
     }
 }
