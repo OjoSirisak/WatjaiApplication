@@ -28,8 +28,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("status", true);
+                intent.putExtra("loginStatus", true);
                 startActivity(intent);
+                finish();
 
             }
         });

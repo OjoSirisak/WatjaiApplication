@@ -10,7 +10,6 @@ import com.example.android.bluetoothlegatt.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static String TAG = MainActivity.class.getSimpleName();
     private static boolean isLoginStatus = false;
 
     @Override
@@ -18,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        isLoginStatus = getIntent().getBooleanExtra("status", false);
+        isLoginStatus = getIntent().getBooleanExtra("loginStatus", false);
+        boolean test = getIntent().getBooleanExtra("test", false);
 
         if (isLoginStatus) {
             if (savedInstanceState == null) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         }
 
 

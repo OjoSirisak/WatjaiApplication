@@ -49,8 +49,10 @@
 
     <application
         android:name="com.example.android.bluetoothlegatt.MainApplication"
+        android:allowBackup="true"
         android:icon="@drawable/logo_app"
         android:label="@string/watjai"
+        android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar" >
         <activity
             android:name="com.example.android.bluetoothlegatt.Activity.MainActivity"
@@ -68,6 +70,7 @@
             android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name="com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity"
+            android:label="@string/watjai"
             android:screenOrientation="landscape"
             android:theme="@style/AppThemeWithActionBar" />
 
@@ -91,6 +94,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.HistoryActivity"
+            android:label="@string/menu_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeWithActionBar" />
     </application>
 
 </manifest>

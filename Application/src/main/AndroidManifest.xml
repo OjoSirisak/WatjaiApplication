@@ -45,8 +45,8 @@
         android:theme="@style/AppThemeNoActionBar">
         <activity
             android:name=".Activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/watjai">
+            android:label="@string/watjai"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,34 +54,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Bluetooth.DeviceScanActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
         <activity
-            android:screenOrientation="landscape"
             android:name=".Bluetooth.DeviceControlActivity"
+            android:label="@string/watjai"
+            android:screenOrientation="landscape"
             android:theme="@style/AppThemeWithActionBar" />
 
         <service
-            android:screenOrientation="portrait"
             android:name=".Bluetooth.BluetoothLeService"
-            android:enabled="true" />
+            android:enabled="true"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:screenOrientation="portrait"
             android:name=".Activity.LoginActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/menu_profile"
-            android:theme="@style/AppThemeWithActionBar" />
-        <activity
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
+
+        <activity
             android:name=".Activity.EditProfileActivity"
             android:label="@string/edit_profile"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/AppThemeWithActionBar"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity android:name=".Activity.HistoryActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeWithActionBar"
+            android:label="@string/menu_history"/>
     </application>
 
 </manifest>

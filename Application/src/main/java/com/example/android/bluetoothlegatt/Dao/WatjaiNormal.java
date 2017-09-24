@@ -12,15 +12,37 @@ import java.util.List;
 
 public class WatjaiNormal {
 
+    @SerializedName("_id")
+    @Expose
+    private String id;
     @SerializedName("measureData")
     @Expose
     private ArrayList<Float> measureData = null;
-
     @SerializedName("patId")
     @Expose
     private String patId;
+    @SerializedName("measureTime")
+    @Expose
+    private String measureTime;
+    @SerializedName("measureId")
+    @Expose
+    private String measureId;
 
-    @SerializedName("measureData")
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ArrayList<Float> getMeasureData() {
+        return measureData;
+    }
+
+    public void setMeasureData(ArrayList<Float> measureData) {
+        this.measureData = measureData;
+    }
 
     public String getPatId() {
         return patId;
@@ -30,12 +52,20 @@ public class WatjaiNormal {
         this.patId = patId;
     }
 
-    public ArrayList<Float> getMeasureData() {
-        return measureData;
+    public String getMeasureTime() {
+        return measureTime;
     }
 
-    public void setMeasureData(ArrayList<Float> measureData) {
-        this.measureData = measureData;
+    public void setMeasureTime(String measureTime) {
+        this.measureTime = measureTime;
+    }
+
+    public String getMeasureId() {
+        return measureId;
+    }
+
+    public void setMeasureId(String measureId) {
+        this.measureId = measureId;
     }
 
 }

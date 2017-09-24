@@ -31,6 +31,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -43,6 +44,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt.Activity.MainActivity;
+import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.BluetoothNameListItem;
@@ -59,6 +62,7 @@ public class DeviceScanActivity extends AppCompatActivity {
     private boolean mScanning;
     private Handler mHandler;
     private ListView listView;
+    private String checkNameBluetooth = "";
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
@@ -130,18 +134,27 @@ public class DeviceScanActivity extends AppCompatActivity {
         listView.setAdapter(mLeDeviceListAdapter);
         scanLeDevice(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
-                if (device == null) return;
-                final Intent intent = new Intent(DeviceScanActivity.this, DeviceControlActivity.class);
+                if (device == null) return ;
+                final Intent intent = new Intent(getApplicationContext(), DeviceControlActivity.class);
                 intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
                 intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
                 if (mScanning) {
                     mBluetoothAdapter.stopLeScan(mLeScanCallback);
                     mScanning = false;
                 }
-                startActivity(intent);
+                checkNameBluetooth = ""+device.getName();
+                if (checkNameBluetooth.equalsIgnoreCase("EHEALTH")) {
+                    startActivity(intent);
+                    checkNameBluetooth = "";
+                    finish();
+                } else {
+                    stopService(intent);
+                    checkNameBluetooth = "";
+                }
             }
         });
     }

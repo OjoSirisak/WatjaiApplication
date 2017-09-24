@@ -10,10 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.MainActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
+import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.MainApplication;
+import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.R;
 
 
@@ -22,6 +25,7 @@ import com.example.android.bluetoothlegatt.R;
  */
 public class MainFragment extends Fragment implements View.OnClickListener {
     ImageButton buttonProfile, buttonMeasure, buttonHistory, buttonSetting, buttonHelp, buttonLogout;
+    private boolean isBluetoothStatus = false;
 
     public MainFragment() {
         super();
@@ -36,6 +40,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
 
@@ -61,6 +66,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         // Init 'View' instance(s) with rootView.findViewById here
         // Note: State of variable initialized here could not be saved
         //       in onSavedInstanceState
+
         buttonProfile = (ImageButton) rootView.findViewById(R.id.btnProfile);
         buttonMeasure = (ImageButton) rootView.findViewById(R.id.btnMeasure);
         buttonHistory = (ImageButton) rootView.findViewById(R.id.btnHistory);
@@ -70,8 +76,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
         buttonMeasure.setOnClickListener(this);
         buttonProfile.setOnClickListener(this);
-
+        buttonHistory.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {
@@ -80,6 +87,15 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             startActivity(intent);
         } else if (v == buttonMeasure) {
             Intent intent = new Intent(getContext(), DeviceScanActivity.class);
+
+            if (isBluetoothStatus) {
+                Intent watjai = new Intent(getContext(), DeviceControlActivity.class);
+                startActivity(watjai);
+            } else {
+                startActivity(intent);
+            }
+        } else if (v == buttonHistory) {
+            Intent intent = new Intent(getContext(), HistoryActivity.class);
             startActivity(intent);
         }
 
@@ -94,6 +110,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @SuppressWarnings("UnusedParameters")
     private void onRestoreInstanceState(Bundle savedInstanceState) {
         // Restore Instance (Fragment level's variables) State here
+        //isBluetoothStatus = getActivity().getIntent().getBooleanExtra("bluetoothStatus", false);
     }
 
 }

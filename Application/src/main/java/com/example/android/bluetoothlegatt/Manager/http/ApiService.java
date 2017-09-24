@@ -3,6 +3,9 @@ package com.example.android.bluetoothlegatt.Manager.http;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -27,4 +30,7 @@ public interface ApiService {
     @POST("watjainormal" )
     @Headers({"Content-Type: application/json"})
     Call<WatjaiNormal> insertECG(@Body WatjaiNormal ecg);
+
+    @GET("watjainormal/history/5minute")
+    Call<ArrayList<WatjaiNormal>> loadWatjai5Minute();
 }

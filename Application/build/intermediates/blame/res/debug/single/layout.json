@@ -28,12 +28,12 @@
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
@@ -60,12 +60,12 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_profile.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\activity_edit_profile.xml"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_profile.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\activity_edit_profile.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
@@ -150,6 +150,10 @@
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\activity_history.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\layout\\activity_history.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",

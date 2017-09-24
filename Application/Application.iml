@@ -108,6 +108,7 @@
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="constraint-layout-solver-1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="SlidingTabLayout-1.2.0" level="project" />
     <orderEntry type="library" exported="" name="okio-1.13.0" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.3.0" level="project" />

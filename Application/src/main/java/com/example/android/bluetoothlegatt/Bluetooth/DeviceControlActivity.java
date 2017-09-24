@@ -38,8 +38,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Activity.EditProfileActivity;
+import com.example.android.bluetoothlegatt.Activity.MainActivity;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
+import com.example.android.bluetoothlegatt.Fragment.MainFragment;
+import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 
 
@@ -71,7 +74,6 @@ public class DeviceControlActivity extends AppCompatActivity {
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
     private LineGraphSeries<DataPoint> series;
-    private LineGraphSeries<DataPoint> series1;
     private int lastX = 0;
 
     private TextView mConnectionState;
@@ -271,6 +273,9 @@ public class DeviceControlActivity extends AppCompatActivity {
                 watjaiNormal = new WatjaiNormal();
                 watjaiNormal.setMeasureData(ecgData);
                 watjaiNormal.setPatId("PA1709001");
+                watjaiNormal.setMeasureId(null);
+                watjaiNormal.setMeasureTime(null);
+                watjaiNormal.setId(null);
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override
@@ -297,7 +302,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setTitle(mDeviceName);
+        getSupportActionBar().setTitle(R.string.watjai);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
@@ -307,7 +312,6 @@ public class DeviceControlActivity extends AppCompatActivity {
         graph.addSeries(series);
         Viewport viewport = graph.getViewport();
         viewport.setYAxisBoundsManual(true);
-        viewport.setXAxisBoundsManual(true);
         viewport.setMinY(0);
         viewport.setMaxY(5);
         viewport.setMinX(0);
