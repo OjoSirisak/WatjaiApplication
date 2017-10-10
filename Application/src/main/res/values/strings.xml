@@ -62,4 +62,5 @@
     <string name="province">Province</string>
     <string name="postcode">Postcode</string>
     <string name="scandevice">Scan device</string>
+    <string name="blanknoti">No notifications</string>
 </resources>

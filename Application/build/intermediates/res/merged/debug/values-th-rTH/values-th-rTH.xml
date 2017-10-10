@@ -2,6 +2,7 @@
 <resources>
     <string name="address">ที่อยู่</string>
     <string name="age">อายุ</string>
+    <string name="blanknoti">ไม่พบการแจ้งเตือน</string>
     <string name="blood_type">หมู่เลือด</string>
     <string name="btn_login">เข้าสู่ระบบ</string>
     <string name="district">อำเภอ/เขต</string>

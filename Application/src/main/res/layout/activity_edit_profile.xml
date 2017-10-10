@@ -38,6 +38,7 @@
                 android:layout_marginRight="5dp"/>
 
             <EditText
+                android:minEms="1"
                 android:id="@+id/edtFirstName"
                 android:imeOptions="actionNext"
                 android:singleLine="true"

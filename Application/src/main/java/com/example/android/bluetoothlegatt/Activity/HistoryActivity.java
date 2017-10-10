@@ -38,7 +38,7 @@ public class HistoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        Call<ArrayList<WatjaiNormal>> call = HttpManager.getInstance().getService().loadWatjai5Minute();
+        Call<ArrayList<WatjaiNormal>> call = HttpManager.getInstance().getService().loadWatjai5Minute("PA1709001");
         call.enqueue(new Callback<ArrayList<WatjaiNormal>>() {
             @Override
             public void onResponse(Call<ArrayList<WatjaiNormal>> call,

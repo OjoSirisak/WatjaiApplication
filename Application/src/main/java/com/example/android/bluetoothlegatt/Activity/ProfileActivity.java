@@ -1,10 +1,8 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -65,7 +63,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                             dao.getProvince());
                     tvTel.setText(dao.getPatTel());
                     tvBloodType.setText(dao.getBloodType());
-
                     List<Doctor> a = dao.getDoctor();
                     String name = a.get(0).getDocFirstName()+ " " +a.get(0).getDocLastName();
                     tvUnderlyingDisease.setText(dao.getUnderlyingDisease());

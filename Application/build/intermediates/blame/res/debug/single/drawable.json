@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_read.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_read.xml"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
@@ -138,6 +142,10 @@
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_alert.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_alert.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",

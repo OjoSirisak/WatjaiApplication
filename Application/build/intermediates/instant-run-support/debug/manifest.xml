@@ -99,6 +99,21 @@
             android:label="@string/menu_history"
             android:screenOrientation="landscape"
             android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.NotificationActivity"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity"
+            android:label="แจ้งเตือนการตรวจพบ"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"

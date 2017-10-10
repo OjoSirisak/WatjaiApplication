@@ -72,24 +72,36 @@
             android:name=".Activity.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
         <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/menu_profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
-
         <activity
             android:name=".Activity.EditProfileActivity"
             android:label="@string/edit_profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
-        <activity android:name=".Activity.HistoryActivity"
+        <activity
+            android:name=".Activity.HistoryActivity"
+            android:label="@string/menu_history"
             android:screenOrientation="landscape"
-            android:theme="@style/AppThemeWithActionBar"
-            android:label="@string/menu_history"/>
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".Activity.BlankNotificationActivity"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".Activity.NotificationActivity"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity android:name=".Activity.DescriptionNotificationActivity"
+            android:label="แจ้งเตือนการตรวจพบ"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithActionBar"/>
     </application>
 
 </manifest>

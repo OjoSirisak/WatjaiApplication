@@ -63,6 +63,9 @@ public class PatientItemDao implements Parcelable {
     @SerializedName("Doctor")
     @Expose
     private List<Doctor> doctor = null;
+    @SerializedName("sex")
+    @Expose
+    private String sex;
 
     public PatientItemDao(Parcel in) {
         id = in.readString();
@@ -79,6 +82,7 @@ public class PatientItemDao implements Parcelable {
         patId = in.readString();
         underlyingDisease = in.readString();
         patPic = in.readString();
+        sex = in.readString();
     }
 
     public static final Creator<PatientItemDao> CREATOR = new Creator<PatientItemDao>() {
@@ -113,6 +117,7 @@ public class PatientItemDao implements Parcelable {
         dest.writeString(patId);
         dest.writeString(underlyingDisease);
         dest.writeString(patPic);
+        dest.writeString(sex);
     }
 
     public String getId() {
@@ -241,6 +246,14 @@ public class PatientItemDao implements Parcelable {
 
     public void setDoctor(List<Doctor> doctor) {
         this.doctor = doctor;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     @Override

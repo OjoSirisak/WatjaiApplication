@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="23"
+    abi="x86"
+    api-level="22"
     build-mode="COLD"
-    density="xxhdpi"
+    density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1506261291664"
+    timestamp="1507616525151"
     token="7411420359649035040"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="481" />
+        duration="1198" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="31" />
+        duration="42" />
     <task
         name="verifier"
-        duration="12" />
+        duration="2" />
 
     <artifact
-        location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
         location="E:\Project\WatjaiApplication\Application\build\outputs\apk\Application-debug.apk"
@@ -35,10 +32,10 @@
 
     <build
         build-mode="FULL"
-        timestamp="1506257553156"
+        timestamp="1507616466004"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="E:\Project\WatjaiApplication\Application\build\outputs\apk\Application-debug.apk"
@@ -59,13 +56,13 @@
             location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
+            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
             location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -76,29 +73,10 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1506261001091"
+        timestamp="1507616525151"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1506261140269"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\Project\WatjaiApplication\Application\build\outputs\apk\Application-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1506261291664"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Project\WatjaiApplication\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="E:\Project\WatjaiApplication\Application\build\outputs\apk\Application-debug.apk"

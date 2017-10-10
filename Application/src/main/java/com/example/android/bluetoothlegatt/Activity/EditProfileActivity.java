@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
-import com.example.android.bluetoothlegatt.Dao.PatientUpdate;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 
@@ -63,6 +62,7 @@ public class EditProfileActivity extends AppCompatActivity {
         dao.setDistrict(edtDistrict.getText().toString());
         dao.setProvince(edtProvince.getText().toString());
         dao.setPatTel(edtMobile.getText().toString());
+        dao.setSex(dao.getSex());
     }
 
     private void findId() {

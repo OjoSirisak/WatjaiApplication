@@ -30,5 +30,6 @@
     <string name="province">จังหวัด</string>
     <string name="postcode">รหัสไปรษณีย์</string>
     <string name="scandevice">ค้นหาอุปกรณ์</string>
+    <string name="blanknoti">ไม่พบการแจ้งเตือน</string>
 
 </resources>
