@@ -94,6 +94,10 @@ public class NotificationListManager {
         String json = prefs.getString("json", null);
         if (json == null)
             return;
+<<<<<<< HEAD
         //dao = new Gson().fromJson(json, WatjaiMeasure.class);
+=======
+        dao = new Gson().fromJson(json, WatjaiMeasure.class);
+>>>>>>> fd0e0439436d8cefa306da45e03561c02b88b987
     }
 }

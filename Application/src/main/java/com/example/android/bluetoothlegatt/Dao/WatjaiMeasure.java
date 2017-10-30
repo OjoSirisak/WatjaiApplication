@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created by SirisakPks on 27/8/2560.
  */
 
-public class WatjaiMeasure implements Parcelable {
+public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelable {
 
     @SerializedName("_id")
     @Expose
@@ -35,14 +35,18 @@ public class WatjaiMeasure implements Parcelable {
     @SerializedName("heartRate")
     @Expose
     private int heartRate;
+    @SerializedName("comment")
+    @Expose
+    private String comment;
 
-    protected WatjaiMeasure(Parcel in) {
+    public WatjaiMeasure(Parcel in) {
         id = in.readString();
         patId = in.readString();
         alertTime = in.readString();
         measuringId = in.readString();
         measuringData = (ArrayList<Float>) in.readSerializable();
         heartRate = in.readInt();
+        comment = in.readString();
     }
 
     public static final Creator<WatjaiMeasure> CREATOR = new Creator<WatjaiMeasure>() {
@@ -56,6 +60,10 @@ public class WatjaiMeasure implements Parcelable {
             return new WatjaiMeasure[size];
         }
     };
+
+    public WatjaiMeasure() {
+
+    }
 
     public String getId() {
         return id;
@@ -113,6 +121,14 @@ public class WatjaiMeasure implements Parcelable {
         this.heartRate = heartRate;
     }
 
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -126,5 +142,6 @@ public class WatjaiMeasure implements Parcelable {
         dest.writeString(measuringId);
         dest.writeSerializable(measuringData);
         dest.writeInt(heartRate);
+        dest.writeString(comment);
     }
 }
