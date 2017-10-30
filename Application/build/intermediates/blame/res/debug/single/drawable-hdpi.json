@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_notreadlistnotification.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_notreadlistnotification.png"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_login.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_login.png"
     },

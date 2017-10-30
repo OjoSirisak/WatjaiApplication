@@ -140,7 +140,7 @@
                     android:layout_height="match_parent">
                         <ImageButton
                             android:layout_marginTop="15dp"
-                            android:id="@+id/btnHelp"
+                            android:id="@+id/btnSetting"
                             android:src="@drawable/selector_btn_setting"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="30dp"
@@ -162,7 +162,7 @@
                     android:layout_height="match_parent">
                         <ImageButton
                             android:layout_marginTop="15dp"
-                            android:id="@+id/btnSetting"
+                            android:id="@+id/btnHelp"
                             android:src="@drawable/selector_btn_info"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="30dp"

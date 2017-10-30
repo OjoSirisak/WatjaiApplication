@@ -15,6 +15,7 @@ import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.NotificationListItem;
+import com.onesignal.OneSignal;
 
 import java.util.ArrayList;
 
@@ -43,8 +44,10 @@ public class NotificationActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 WatjaiMeasure measure = notificationListAdapter.getItem(position);
                 if (measure != null) {
+                    // TODO: retrofit call to update status
+                    // TODO: check status to change read status
                     ImageView imageView = (ImageView) view.findViewById(R.id.readStatus);
-                    imageView.setVisibility(View.GONE);
+                    imageView.setImageResource(R.drawable.bg_listnotificationpng);
                     Intent intent = new Intent(NotificationActivity.this, DescriptionNotificationActivity.class);
                     intent.putExtra("measure", measure);
                     startActivity(intent);

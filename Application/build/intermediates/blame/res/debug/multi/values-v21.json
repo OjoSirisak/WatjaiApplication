@@ -2018,9 +2018,169 @@
                     "startLine": 279,
                     "startColumn": 4,
                     "startOffset": 20451,
-                    "endLine": 280,
+                    "endColumn": 115,
+                    "endOffset": 20562
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 354,
+                        "endColumn": 115,
+                        "endOffset": 465
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 280,
+                    "startColumn": 4,
+                    "startOffset": 20567,
+                    "endColumn": 125,
+                    "endOffset": 20688
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 470,
+                        "endColumn": 125,
+                        "endOffset": 591
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 281,
+                    "startColumn": 4,
+                    "startOffset": 20693,
+                    "endLine": 283,
                     "endColumn": 12,
-                    "endOffset": 20527
+                    "endOffset": 20856
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\78db9af3de258d2cc01980f3949c12f018d807a8\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 284,
+                    "startColumn": 4,
+                    "startOffset": 20861,
+                    "endLine": 286,
+                    "endColumn": 12,
+                    "endOffset": 21019
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\78db9af3de258d2cc01980f3949c12f018d807a8\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 223,
+                        "endLine": 7,
+                        "endColumn": 12,
+                        "endOffset": 381
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 287,
+                    "startColumn": 4,
+                    "startOffset": 21024,
+                    "endColumn": 125,
+                    "endOffset": 21145
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 596,
+                        "endColumn": 125,
+                        "endOffset": 717
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 288,
+                    "startColumn": 4,
+                    "startOffset": 21150,
+                    "endLine": 290,
+                    "endColumn": 12,
+                    "endOffset": 21313
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\78db9af3de258d2cc01980f3949c12f018d807a8\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 386,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 549
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 291,
+                    "startColumn": 4,
+                    "startOffset": 21318,
+                    "endColumn": 127,
+                    "endOffset": 21441
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 722,
+                        "endColumn": 127,
+                        "endOffset": 845
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 292,
+                    "startColumn": 4,
+                    "startOffset": 21446,
+                    "endLine": 294,
+                    "endColumn": 12,
+                    "endOffset": 21608
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\78db9af3de258d2cc01980f3949c12f018d807a8\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 554,
+                        "endLine": 13,
+                        "endColumn": 12,
+                        "endOffset": 716
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 295,
+                    "startColumn": 4,
+                    "startOffset": 21613,
+                    "endLine": 296,
+                    "endColumn": 12,
+                    "endOffset": 21689
                 },
                 "from": {
                     "file": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
@@ -2036,12 +2196,12 @@
             },
             {
                 "to": {
-                    "startLine": 281,
+                    "startLine": 297,
                     "startColumn": 4,
-                    "startOffset": 20532,
-                    "endLine": 283,
+                    "startOffset": 21694,
+                    "endLine": 299,
                     "endColumn": 12,
-                    "endOffset": 20702
+                    "endOffset": 21864
                 },
                 "from": {
                     "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\values-v21\\values-v21.xml",
@@ -2057,12 +2217,12 @@
             },
             {
                 "to": {
-                    "startLine": 284,
+                    "startLine": 300,
                     "startColumn": 4,
-                    "startOffset": 20707,
-                    "endLine": 288,
+                    "startOffset": 21869,
+                    "endLine": 304,
                     "endColumn": 12,
-                    "endOffset": 21043
+                    "endOffset": 22205
                 },
                 "from": {
                     "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\values-v21\\values-v21.xml",
@@ -2073,6 +2233,48 @@
                         "endLine": 286,
                         "endColumn": 12,
                         "endOffset": 20962
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 305,
+                    "startColumn": 4,
+                    "startOffset": 22210,
+                    "endLine": 307,
+                    "endColumn": 12,
+                    "endOffset": 22377
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 850,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 1017
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 308,
+                    "startColumn": 4,
+                    "startOffset": 22382,
+                    "endLine": 312,
+                    "endColumn": 12,
+                    "endOffset": 22715
+                },
+                "from": {
+                    "file": "C:\\Users\\SirisakPks\\.android\\build-cache\\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1022,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 1355
                     }
                 }
             }

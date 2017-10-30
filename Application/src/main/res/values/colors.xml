@@ -7,4 +7,5 @@
     <color name="white_text">#FFFFFF</color>
     <color name="overlay_color">#80000000</color>
     <color name="bg_btn_blank_color">#00000000</color>
+    <color name="over_overlay_color">#54000000</color>
 </resources>

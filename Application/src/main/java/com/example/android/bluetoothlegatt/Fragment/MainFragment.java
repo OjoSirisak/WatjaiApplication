@@ -1,35 +1,52 @@
 package com.example.android.bluetoothlegatt.Fragment;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity;
+import com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.NotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
+import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
+import com.onesignal.OSNotification;
+import com.onesignal.OSNotificationAction;
+import com.onesignal.OSNotificationOpenResult;
+import com.onesignal.OneSignal;
+
+import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
+
+
 
 /**
  * Created by nuuneoi on 11/16/2014.
@@ -81,7 +98,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         // Init 'View' instance(s) with rootView.findViewById here
         // Note: State of variable initialized here could not be saved
         //       in onSavedInstanceState
-
         buttonProfile = (ImageButton) rootView.findViewById(R.id.btnProfile);
         buttonMeasure = (ImageButton) rootView.findViewById(R.id.btnMeasure);
         buttonHistory = (ImageButton) rootView.findViewById(R.id.btnHistory);
@@ -97,14 +113,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         buttonHistory.setOnClickListener(this);
         buttonNotification.setOnClickListener(this);
         buttonHelp.setOnClickListener(this);
-    }
 
-    /*@Override
-    public void onStart() {
-        super.onStart();
-        System.out.println("onstart " +countNoti);
-        showCountNotification();
-    }*/
+        OneSignal.sendTag("patId", "PA1709001");
+
+        OneSignal.startInit(getContext())
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
+    }
 
     @Override
     public void onResume() {
@@ -185,6 +201,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(blank);
             }
         } else if (v == buttonHelp) {
+
         }
 
     }
@@ -218,9 +235,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         @Override
         protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
             watjaiMeasure = result;
-            countNoti = watjaiMeasure.size();
             if (watjaiMeasure.size() != 0)
-                lastIdMeasure = watjaiMeasure.get(countNoti-1).getMeasuringId();
+                lastIdMeasure = watjaiMeasure.get(0).getMeasuringId();
         }
 
         @Override
@@ -290,5 +306,45 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
 }
 
+class ExampleNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
+    // This fires when a notification is opened by tapping on it.
+
+
+    @Override
+    public void notificationReceived(OSNotification osNotification) {
+
+        JSONObject data = osNotification.payload.additionalData;
+        String customKey;
+
+        Intent intent = new Intent(Contextor.getInstance().getContext(), NotificationActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+
+        int requestCode = 0;
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(Contextor.getInstance().getContext(), requestCode, intent, PendingIntent.FLAG_ONE_SHOT);
+        Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        android.support.v4.app.NotificationCompat.Builder noBuilder = new android.support.v4.app.NotificationCompat.Builder(Contextor.getInstance().getContext())
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("แจ้งเตือนพบอาการ")
+                .setContentText(osNotification.payload.body)
+                .setAutoCancel(true).setDefaults(android.app.Notification.DEFAULT_ALL)
+                .setContentIntent(pendingIntent).setSound(sound);
+
+
+        NotificationManager notificationManager = (NotificationManager) Contextor.getInstance().getContext().getSystemService(Contextor.getInstance().getContext().NOTIFICATION_SERVICE);
+        notificationManager.notify(0, noBuilder.build()); //0 = ID of notification
+
+
+        if (data != null) {
+            customKey = data.optString("customkey", null);
+            if (customKey != null)
+                Log.i("OneSignalExample", "customkey set with value: " + customKey);
+        }
+
+        Log.i("OneSignalExample", "ExampleNotificationOpenedHandler");
+    }
+}
 
 

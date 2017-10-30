@@ -37,10 +37,14 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:37:22-78
 uses-permission#android.permission.INTERNET
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:38:5-67
+MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:17:5-67
+MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:21:5-66
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:38:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:39:5-79
+MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:25:5-79
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:39:22-76
 application
@@ -52,14 +56,23 @@ MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\SirisakPks\.android\bu
 MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\SirisakPks\.android\build-cache\b7305f986dc7d8aa9ee66676e48eeb20271112c2\output\AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.ATHBK:SlidingTabLayout:1.2.0] C:\Users\SirisakPks\.android\build-cache\cec0b85fb8286aefc25bcfc791a0304b71ba9d14\output\AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\5df96e97d73daba91ae8739d6d3a21a1e14a3822\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\SirisakPks\.android\build-cache\991fb654fcacc48e695593fcaadee102d570cce9\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\SirisakPks\.android\build-cache\cef44ead2edb359605af041db53dc2cbd9044013\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\0f7a8d4aff8eef2ce99c468b04c3baedfb39f84b\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\SirisakPks\.android\build-cache\39150a7523f42d3813b041cd6c14b4c7bbfb6cb3\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\SirisakPks\.android\build-cache\3e744f4eb4efc2e8d656b9635cbafa23dd6dd8a3\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\aeb85b1b031b2e69f5c9ad9bbf8d1855a3978706\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\98836f1544f256c143ecb8150f4d68f3b5c0b583\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\7aecaa9d1f61d671b53cdef541916b63e0fc252b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:49:5-104:19
+MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-location:11.2.2] C:\Users\SirisakPks\.android\build-cache\c0c23da46b9ad6678df02f8d55aca18efbdf558f\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:11.2.2] C:\Users\SirisakPks\.android\build-cache\34ed3842322c68aef6a390fd6a2770a676e3fc88\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.2.2] C:\Users\SirisakPks\.android\build-cache\1d5b66d755d63c170f0d4f236204abf6aba7d713\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\SirisakPks\.android\build-cache\3c9c9ffbbd884b636814fd5b5f54553a365fab23\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\78db9af3de258d2cc01980f3949c12f018d807a8\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\SirisakPks\.android\build-cache\24d0b7e4067cc537744b0321ce7e2361ca9a128b\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\SirisakPks\.android\build-cache\8cdd1b7d1a3541f0509dca957099217ca73a19ac\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\.android\build-cache\8df54702e5908c28541e8aab46b6c9d629a4f98c\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:24:5-28:19
 	android:label
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:44:9-39
 	android:supportsRtl
@@ -195,14 +208,23 @@ MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\SirisakPks\.android\bu
 MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\SirisakPks\.android\build-cache\b7305f986dc7d8aa9ee66676e48eeb20271112c2\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.ATHBK:SlidingTabLayout:1.2.0] C:\Users\SirisakPks\.android\build-cache\cec0b85fb8286aefc25bcfc791a0304b71ba9d14\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\5df96e97d73daba91ae8739d6d3a21a1e14a3822\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\SirisakPks\.android\build-cache\991fb654fcacc48e695593fcaadee102d570cce9\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\SirisakPks\.android\build-cache\cef44ead2edb359605af041db53dc2cbd9044013\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\0f7a8d4aff8eef2ce99c468b04c3baedfb39f84b\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\SirisakPks\.android\build-cache\39150a7523f42d3813b041cd6c14b4c7bbfb6cb3\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\SirisakPks\.android\build-cache\3e744f4eb4efc2e8d656b9635cbafa23dd6dd8a3\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\aeb85b1b031b2e69f5c9ad9bbf8d1855a3978706\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\98836f1544f256c143ecb8150f4d68f3b5c0b583\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\7aecaa9d1f61d671b53cdef541916b63e0fc252b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-location:11.2.2] C:\Users\SirisakPks\.android\build-cache\c0c23da46b9ad6678df02f8d55aca18efbdf558f\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.2.2] C:\Users\SirisakPks\.android\build-cache\34ed3842322c68aef6a390fd6a2770a676e3fc88\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.2.2] C:\Users\SirisakPks\.android\build-cache\1d5b66d755d63c170f0d4f236204abf6aba7d713\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\SirisakPks\.android\build-cache\3c9c9ffbbd884b636814fd5b5f54553a365fab23\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\78db9af3de258d2cc01980f3949c12f018d807a8\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\SirisakPks\.android\build-cache\24d0b7e4067cc537744b0321ce7e2361ca9a128b\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\SirisakPks\.android\build-cache\8cdd1b7d1a3541f0509dca957099217ca73a19ac\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\.android\build-cache\8df54702e5908c28541e8aab46b6c9d629a4f98c\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:20:5-22:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:23:9-52
 	android:targetSdkVersion
@@ -215,15 +237,234 @@ meta-data#android.support.VERSION
 ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\5df96e97d73daba91ae8739d6d3a21a1e14a3822\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\SirisakPks\.android\build-cache\991fb654fcacc48e695593fcaadee102d570cce9\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\SirisakPks\.android\build-cache\cef44ead2edb359605af041db53dc2cbd9044013\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\0f7a8d4aff8eef2ce99c468b04c3baedfb39f84b\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\SirisakPks\.android\build-cache\39150a7523f42d3813b041cd6c14b4c7bbfb6cb3\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\SirisakPks\.android\build-cache\3e744f4eb4efc2e8d656b9635cbafa23dd6dd8a3\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\aeb85b1b031b2e69f5c9ad9bbf8d1855a3978706\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\SirisakPks\.android\build-cache\98836f1544f256c143ecb8150f4d68f3b5c0b583\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\SirisakPks\.android\build-cache\7aecaa9d1f61d671b53cdef541916b63e0fc252b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\78db9af3de258d2cc01980f3949c12f018d807a8\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\SirisakPks\.android\build-cache\24d0b7e4067cc537744b0321ce7e2361ca9a128b\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\SirisakPks\.android\build-cache\8cdd1b7d1a3541f0509dca957099217ca73a19ac\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\.android\build-cache\8df54702e5908c28541e8aab46b6c9d629a4f98c\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:26:9-28:38
 	android:value
 		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:27:9-31
 	android:name
 		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:26:9-47
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:8:5-10:47
+	android:protectionLevel
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:10:9-44
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:9:9-63
+		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:12:22-76
+		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:18:5-82
+MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:18:22-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:19:5-68
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:19:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:24:5-66
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:24:22-63
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:30:5-81
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:30:22-78
+uses-permission#com.sec.android.provider.badge.permission.READ
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:32:5-86
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:32:22-83
+uses-permission#com.sec.android.provider.badge.permission.WRITE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:33:5-87
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:33:22-84
+uses-permission#com.htc.launcher.permission.READ_SETTINGS
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:34:5-81
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:34:22-78
+uses-permission#com.htc.launcher.permission.UPDATE_SHORTCUT
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:35:5-83
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:35:22-80
+uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:36:5-88
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:36:22-85
+uses-permission#com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:37:5-92
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:37:22-89
+uses-permission#com.anddoes.launcher.permission.UPDATE_COUNT
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:38:5-84
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:38:22-81
+uses-permission#com.majeur.launcher.permission.UPDATE_BADGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:39:5-83
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:39:22-80
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:40:5-91
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:40:22-88
+uses-permission#com.huawei.android.launcher.permission.READ_SETTINGS
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:41:5-92
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:41:22-89
+uses-permission#com.huawei.android.launcher.permission.WRITE_SETTINGS
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:42:5-93
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:42:22-90
+uses-permission#android.permission.READ_APP_BADGE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:43:5-73
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:43:22-70
+uses-permission#com.oppo.launcher.permission.READ_SETTINGS
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:44:5-82
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:44:22-79
+uses-permission#com.oppo.launcher.permission.WRITE_SETTINGS
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:45:5-83
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:45:22-80
+uses-permission#me.everything.badger.permission.BADGE_COUNT_READ
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:46:5-88
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:46:22-85
+uses-permission#me.everything.badger.permission.BADGE_COUNT_WRITE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:47:5-89
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:47:22-86
+meta-data#onesignal_app_id
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:50:9-52:51
+	android:value
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:52:13-48
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:51:13-44
+meta-data#onesignal_google_project_number
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:54:9-56:70
+	android:value
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:56:13-67
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:55:13-59
+receiver#com.onesignal.GcmBroadcastReceiver
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:58:9-68:20
+	android:permission
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:60:13-73
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:59:13-62
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:63:13-67:29
+	android:priority
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:63:28-50
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:64:17-81
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:64:25-78
+category#${applicationId}
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:66:17-61
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:66:27-58
+		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
+receiver#com.onesignal.NotificationOpenedReceiver
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:69:9-77
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:69:19-74
+service#com.onesignal.GcmIntentService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:71:9-66
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:71:18-63
+service#com.onesignal.GcmIntentJobService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:72:9-74:72
+	android:permission
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:74:13-69
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:73:13-61
+service#com.onesignal.SyncJobService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:75:9-77:72
+	android:permission
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:77:13-69
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:76:13-56
+service#com.onesignal.RestoreJobService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:78:9-80:72
+	android:permission
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:80:13-69
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:79:13-59
+service#com.onesignal.RestoreKickoffJobService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:81:9-83:72
+	android:permission
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:83:13-69
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:82:13-66
+service#com.onesignal.SyncService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:84:9-61
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:84:18-58
+activity#com.onesignal.PermissionsActivity
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:86:9-88:75
+	android:theme
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:88:13-72
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:87:13-61
+service#com.onesignal.NotificationRestoreService
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:90:9-76
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:90:18-73
+receiver#com.onesignal.BootUpReceiver
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:92:9-98:20
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:92:19-62
+intent-filter#android.intent.action.ACTION_BOOT_COMPLETED+android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:93:13-97:29
+action#android.intent.action.ACTION_BOOT_COMPLETED
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:94:17-86
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:94:25-83
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:95:17-79
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:95:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:96:17-82
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:96:25-79
+receiver#com.onesignal.UpgradeReceiver
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:99:9-103:20
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:99:19-63
+intent-filter#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:100:13-102:29
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:101:17-84
+	android:name
+		ADDED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:101:25-81
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.2.2] C:\Users\SirisakPks\.android\build-cache\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\output\AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.2.2] C:\Users\SirisakPks\.android\build-cache\1d5b66d755d63c170f0d4f236204abf6aba7d713\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.2.2] C:\Users\SirisakPks\.android\build-cache\1d5b66d755d63c170f0d4f236204abf6aba7d713\output\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.2.2] C:\Users\SirisakPks\.android\build-cache\1d5b66d755d63c170f0d4f236204abf6aba7d713\output\AndroidManifest.xml:20:20-65
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:26:13-58
