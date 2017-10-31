@@ -58,6 +58,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private int countNoti = 0;
     private String lastIdMeasure = "";
     private ArrayList<WatjaiMeasure> watjaiMeasure;
+    int t;
 
     public MainFragment() {
         super();
@@ -90,14 +91,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @SuppressWarnings("UnusedParameters")
     private void init(Bundle savedInstanceState) {
-        // Init Fragment level's variable(s) here
+        watjaiMeasure = new ArrayList<WatjaiMeasure>();
     }
 
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
-        // Init 'View' instance(s) with rootView.findViewById here
-        // Note: State of variable initialized here could not be saved
-        //       in onSavedInstanceState
         buttonProfile = (ImageButton) rootView.findViewById(R.id.btnProfile);
         buttonMeasure = (ImageButton) rootView.findViewById(R.id.btnMeasure);
         buttonHistory = (ImageButton) rootView.findViewById(R.id.btnHistory);
@@ -106,6 +104,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         buttonNotification = (ImageButton) rootView.findViewById(R.id.btnNotification);
         countNotification = (TextView) rootView.findViewById(R.id.countNotification);
 
+        if (countNoti>0) {
+            showCountNotification();
+        } else {
+            hideCountNotification();
+        }
         checkAlert();
 
         buttonMeasure.setOnClickListener(this);
@@ -120,6 +123,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+
+
     }
 
     @Override
@@ -128,7 +133,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         if (countNoti>0) {
             showCountNotification();
         }
-
     }
 
     private void checkAlert() {
@@ -137,9 +141,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         NetworkCall task = new NetworkCall();
         refresh.execute(call);
         task.execute(call);
-
-
-
         /*call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
             @Override
             public void onResponse(Call<ArrayList<WatjaiMeasure>> call, Response<ArrayList<WatjaiMeasure>> response) {
@@ -192,10 +193,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getContext(), HistoryActivity.class);
             startActivity(intent);
         } else if (v == buttonNotification) {
-            if  (countNoti > 0 ) {
+            if  (watjaiMeasure.size() > 0 ) {
                 Intent noti = new Intent(getContext(), NotificationActivity.class);
                 noti.putExtra("notification", watjaiMeasure);
                 startActivity(noti);
+                countNoti = 0;
             } else {
                 Intent blank = new Intent(getContext(), BlankNotificationActivity.class);
                 startActivity(blank);
@@ -218,15 +220,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         // Save Instance (Fragment level's variables) State here
-        outState.putParcelableArrayList("watjaimeasure",watjaiMeasure);
-        outState.putInt("count", countNoti);
     }
 
     @SuppressWarnings("UnusedParameters")
     private void onRestoreInstanceState(Bundle savedInstanceState) {
         // Restore Instance (Fragment level's variables) State here
-        watjaiMeasure = savedInstanceState.getParcelableArrayList("watjaimeasure");
-        countNoti = savedInstanceState.getInt("count");
     }
 
     private class NetworkCallRefresh extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
@@ -235,8 +233,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         @Override
         protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
             watjaiMeasure = result;
-            if (watjaiMeasure.size() != 0)
-                lastIdMeasure = watjaiMeasure.get(0).getMeasuringId();
         }
 
         @Override
@@ -248,10 +244,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                     Response<ArrayList<WatjaiMeasure>> response = call.execute();
                     if (response.body() != null) {
                         watjaiMeasure = response.body();
-                        countNoti = watjaiMeasure.size();
-                        if (watjaiMeasure.size() != 0)
-                            lastIdMeasure = watjaiMeasure.get(countNoti-1).getMeasuringId();
-                        System.out.println(countNoti);
+                        //countNoti = watjaiMeasure.size();
                         Thread.sleep(1000);
                     }
                 }
@@ -264,11 +257,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             return null;
         }
 
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            super.onProgressUpdate(values);
-
-        }
     }
 
     private class NetworkCall extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
@@ -276,75 +264,23 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         @Override
         protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
             watjaiMeasure = result;
-            countNoti = watjaiMeasure.size();
-            //lastIdMeasure = watjaiMeasure.get(countNoti-1).getMeasuringId();
         }
 
         @Override
         protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
 
             try {
-
-                    Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
-                    Response<ArrayList<WatjaiMeasure>> response = call.execute();
-                    watjaiMeasure = response.body();
-                    countNoti = watjaiMeasure.size();
-
+                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
+                Response<ArrayList<WatjaiMeasure>> response = call.execute();
+                watjaiMeasure = response.body();
                 return watjaiMeasure;
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
-
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            super.onProgressUpdate(values);
-
-        }
     }
 
-}
-
-class ExampleNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
-    // This fires when a notification is opened by tapping on it.
-
-
-    @Override
-    public void notificationReceived(OSNotification osNotification) {
-
-        JSONObject data = osNotification.payload.additionalData;
-        String customKey;
-
-        Intent intent = new Intent(Contextor.getInstance().getContext(), NotificationActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-
-        int requestCode = 0;
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(Contextor.getInstance().getContext(), requestCode, intent, PendingIntent.FLAG_ONE_SHOT);
-        Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-        android.support.v4.app.NotificationCompat.Builder noBuilder = new android.support.v4.app.NotificationCompat.Builder(Contextor.getInstance().getContext())
-                .setSmallIcon(R.drawable.logo)
-                .setContentTitle("แจ้งเตือนพบอาการ")
-                .setContentText(osNotification.payload.body)
-                .setAutoCancel(true).setDefaults(android.app.Notification.DEFAULT_ALL)
-                .setContentIntent(pendingIntent).setSound(sound);
-
-
-        NotificationManager notificationManager = (NotificationManager) Contextor.getInstance().getContext().getSystemService(Contextor.getInstance().getContext().NOTIFICATION_SERVICE);
-        notificationManager.notify(0, noBuilder.build()); //0 = ID of notification
-
-
-        if (data != null) {
-            customKey = data.optString("customkey", null);
-            if (customKey != null)
-                Log.i("OneSignalExample", "customkey set with value: " + customKey);
-        }
-
-        Log.i("OneSignalExample", "ExampleNotificationOpenedHandler");
-    }
 }
 
 

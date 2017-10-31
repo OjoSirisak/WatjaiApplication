@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,14 +11,23 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
+import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.NotificationListItem;
 import com.onesignal.OneSignal;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NotificationActivity extends AppCompatActivity {
     ListView listView;
@@ -33,23 +43,41 @@ public class NotificationActivity extends AppCompatActivity {
         watjaiMeasure = (ArrayList<WatjaiMeasure>) getIntent().getSerializableExtra("notification");
         listView = (ListView) findViewById(R.id.notificationList);
         notificationListAdapter = new NotificationListAdapter();
-        if (notificationListAdapter.isEmpty()) {
-            notificationListAdapter.addNotification(watjaiMeasure);
-        } else {
-            notificationListAdapter.addTopNotification(watjaiMeasure);
-        }
+        notificationListAdapter.addNotification(watjaiMeasure);
         listView.setAdapter(notificationListAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 WatjaiMeasure measure = notificationListAdapter.getItem(position);
+                Intent intent = new Intent(NotificationActivity.this, DescriptionNotificationActivity.class);
+                intent.putExtra("measure", measure);
                 if (measure != null) {
-                    // TODO: retrofit call to update status
-                    // TODO: check status to change read status
-                    ImageView imageView = (ImageView) view.findViewById(R.id.readStatus);
-                    imageView.setImageResource(R.drawable.bg_listnotificationpng);
-                    Intent intent = new Intent(NotificationActivity.this, DescriptionNotificationActivity.class);
-                    intent.putExtra("measure", measure);
+                    if (measure.getReadStatus().equalsIgnoreCase("unread")) {
+                        ImageView imageView = (ImageView) view.findViewById(R.id.readStatus);
+                        imageView.setImageResource(R.drawable.bg_listnotificationpng);
+                        measure.setId(null);
+                        measure.setReadStatus("read");
+                        Call<WatjaiMeasure> call = HttpManager.getInstance().getService().chageReadStatus(measure, measure.getMeasuringId());
+                        call.enqueue(new Callback<WatjaiMeasure>() {
+                            @Override
+                            public void onResponse(Call<WatjaiMeasure> call, Response<WatjaiMeasure> response) {
+                                if (response.isSuccessful()) {
+                                    System.out.println("success");
+                                } else {
+                                    try {
+                                        System.out.println(response.errorBody().string());
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<WatjaiMeasure> call, Throwable throwable) {
+                                System.out.println(throwable.toString());
+                            }
+                        });
+                    }
                     startActivity(intent);
                 }
             }
@@ -122,7 +150,11 @@ class NotificationListAdapter extends BaseAdapter {
 
         if (watjaiMeasure != null) {
             item.setTimeText(watjaiMeasure.getAlertTime());
-            item.setDescriptionText("อัตราการเต้นของหัวใจ\n"+watjaiMeasure.getHeartRate()+" ครั้ง/นาที");
+            item.setDescriptionText(watjaiMeasure.getComment());
+        }
+
+        if  (watjaiMeasure.getReadStatus().equalsIgnoreCase("read")) {
+            item.setReadStatus();
         }
 
         return item;

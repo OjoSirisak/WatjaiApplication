@@ -127,12 +127,12 @@ public class DeviceControlActivity extends AppCompatActivity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
-               // updateConnectionState(true);
+                // updateConnectionState(true);
                 invalidateOptionsMenu();
 
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
-               // updateConnectionState(false);
+                // updateConnectionState(false);
                 invalidateOptionsMenu();
                 clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
@@ -179,8 +179,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     };*/
 
     private void clearUI() {
-       // mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
-      //  mDataField.setText(R.string.no_data);
+        // mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
+        //  mDataField.setText(R.string.no_data);
     }
     private void doStartService(){
         BluetoothGattService serv = mBluetoothLeService.getUUID();
@@ -203,7 +203,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             mBluetoothLeService.setCharacteristicNotification(charac, true);
         }
 
-        charac.setValue("10");
+        charac.setValue("C");
         boolean status = mBluetoothLeService.writeCharacteristic(charac);
         Log.e(TAG,"Write Status : " + status);
 
@@ -235,7 +235,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             mBluetoothLeService.setCharacteristicNotification(charac, false);
         }
 
-        charac.setValue("20");
+        charac.setValue("F");
         boolean status = mBluetoothLeService.writeCharacteristic(charac);
         Log.e(TAG,"Write Status : " + status);
     }
@@ -250,13 +250,13 @@ public class DeviceControlActivity extends AppCompatActivity {
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
         // Sets up UI references.
-       // ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
+        // ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         //mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
         //mGattServicesList.setOnChildClickListener(servicesListClickListner);
         stButton = (Button)findViewById(R.id.btnstart);
         soButton = (Button)findViewById(R.id.stopbt);
         //mConnectionState  = (TextView) findViewById(R.id.connection_state);
-       // mDataField = (TextView) findViewById(R.id.data_value);
+        // mDataField = (TextView) findViewById(R.id.data_value);
 
         stButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -278,6 +278,30 @@ public class DeviceControlActivity extends AppCompatActivity {
                 watjaiNormal.setId(null);
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
+                    @Override
+                    public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            try {
+                                Toast.makeText(DeviceControlActivity.this, response.errorBody().string()
+                                        , Toast.LENGTH_LONG).show();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
+                        Toast.makeText(DeviceControlActivity.this, throwable.toString()
+                                , Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                Call<WatjaiNormal> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiNormal);
+                detecing.enqueue(new Callback<WatjaiNormal>() {
                     @Override
                     public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                         if (response.isSuccessful()) {
@@ -357,9 +381,9 @@ public class DeviceControlActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-               if(status){
-                   doStartService();
-               }{
+                if(status){
+                    doStartService();
+                }{
                     doStopService();
                 }
             }
@@ -368,21 +392,45 @@ public class DeviceControlActivity extends AppCompatActivity {
 
     private void displayData(String data) {
         if (data != null) {
-           // mDataField.setText(data);
+            // mDataField.setText(data);
             collectData(data);
         }
     }
 
-
+    float ecg;
+    int numCount =0;
+    String temp = "";
     private void collectData(String data){
         if(ecgData == null){
             ecgData = new ArrayList<Float>();
         }
         try{
-            float ecg = Float.parseFloat(data);
-            ecgData.add(ecg);
+            if(numCount > 0){
+                temp += data.substring(0,numCount);
+                ecg = Float.parseFloat(temp);
+                ecgData.add(ecg);
+                series.appendData(new DataPoint(lastX++, ecg), true, 512);
+                temp = "";
+                numCount = 0;
+            }
+
+            int i = data.indexOf(';');
+            while(i >= 0){
+                int k = data.length();
+                System.out.println("i : " + i + "//k : " + k);
+                if(i+4 <= k-1){
+
+                    ecg = Float.parseFloat(data.substring(i+1,i+5));
+                    ecgData.add(ecg);
+                    series.appendData(new DataPoint(lastX++, ecg), true, 512);
+                }else{
+                    temp = data.substring(i+1,k);
+                    numCount = 4-temp.length();
+                }
+                i = data.indexOf(';',i+1);
+            }
             Log.e(TAG,"ECG SIZE : " + ecgData.size());
-            series.appendData(new DataPoint(lastX++, ecg), true, 512);
+
         }catch(Exception e){
             Log.e(TAG,"error : " + e + "\n DATA : " + data);
         }

@@ -102,6 +102,10 @@
             android:label="แจ้งเตือนการตรวจพบ"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="916a8b9dbb63b500654e59a50e5b84aa9afc5f03"
+            />
     </application>
 
 </manifest>

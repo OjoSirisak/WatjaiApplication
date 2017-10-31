@@ -150,6 +150,9 @@
             android:theme="@style/AppThemeWithActionBar" />
 
         <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="916a8b9dbb63b500654e59a50e5b84aa9afc5f03" />
+        <meta-data
             android:name="onesignal_app_id"
             android:value="3b2a8959-e726-41d4-b83d-82c965cfabe1" /> <!-- Deprecated - Pulled from OneSignal dashboard. -->
         <meta-data
@@ -218,6 +221,11 @@
             android:name="android.arch.lifecycle.VERSION"
             android:value="27.0.0-SNAPSHOT" />
 
+        <provider
+            android:name="com.crashlytics.android.CrashlyticsInitProvider"
+            android:authorities="com.example.android.bluetoothlegatt.crashlyticsinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
             android:authorities="com.example.android.bluetoothlegatt.com.android.tools.fd.runtime.InstantRunContentProvider"

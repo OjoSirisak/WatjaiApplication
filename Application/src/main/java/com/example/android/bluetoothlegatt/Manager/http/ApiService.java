@@ -32,9 +32,17 @@ public interface ApiService {
     @Headers({"Content-Type: application/json"})
     Call<WatjaiNormal> insertECG(@Body WatjaiNormal ecg);
 
+    @POST("watjaimeasure" )
+    @Headers({"Content-Type: application/json"})
+    Call<WatjaiNormal> insertECGtoDetecing(@Body WatjaiNormal ecg);
+
     @GET("watjainormal/{id}/history/5minute")
     Call<ArrayList<WatjaiNormal>> loadWatjai5Minute(@Path("id") String id);
 
     @GET("watjaimeasure/showabnormal/{patId}/after/{measuringId}")
     Call<ArrayList<WatjaiMeasure>> loadWatjaiMeasureAlert(@Path("patId") String patId, @Path("measuringId") String measuringId);
+
+    @PATCH("watjaimeasure/changereadstatus/{measuringId}")
+    @Headers({"Content-Type: application/json"})
+    Call<WatjaiMeasure> chageReadStatus(@Body WatjaiMeasure dao,@Path("measuringId") String measuringId);
 }

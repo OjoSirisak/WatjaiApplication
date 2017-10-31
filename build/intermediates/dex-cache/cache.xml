@@ -2,15 +2,6 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="dfff80b6e21c10f40ec59c0e5d86d00bd67a1f35">
-        <dex dex="E:\Project\WatjaiApplication\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15577dafeaacb42fe021f19aa04c9034d7702286\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\SirisakPks\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
         jumboMode="false"
@@ -21,11 +12,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dfff80b6e21c10f40ec59c0e5d86d00bd67a1f35">
+        <dex dex="E:\Project\WatjaiApplication\Application\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15577dafeaacb42fe021f19aa04c9034d7702286\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="E:\Project\WatjaiApplication\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="6229a5821405fd684c3bf435c8ac2620cc9f4cbe">
+        sha1="ed72e304ffa7a5ae7fcd9b39fdb8b64ff9503fe8">
         <dex dex="E:\Project\WatjaiApplication\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_fd69f8ba38734bb323444afae07d04ce22b62e8a\classes.dex" />
     </item>
     <item

@@ -116,4 +116,8 @@ public class NotificationListItem extends BaseCustomViewGroup {
     public void setDescriptionText(String text){
         tvDescription.setText(text);
     }
+
+    public void setReadStatus() {
+        readStatus.setImageResource(R.drawable.bg_listnotificationpng);
+    }
 }

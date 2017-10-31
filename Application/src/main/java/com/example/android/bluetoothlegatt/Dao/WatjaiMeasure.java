@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created by SirisakPks on 27/8/2560.
  */
 
-public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelable {
+public class WatjaiMeasure implements Parcelable {
 
     @SerializedName("_id")
     @Expose
@@ -23,9 +23,6 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
     @SerializedName("patId")
     @Expose
     private String patId;
-    @SerializedName("abnormalStatus")
-    @Expose
-    private Boolean abnormalStatus;
     @SerializedName("alertTime")
     @Expose
     private String alertTime;
@@ -34,18 +31,27 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
     private String measuringId;
     @SerializedName("heartRate")
     @Expose
-    private int heartRate;
+    private Integer heartRate;
+    @SerializedName("abnormalStatus")
+    @Expose
+    private Boolean abnormalStatus;
+    @SerializedName("abnormalDetail")
+    @Expose
+    private String abnormalDetail;
+    @SerializedName("readStatus")
+    @Expose
+    private String readStatus;
     @SerializedName("comment")
     @Expose
     private String comment;
 
-    public WatjaiMeasure(Parcel in) {
+    protected WatjaiMeasure(Parcel in) {
         id = in.readString();
         patId = in.readString();
         alertTime = in.readString();
         measuringId = in.readString();
-        measuringData = (ArrayList<Float>) in.readSerializable();
-        heartRate = in.readInt();
+        abnormalDetail = in.readString();
+        readStatus = in.readString();
         comment = in.readString();
     }
 
@@ -60,10 +66,6 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
             return new WatjaiMeasure[size];
         }
     };
-
-    public WatjaiMeasure() {
-
-    }
 
     public String getId() {
         return id;
@@ -89,14 +91,6 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
         this.patId = patId;
     }
 
-    public Boolean getAbnormalStatus() {
-        return abnormalStatus;
-    }
-
-    public void setAbnormalStatus(Boolean abnormalStatus) {
-        this.abnormalStatus = abnormalStatus;
-    }
-
     public String getAlertTime() {
         return alertTime;
     }
@@ -113,20 +107,44 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
         this.measuringId = measuringId;
     }
 
-    public int getHeartRate() {
+    public Integer getHeartRate() {
         return heartRate;
     }
 
-    public void setHeartRate(int heartRate) {
+    public void setHeartRate(Integer heartRate) {
         this.heartRate = heartRate;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public Boolean getAbnormalStatus() {
+        return abnormalStatus;
+    }
+
+    public void setAbnormalStatus(Boolean abnormalStatus) {
+        this.abnormalStatus = abnormalStatus;
+    }
+
+    public String getAbnormalDetail() {
+        return abnormalDetail;
+    }
+
+    public void setAbnormalDetail(String abnormalDetail) {
+        this.abnormalDetail = abnormalDetail;
+    }
+
+    public String getReadStatus() {
+        return readStatus;
+    }
+
+    public void setReadStatus(String readStatus) {
+        this.readStatus = readStatus;
     }
 
     public String getComment() {
         return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     @Override
@@ -140,8 +158,8 @@ public class WatjaiMeasure extends ArrayList<WatjaiMeasure> implements Parcelabl
         dest.writeString(patId);
         dest.writeString(alertTime);
         dest.writeString(measuringId);
-        dest.writeSerializable(measuringData);
-        dest.writeInt(heartRate);
+        dest.writeString(abnormalDetail);
+        dest.writeString(readStatus);
         dest.writeString(comment);
     }
 }
