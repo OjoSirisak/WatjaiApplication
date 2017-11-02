@@ -1,7 +1,6 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,19 +10,20 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.NotificationListItem;
-import com.onesignal.OneSignal;
+
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -156,6 +156,31 @@ class NotificationListAdapter extends BaseAdapter {
         if  (watjaiMeasure.getReadStatus().equalsIgnoreCase("read")) {
             item.setReadStatus();
         }
+
+        /*String dateStart = "11/03/14 09:29:58Z";
+        String dateStop = watjaiMeasure.getAlertTime();
+
+        SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+
+        Date d1 = null;
+        Date d2 = null;
+        try {
+            d1 = format.parse(dateStart);
+            d2 = format.parse(dateStop);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // Get msec from each, and subtract.
+        long diff = d2.getTime() - d1.getTime();
+        long diffSeconds = diff / 1000 % 60;
+        long diffMinutes = diff / (60 * 1000) % 60;
+        long diffHours = diff / (60 * 60 * 1000);
+        long diffDay = diff / (24 * 60 * 60 * 1000);
+        System.out.println("Time in seconds: " + diffSeconds + " seconds.");
+        System.out.println("Time in minutes: " + diffMinutes + " minutes.");
+        System.out.println("Time in hours: " + diffHours + " hours.");
+        System.out.println("Time in Day: " + diffDay + " days.");*/
 
         return item;
     }

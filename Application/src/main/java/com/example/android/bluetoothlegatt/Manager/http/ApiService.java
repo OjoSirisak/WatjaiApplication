@@ -34,7 +34,7 @@ public interface ApiService {
 
     @POST("watjaimeasure" )
     @Headers({"Content-Type: application/json"})
-    Call<WatjaiNormal> insertECGtoDetecing(@Body WatjaiNormal ecg);
+    Call<WatjaiMeasure> insertECGtoDetecing(@Body WatjaiMeasure ecg);
 
     @GET("watjainormal/{id}/history/5minute")
     Call<ArrayList<WatjaiNormal>> loadWatjai5Minute(@Path("id") String id);

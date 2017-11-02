@@ -45,7 +45,7 @@ public class WatjaiMeasure implements Parcelable {
     @Expose
     private String comment;
 
-    protected WatjaiMeasure(Parcel in) {
+    public WatjaiMeasure(Parcel in) {
         id = in.readString();
         patId = in.readString();
         alertTime = in.readString();
@@ -66,6 +66,10 @@ public class WatjaiMeasure implements Parcelable {
             return new WatjaiMeasure[size];
         }
     };
+
+    public WatjaiMeasure() {
+
+    }
 
     public String getId() {
         return id;

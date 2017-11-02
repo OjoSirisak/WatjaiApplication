@@ -11,6 +11,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
@@ -31,6 +32,7 @@ import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
+import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 import com.onesignal.OSNotification;
@@ -41,7 +43,13 @@ import com.onesignal.OneSignal;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -55,10 +63,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private ImageButton buttonProfile, buttonMeasure, buttonHistory, buttonSetting, buttonHelp, buttonNotification;
     private TextView countNotification;
     private boolean isBluetoothStatus = false;
-    private int countNoti = 0;
-    private String lastIdMeasure = "";
     private ArrayList<WatjaiMeasure> watjaiMeasure;
-    int t;
+    Thread t;
+    private int countNoti;
 
     public MainFragment() {
         super();
@@ -104,27 +111,70 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         buttonNotification = (ImageButton) rootView.findViewById(R.id.btnNotification);
         countNotification = (TextView) rootView.findViewById(R.id.countNotification);
 
-        if (countNoti>0) {
-            showCountNotification();
-        } else {
-            hideCountNotification();
-        }
-        checkAlert();
-
         buttonMeasure.setOnClickListener(this);
         buttonProfile.setOnClickListener(this);
         buttonHistory.setOnClickListener(this);
         buttonNotification.setOnClickListener(this);
         buttonHelp.setOnClickListener(this);
 
-        OneSignal.sendTag("patId", "PA1709001");
+        t = new Thread() {
 
-        OneSignal.startInit(getContext())
-                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-                .unsubscribeWhenNotificationsAreDisabled(true)
-                .init();
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        countNoti = CounterNotification.getInstance().getCountNotification();
+                        if  (getActivity() != null) {
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // update TextView here!
+                                    if (countNoti>0) {
+                                        showCountNotification();
+                                    } else {
+                                        hideCountNotification();
+                                    }
+                                    Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
+                                    NetworkCall task = new NetworkCall();
+                                    task.execute(call);
+                                }
+                            });
+                        } else {
+                            isInterrupted();
+                        }
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
 
+        t.start();
 
+        /*String dateStart = "11/03/14 09:29:58";
+        String dateStop = "11/03/14 09:33:43";
+
+        SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+
+        Date d1 = null;
+        Date d2 = null;
+        try {
+            d1 = format.parse(dateStart);
+            d2 = format.parse(dateStop);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // Get msec from each, and subtract.
+        long diff = d2.getTime() - d1.getTime();
+        long diffSeconds = diff / 1000 % 60;
+        long diffMinutes = diff / (60 * 1000) % 60;
+        long diffHours = diff / (60 * 60 * 1000);
+        long diffDay = diff / (24 * 60 * 60 * 1000);
+        System.out.println("Time in seconds: " + diffSeconds + " seconds.");
+        System.out.println("Time in minutes: " + diffMinutes + " minutes.");
+        System.out.println("Time in hours: " + diffHours + " hours.");
+        System.out.println("Time in Day: " + diffDay + " days.");*/
     }
 
     @Override
@@ -132,15 +182,17 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         super.onResume();
         if (countNoti>0) {
             showCountNotification();
+        } else {
+            hideCountNotification();
         }
     }
 
     private void checkAlert() {
-        Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
+        /*Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
         NetworkCallRefresh refresh = new NetworkCallRefresh();
         NetworkCall task = new NetworkCall();
         refresh.execute(call);
-        task.execute(call);
+        task.execute(call);*/
         /*call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
             @Override
             public void onResponse(Call<ArrayList<WatjaiMeasure>> call, Response<ArrayList<WatjaiMeasure>> response) {
@@ -198,6 +250,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 noti.putExtra("notification", watjaiMeasure);
                 startActivity(noti);
                 countNoti = 0;
+                CounterNotification.getInstance().resetCountNotification();
             } else {
                 Intent blank = new Intent(getContext(), BlankNotificationActivity.class);
                 startActivity(blank);
@@ -227,7 +280,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         // Restore Instance (Fragment level's variables) State here
     }
 
-    private class NetworkCallRefresh extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
+    /*private class NetworkCallRefresh extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
         int refreshTime=100;
 
         @Override
@@ -257,7 +310,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             return null;
         }
 
-    }
+    }*/
 
     private class NetworkCall extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
 
@@ -280,6 +333,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             return null;
         }
     }
+
 
 }
 

@@ -40,6 +40,7 @@ import android.widget.Toast;
 import com.example.android.bluetoothlegatt.Activity.EditProfileActivity;
 import com.example.android.bluetoothlegatt.Activity.MainActivity;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
+import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
@@ -91,6 +92,7 @@ public class DeviceControlActivity extends AppCompatActivity {
     private Button soButton;
     private ArrayList<Float> ecgData;
     WatjaiNormal watjaiNormal;
+    WatjaiMeasure watjaiMeasure;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
@@ -270,12 +272,19 @@ public class DeviceControlActivity extends AppCompatActivity {
                 if(watjaiNormal!=null){
                     watjaiNormal = null;
                 }
+                if(watjaiMeasure!=null){
+                    watjaiMeasure = null;
+                }
                 watjaiNormal = new WatjaiNormal();
                 watjaiNormal.setMeasureData(ecgData);
                 watjaiNormal.setPatId("PA1709001");
                 watjaiNormal.setMeasureId(null);
                 watjaiNormal.setMeasureTime(null);
                 watjaiNormal.setId(null);
+
+                watjaiMeasure = new WatjaiMeasure();
+                watjaiMeasure.setMeasuringData(ecgData);
+                watjaiMeasure.setPatId("PA1709001");
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override
@@ -300,10 +309,10 @@ public class DeviceControlActivity extends AppCompatActivity {
                     }
                 });
 
-                Call<WatjaiNormal> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiNormal);
-                detecing.enqueue(new Callback<WatjaiNormal>() {
+                Call<WatjaiMeasure> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasure);
+                detecing.enqueue(new Callback<WatjaiMeasure>() {
                     @Override
-                    public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
+                    public void onResponse(Call<WatjaiMeasure> call, Response<WatjaiMeasure> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
 
@@ -318,7 +327,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
+                    public void onFailure(Call<WatjaiMeasure> call, Throwable throwable) {
                         Toast.makeText(DeviceControlActivity.this, throwable.toString()
                                 , Toast.LENGTH_LONG).show();
                     }
@@ -339,7 +348,7 @@ public class DeviceControlActivity extends AppCompatActivity {
         viewport.setMinY(0);
         viewport.setMaxY(5);
         viewport.setMinX(0);
-        viewport.setMaxX(80);
+        viewport.setMaxX(700);
         viewport.setScrollable(true);
         graph.getViewport().setScalableY(true);
     }
@@ -409,7 +418,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 temp += data.substring(0,numCount);
                 ecg = Float.parseFloat(temp);
                 ecgData.add(ecg);
-                series.appendData(new DataPoint(lastX++, ecg), true, 512);
+                series.appendData(new DataPoint(lastX++, ecg), true, 700);
                 temp = "";
                 numCount = 0;
             }
@@ -422,7 +431,7 @@ public class DeviceControlActivity extends AppCompatActivity {
 
                     ecg = Float.parseFloat(data.substring(i+1,i+5));
                     ecgData.add(ecg);
-                    series.appendData(new DataPoint(lastX++, ecg), true, 512);
+                    series.appendData(new DataPoint(lastX++, ecg), true, 700);
                 }else{
                     temp = data.substring(i+1,k);
                     numCount = 4-temp.length();

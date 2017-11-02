@@ -4,6 +4,10 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_sync_black_24dp.png"
     },
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\bg_notification_comment.9.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-xxhdpi\\bg_notification_comment.9.png"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\bg_user_input.9.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-xxhdpi\\bg_user_input.9.png"
     },
