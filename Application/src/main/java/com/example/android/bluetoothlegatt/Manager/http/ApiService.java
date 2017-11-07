@@ -21,12 +21,12 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
-    @GET("patients/{id}")
-    Call<PatientItemDao> loadPatient(@Path("id") String id);
+    @GET("patients/{patId}")
+    Call<PatientItemDao> loadPatient(@Path("patId") String id);
 
-    @PATCH("patients/{id}" )
+    @PATCH("patients/{patId}" )
     @Headers({"Content-Type: application/json"})
-    Call<PatientItemDao> updatePatient(@Body PatientItemDao dao, @Path("id") String id);
+    Call<PatientItemDao> updatePatient(@Body PatientItemDao dao, @Path("patId") String id);
 
     @POST("watjainormal" )
     @Headers({"Content-Type: application/json"})
@@ -36,8 +36,8 @@ public interface ApiService {
     @Headers({"Content-Type: application/json"})
     Call<WatjaiMeasure> insertECGtoDetecing(@Body WatjaiMeasure ecg);
 
-    @GET("watjainormal/{id}/history/5minute")
-    Call<ArrayList<WatjaiNormal>> loadWatjai5Minute(@Path("id") String id);
+    @GET("patients/{patId}/history")
+    Call<ArrayList<WatjaiMeasure>> loadHistory(@Path("patId") String id);
 
     @GET("watjaimeasure/showabnormal/{patId}/after/{measuringId}")
     Call<ArrayList<WatjaiMeasure>> loadWatjaiMeasureAlert(@Path("patId") String patId, @Path("measuringId") String measuringId);
@@ -45,4 +45,7 @@ public interface ApiService {
     @PATCH("watjaimeasure/changereadstatus/{measuringId}")
     @Headers({"Content-Type: application/json"})
     Call<WatjaiMeasure> chageReadStatus(@Body WatjaiMeasure dao,@Path("measuringId") String measuringId);
+
+    @GET("watjaimeasure/{measuringId}")
+    Call<ArrayList<WatjaiMeasure>> findMeasuring(@Path("measuringId") String id);
 }

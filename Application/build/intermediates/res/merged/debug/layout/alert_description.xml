@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/tvNotificationDescription"
-        android:textSize="6pt"
+        android:textSize="7pt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
@@ -38,7 +38,7 @@
         android:layout_toStartOf="@+id/tvTime" />
 
     <TextView
-        android:text="32123"
+        android:text="*********"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="5pt"

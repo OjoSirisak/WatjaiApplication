@@ -115,6 +115,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         buttonProfile.setOnClickListener(this);
         buttonHistory.setOnClickListener(this);
         buttonNotification.setOnClickListener(this);
+        buttonSetting.setOnClickListener(this);
         buttonHelp.setOnClickListener(this);
 
         t = new Thread() {
@@ -123,7 +124,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             public void run() {
                 try {
                     while (!isInterrupted()) {
-                        Thread.sleep(1000);
                         countNoti = CounterNotification.getInstance().getCountNotification();
                         if  (getActivity() != null) {
                             getActivity().runOnUiThread(new Runnable() {
@@ -135,14 +135,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                                     } else {
                                         hideCountNotification();
                                     }
-                                    Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
                                     NetworkCall task = new NetworkCall();
-                                    task.execute(call);
+                                    task.execute();
                                 }
                             });
                         } else {
                             isInterrupted();
                         }
+                        Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
                 }
@@ -151,30 +151,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
         t.start();
 
-        /*String dateStart = "11/03/14 09:29:58";
-        String dateStop = "11/03/14 09:33:43";
-
-        SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-
-        Date d1 = null;
-        Date d2 = null;
-        try {
-            d1 = format.parse(dateStart);
-            d2 = format.parse(dateStop);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        // Get msec from each, and subtract.
-        long diff = d2.getTime() - d1.getTime();
-        long diffSeconds = diff / 1000 % 60;
-        long diffMinutes = diff / (60 * 1000) % 60;
-        long diffHours = diff / (60 * 60 * 1000);
-        long diffDay = diff / (24 * 60 * 60 * 1000);
-        System.out.println("Time in seconds: " + diffSeconds + " seconds.");
-        System.out.println("Time in minutes: " + diffMinutes + " minutes.");
-        System.out.println("Time in hours: " + diffHours + " hours.");
-        System.out.println("Time in Day: " + diffDay + " days.");*/
     }
 
     @Override
@@ -185,46 +161,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         } else {
             hideCountNotification();
         }
-    }
-
-    private void checkAlert() {
-        /*Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
-        NetworkCallRefresh refresh = new NetworkCallRefresh();
-        NetworkCall task = new NetworkCall();
-        refresh.execute(call);
-        task.execute(call);*/
-        /*call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
-            @Override
-            public void onResponse(Call<ArrayList<WatjaiMeasure>> call, Response<ArrayList<WatjaiMeasure>> response) {
-                if (response.isSuccessful()) {
-                    watjaiMeasure = response.body();
-                    if (watjaiMeasure.size() > 0) {
-                        countNoti = watjaiMeasure.size();
-                        lastIdMeasure = watjaiMeasure.get(countNoti-1).getMeasuringId();
-                        showCountNotification();
-                    }
-                } else {
-                    try {
-                        Toast.makeText(getContext(),
-                                response.errorBody().string(),
-                                Toast.LENGTH_SHORT)
-                                .show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<WatjaiMeasure>> call, Throwable throwable) {
-                if (Locale.getDefault().getLanguage().equals("th")) {
-                    Toast.makeText(getContext(), "กรุณาเชื่อมต่ออินเทอร์เน็ต", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "Disconnect internet", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
-
     }
 
     @Override
@@ -257,6 +193,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             }
         } else if (v == buttonHelp) {
 
+        } else if (v == buttonSetting) {
+
         }
 
     }
@@ -279,38 +217,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private void onRestoreInstanceState(Bundle savedInstanceState) {
         // Restore Instance (Fragment level's variables) State here
     }
-
-    /*private class NetworkCallRefresh extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
-        int refreshTime=100;
-
-        @Override
-        protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
-            watjaiMeasure = result;
-        }
-
-        @Override
-        protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
-
-            try {
-                for (int i=0; i<refreshTime; i++) {
-                    Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
-                    Response<ArrayList<WatjaiMeasure>> response = call.execute();
-                    if (response.body() != null) {
-                        watjaiMeasure = response.body();
-                        //countNoti = watjaiMeasure.size();
-                        Thread.sleep(1000);
-                    }
-                }
-                return watjaiMeasure;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-    }*/
 
     private class NetworkCall extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
 

@@ -31,7 +31,7 @@ public class WatjaiMeasure implements Parcelable {
     private String measuringId;
     @SerializedName("heartRate")
     @Expose
-    private Integer heartRate;
+    private int heartRate;
     @SerializedName("abnormalStatus")
     @Expose
     private Boolean abnormalStatus;
@@ -53,6 +53,7 @@ public class WatjaiMeasure implements Parcelable {
         abnormalDetail = in.readString();
         readStatus = in.readString();
         comment = in.readString();
+        measuringData = (ArrayList<Float>) in.readSerializable();
     }
 
     public static final Creator<WatjaiMeasure> CREATOR = new Creator<WatjaiMeasure>() {
@@ -111,11 +112,11 @@ public class WatjaiMeasure implements Parcelable {
         this.measuringId = measuringId;
     }
 
-    public Integer getHeartRate() {
+    public int getHeartRate() {
         return heartRate;
     }
 
-    public void setHeartRate(Integer heartRate) {
+    public void setHeartRate(int heartRate) {
         this.heartRate = heartRate;
     }
 
@@ -165,5 +166,6 @@ public class WatjaiMeasure implements Parcelable {
         dest.writeString(abnormalDetail);
         dest.writeString(readStatus);
         dest.writeString(comment);
+        dest.writeSerializable(measuringData);
     }
 }

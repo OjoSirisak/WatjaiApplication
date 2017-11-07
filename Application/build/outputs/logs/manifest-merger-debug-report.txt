@@ -37,14 +37,14 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:37:22-78
 uses-permission#android.permission.INTERNET
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:38:5-67
-MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:17:5-67
-MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:21:5-66
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:9:5-67
 MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\SirisakPks\.android\build-cache\17d5032dcd0480c8b6e712b435adf54a7a85b77f\output\AndroidManifest.xml:9:5-67
 MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.4.1] C:\Users\SirisakPks\.android\build-cache\8ec91e25a7e00299538058e5feeadb54b298c879\output\AndroidManifest.xml:52:5-67
 MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.android\build-cache\aea5b6ff6ff65ff14d111c4639799124434f021e\output\AndroidManifest.xml:9:5-67
 MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:29:5-67
+MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-cache\65aa8e21a9d3a60439f202f4e0afb5eb83171ec5\output\AndroidManifest.xml:17:5-67
+MERGED from [com.google.android.gms:play-services-gcm:11.2.2] C:\Users\SirisakPks\.android\build-cache\a2f374e5339f6170e73d4c9b9f0ff3b358947791\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:11.2.2] C:\Users\SirisakPks\.android\build-cache\78ebc480a7f2f8166b1c40b251335027f7c542d4\output\AndroidManifest.xml:21:5-66
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:38:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -54,6 +54,11 @@ MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\SirisakPks\.android\build-c
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:39:22-76
 application
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:41:5-118:19
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:11:5-17:19
+MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\SirisakPks\.android\build-cache\17d5032dcd0480c8b6e712b435adf54a7a85b77f\output\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.4.1] C:\Users\SirisakPks\.android\build-cache\8ec91e25a7e00299538058e5feeadb54b298c879\output\AndroidManifest.xml:54:5-20
+MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.android\build-cache\aea5b6ff6ff65ff14d111c4639799124434f021e\output\AndroidManifest.xml:11:5-20
+MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:31:5-20
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:9:5-20
@@ -78,11 +83,6 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:25:5-29:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:24:5-28:19
-MERGED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:11:5-17:19
-MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\SirisakPks\.android\build-cache\17d5032dcd0480c8b6e712b435adf54a7a85b77f\output\AndroidManifest.xml:11:5-20
-MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.4.1] C:\Users\SirisakPks\.android\build-cache\8ec91e25a7e00299538058e5feeadb54b298c879\output\AndroidManifest.xml:54:5-20
-MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.android\build-cache\aea5b6ff6ff65ff14d111c4639799124434f021e\output\AndroidManifest.xml:11:5-20
-MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:31:5-20
 	android:label
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:44:9-39
 	android:supportsRtl
@@ -172,7 +172,7 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 activity#com.example.android.bluetoothlegatt.Activity.HistoryActivity
 ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:86:9-90:60
 	android:screenOrientation
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:89:13-50
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:89:13-49
 	android:label
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:88:13-49
 	android:theme
@@ -221,16 +221,23 @@ ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:112:13-36
 	android:name
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:111:13-68
-service#com.example.android.bluetoothlegatt.Service.NotificationService
-ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:114:9-117:47
-	android:enabled
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:116:13-35
-	android:exported
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:117:13-36
+activity#com.example.android.bluetoothlegatt.Activity.HistoryDetailActivity
+ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:114:9-117:59
+	android:screenOrientation
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:116:13-50
+	android:label
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:115:13-49
+	android:theme
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:117:13-57
 	android:name
-		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:115:13-56
+		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:114:19-65
 uses-sdk
 INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\SirisakPks\.android\build-cache\17d5032dcd0480c8b6e712b435adf54a7a85b77f\output\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.4.1] C:\Users\SirisakPks\.android\build-cache\8ec91e25a7e00299538058e5feeadb54b298c879\output\AndroidManifest.xml:50:5-43
+MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.android\build-cache\aea5b6ff6ff65ff14d111c4639799124434f021e\output\AndroidManifest.xml:7:5-43
+MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:27:5-43
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:21:5-23:55
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:5:5-7:41
@@ -255,11 +262,6 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:21:5-23:58
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:20:5-22:41
-MERGED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:7:5-43
-MERGED from [com.crashlytics.sdk.android:beta:1.2.7] C:\Users\SirisakPks\.android\build-cache\17d5032dcd0480c8b6e712b435adf54a7a85b77f\output\AndroidManifest.xml:7:5-43
-MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.4.1] C:\Users\SirisakPks\.android\build-cache\8ec91e25a7e00299538058e5feeadb54b298c879\output\AndroidManifest.xml:50:5-43
-MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.android\build-cache\aea5b6ff6ff65ff14d111c4639799124434f021e\output\AndroidManifest.xml:7:5-43
-MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:27:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:23:9-52
 	android:targetSdkVersion
@@ -268,6 +270,17 @@ MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\bu
 	android:minSdkVersion
 		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
 		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
+provider#com.crashlytics.android.CrashlyticsInitProvider
+ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:14:13-75
+		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
+	android:exported
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:13:13-75
 meta-data#android.support.VERSION
 ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:22:5-24:34
@@ -503,14 +516,3 @@ ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\b
 		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:27:13-44
 	android:name
 		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:26:13-58
-provider#com.crashlytics.android.CrashlyticsInitProvider
-ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:12:9-16:39
-	android:authorities
-		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:14:13-75
-		INJECTED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml
-	android:exported
-		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:15:13-37
-	android:initOrder
-		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:16:13-36
-	android:name
-		ADDED from [com.crashlytics.sdk.android:crashlytics:2.7.1] C:\Users\SirisakPks\.android\build-cache\44256f6878dcb8335296ad3454bd471a2509e486\output\AndroidManifest.xml:13:13-75

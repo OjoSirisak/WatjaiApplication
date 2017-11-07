@@ -24,7 +24,7 @@ public class MainApplication extends Application {
         Contextor.getInstance().init(getApplicationContext());
         OneSignal.sendTag("patId", "PA1709001");
 
-        OneSignal.startInit(this)
+        OneSignal.startInit(getApplicationContext())
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .setNotificationOpenedHandler(new MyNotificationOpenedHandler())
                 .setNotificationReceivedHandler(new MyNotificationReceivedHandler())

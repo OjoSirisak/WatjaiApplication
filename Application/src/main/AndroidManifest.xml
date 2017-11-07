@@ -86,7 +86,7 @@
         <activity
             android:name=".Activity.HistoryActivity"
             android:label="@string/menu_history"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name=".Activity.BlankNotificationActivity"
@@ -111,10 +111,10 @@
             android:name="com.onesignal.NotificationOpened.DEFAULT"
             android:value="DISABLE" />
 
-        <service
-            android:name=".Service.NotificationService"
-            android:enabled="true"
-            android:exported="true"></service>
+        <activity android:name=".Activity.HistoryDetailActivity"
+            android:label="@string/menu_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeWithActionBar"/>
     </application>
 
 </manifest>

@@ -131,7 +131,7 @@
         <activity
             android:name="com.example.android.bluetoothlegatt.Activity.HistoryActivity"
             android:label="@string/menu_history"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
         <activity
             android:name="com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity"
@@ -156,10 +156,17 @@
             android:name="com.onesignal.NotificationOpened.DEFAULT"
             android:value="DISABLE" />
 
-        <service
-            android:name="com.example.android.bluetoothlegatt.Service.NotificationService"
-            android:enabled="true"
-            android:exported="true" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.Activity.HistoryDetailActivity"
+            android:label="@string/menu_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeWithActionBar" />
+
+        <provider
+            android:name="com.crashlytics.android.CrashlyticsInitProvider"
+            android:authorities="com.example.android.bluetoothlegatt.crashlyticsinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
 
         <meta-data
             android:name="onesignal_app_id"
@@ -230,11 +237,6 @@
             android:name="android.arch.lifecycle.VERSION"
             android:value="27.0.0-SNAPSHOT" />
 
-        <provider
-            android:name="com.crashlytics.android.CrashlyticsInitProvider"
-            android:authorities="com.example.android.bluetoothlegatt.crashlyticsinitprovider"
-            android:exported="false"
-            android:initOrder="100" />
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
             android:authorities="com.example.android.bluetoothlegatt.com.android.tools.fd.runtime.InstantRunContentProvider"
