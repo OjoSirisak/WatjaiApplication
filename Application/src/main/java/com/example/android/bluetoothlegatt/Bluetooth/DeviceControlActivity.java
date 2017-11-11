@@ -41,6 +41,7 @@ import com.example.android.bluetoothlegatt.Activity.EditProfileActivity;
 import com.example.android.bluetoothlegatt.Activity.MainActivity;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
+import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
@@ -93,6 +94,7 @@ public class DeviceControlActivity extends AppCompatActivity {
     private ArrayList<Float> ecgData;
     WatjaiNormal watjaiNormal;
     WatjaiMeasure watjaiMeasure;
+    WatjaiMeasureSendData watjaiMeasureSendData;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
@@ -232,7 +234,8 @@ public class DeviceControlActivity extends AppCompatActivity {
             mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, false);
             mNotifyCharacteristic = null;
         }
-        if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
+        if(
+                BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
             mNotifyCharacteristic = charac;
             mBluetoothLeService.setCharacteristicNotification(charac, false);
         }
@@ -282,15 +285,17 @@ public class DeviceControlActivity extends AppCompatActivity {
                 watjaiNormal.setMeasureTime(null);
                 watjaiNormal.setId(null);
 
-                watjaiMeasure = new WatjaiMeasure();
+                /*watjaiMeasure = new WatjaiMeasure();
                 watjaiMeasure.setMeasuringData(ecgData);
-                watjaiMeasure.setPatId("PA1709001");
+                watjaiMeasure.setPatId("PA1709001");*/
+                watjaiMeasureSendData = new WatjaiMeasureSendData();
+                watjaiMeasureSendData.setMeasuringData(ecgData);
+                watjaiMeasureSendData.setPatId("PA1709001");
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override
                     public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                         if (response.isSuccessful()) {
-                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {
@@ -309,12 +314,12 @@ public class DeviceControlActivity extends AppCompatActivity {
                     }
                 });
 
-                Call<WatjaiMeasure> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasure);
-                detecing.enqueue(new Callback<WatjaiMeasure>() {
+                Call<WatjaiMeasureSendData> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasureSendData);
+                detecing.enqueue(new Callback<WatjaiMeasureSendData>() {
                     @Override
-                    public void onResponse(Call<WatjaiMeasure> call, Response<WatjaiMeasure> response) {
+                    public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
                         if (response.isSuccessful()) {
-                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeviceControlActivity.this, "หยุดการวัดใจ", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {
@@ -327,7 +332,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<WatjaiMeasure> call, Throwable throwable) {
+                    public void onFailure(Call<WatjaiMeasureSendData> call, Throwable throwable) {
                         Toast.makeText(DeviceControlActivity.this, throwable.toString()
                                 , Toast.LENGTH_LONG).show();
                     }

@@ -160,6 +160,10 @@
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bglogin.jpg",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bglogin.jpg"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },

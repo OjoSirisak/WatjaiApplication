@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
+import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
+import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.HistoryListItem;
@@ -28,8 +31,9 @@ public class HistoryActivity extends AppCompatActivity {
     private ListView historyListView;
     private ArrayList<WatjaiMeasure> history;
     private HistoryListAdapter historyListAdapter;
+    private Thread t;
+    private ProgressBar progressBar;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
@@ -131,14 +135,12 @@ public class HistoryActivity extends AppCompatActivity {
             // sub str แยกวัน แยกเวลา ล้ะค่อยลบกัน
 
             /*SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-
             Date d2 = null;
             try {
                 d2 = format.parse(dateNotification);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-
             // Get msec from each, and subtract.
             long diff = currentTime.getTime() - d2.getTime();
             long diffSeconds = diff / 1000 % 60;
@@ -174,6 +176,8 @@ public class HistoryActivity extends AppCompatActivity {
             return null;
         }
     }
+
+
 
 }
 

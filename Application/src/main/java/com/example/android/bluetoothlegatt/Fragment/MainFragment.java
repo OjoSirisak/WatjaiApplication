@@ -25,9 +25,11 @@ import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity;
+import com.example.android.bluetoothlegatt.Activity.HelpActivity;
 import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.NotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
+import com.example.android.bluetoothlegatt.Activity.SettingActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
@@ -64,7 +66,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private TextView countNotification;
     private boolean isBluetoothStatus = false;
     private ArrayList<WatjaiMeasure> watjaiMeasure;
-    Thread t;
+    private Thread t;
     private int countNoti;
 
     public MainFragment() {
@@ -135,14 +137,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                                     } else {
                                         hideCountNotification();
                                     }
-                                    NetworkCall task = new NetworkCall();
-                                    task.execute();
+                                    NetworkCall notification = new NetworkCall();
+                                    notification.execute();
                                 }
                             });
                         } else {
                             isInterrupted();
                         }
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     }
                 } catch (InterruptedException e) {
                 }
@@ -192,9 +194,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(blank);
             }
         } else if (v == buttonHelp) {
-
+            Intent intent = new Intent(getContext(), HelpActivity.class);
+            startActivity(intent);
         } else if (v == buttonSetting) {
-
+            Intent intent = new Intent(getContext(), SettingActivity.class);
+            startActivity(intent);
         }
 
     }

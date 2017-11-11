@@ -35,10 +35,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class NotificationActivity extends AppCompatActivity {
-    ListView listView;
-    NotificationListAdapter notificationListAdapter;
-    ArrayList<WatjaiMeasure> watjaiMeasure;
-    Thread t;
+    private ListView listView;
+    private NotificationListAdapter notificationListAdapter;
+    private ArrayList<WatjaiMeasure> watjaiMeasure;
+    private Thread t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class NotificationActivity extends AppCompatActivity {
         NetworkCall task = new NetworkCall();
         task.execute();
         try {
-            Thread.sleep(100);
+            Thread.sleep(0);
             notificationListAdapter.addNotification(watjaiMeasure);
             listView.setAdapter(notificationListAdapter);
             listView.setOnItemClickListener(listNotification);

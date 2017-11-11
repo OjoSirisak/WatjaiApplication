@@ -10,61 +10,94 @@
         android:scaleType="fitXY"
         android:id="@+id/readStatus" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textSize="7pt"
-        android:text="ME******************"
-        android:layout_marginTop="23dp"
-        android:id="@+id/tvMeasuringId"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/tvHeartRate"
-        android:layout_marginEnd="35dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="7pt"
-        android:text="อัตราการเต้นของหัวใจ"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/tvMeasuringId"
-        android:layout_alignStart="@+id/tvMeasuringId"
-        android:id="@+id/textView3" />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/logo_app"
+            android:layout_width="90dp"
+            android:layout_height="90dp"/>
 
-    <TextView
-        android:id="@+id/tvHeartRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="7pt"
-        android:textColor="@color/colorPrimary"
-        android:text="** ครั้ง/นาที"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="7pt"
+                android:text="ME******************"
+                android:layout_marginTop="23dp"
+                android:id="@+id/tvMeasuringId"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/tvHeartRate"
+                android:layout_marginEnd="35dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="7pt"
-        android:text="เวลาที่บันทึก"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="12dp"
-        android:id="@+id/textView4" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvDateTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="7pt"
-        android:textColor="@color/colorPrimary"
-        android:text="********************"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
-        android:layout_marginStart="5dp" />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="7pt"
+                    android:text="อัตราการเต้นของหัวใจ"
+                    android:layout_marginTop="12dp"
+                    android:layout_below="@+id/tvMeasuringId"
+                    android:layout_alignStart="@+id/tvMeasuringId"
+                    android:id="@+id/textView3" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tvHeartRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="7pt"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="12dp"
+                    android:text="** ครั้ง/นาที" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="7pt"
+                    android:layout_weight="1"
+                    android:text="เวลาที่บันทึก"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/textView4" />
+
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="7pt"
+                    android:textColor="@color/colorPrimary"
+                    android:text="********************" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 
     <View

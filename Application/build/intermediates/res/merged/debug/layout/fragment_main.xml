@@ -99,9 +99,9 @@
                             android:background="@color/bg_btn_blank_color"/>
                         <TextView
                             android:id="@+id/countNotification"
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_margin="5dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="7dp"
                             android:textStyle="bold"
                             android:textColor="@color/white_text"
                             android:gravity="center"

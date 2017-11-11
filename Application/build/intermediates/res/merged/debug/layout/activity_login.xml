@@ -9,7 +9,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_login"
+            android:background="@drawable/bglogin"
             android:scaleType="centerCrop" />
 
         <ScrollView
@@ -36,23 +36,25 @@
                     android:layout_gravity="center_horizontal"/>
 
                 <EditText
-                    android:id="@+id/edtMenuMobile"
+                    android:id="@+id/edtUsername"
                     android:background="@drawable/bg_user_input"
                     android:layout_width="match_parent"
                     android:layout_height="54.5dp"
                     android:hint="@string/hint_user"
+                    android:minEms="9"
                     android:singleLine="true"
                     android:paddingTop="16dp"
                     android:imeOptions="actionNext"
                     android:layout_marginBottom="10dp"/>
 
                 <EditText
-                    android:id="@+id/edtMenuPassword"
+                    android:id="@+id/edtPassword"
                     android:background="@drawable/bg_pass_input"
                     android:layout_width="match_parent"
                     android:layout_height="54.5dp"
                     android:inputType="textPassword"
                     android:paddingTop="16dp"
+                    android:minEms="10"
                     android:singleLine="true"
                     android:hint="@string/hint_pass"
                     android:layout_marginBottom="20dp"/>

@@ -1,4 +1,4 @@
-#Wed Nov 01 01:16:26 ICT 2017
+#Sat Nov 11 19:07:43 ICT 2017
 file.9=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_4ce6e864d0dd5a6f76583b67b3e2f36fd32af0ac\\classes.dex
 base.10=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_1768a7273f202b07537d6e490f253b0546b56ce2
 file.8=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_01f2b50b9dde5b785741efbaaa48e56ac4fed66e\\classes.dex

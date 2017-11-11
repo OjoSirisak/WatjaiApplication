@@ -1,7 +1,9 @@
 package com.example.android.bluetoothlegatt.Manager.http;
 
+import com.example.android.bluetoothlegatt.Dao.Login;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
+import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public interface ApiService {
 
     @POST("watjaimeasure" )
     @Headers({"Content-Type: application/json"})
-    Call<WatjaiMeasure> insertECGtoDetecing(@Body WatjaiMeasure ecg);
+    Call<WatjaiMeasureSendData> insertECGtoDetecing(@Body WatjaiMeasureSendData ecg);
 
     @GET("patients/{patId}/history")
     Call<ArrayList<WatjaiMeasure>> loadHistory(@Path("patId") String id);
@@ -48,4 +50,8 @@ public interface ApiService {
 
     @GET("watjaimeasure/{measuringId}")
     Call<ArrayList<WatjaiMeasure>> findMeasuring(@Path("measuringId") String id);
+
+    @POST("checkuser/patient")
+    @Headers({"Content-Type: application/json"})
+    Call<Login> checkLogin(@Body Login dao);
 }

@@ -4,20 +4,24 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_watjai.png"
     },
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_setting_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_setting_black.png"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_notreadlistnotification.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_notreadlistnotification.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_logout_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_logout_onclick.png"
-    },
-    {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_login.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_login.png"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_help_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_help_black.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_listnotificationpng.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_listnotificationpng.png"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_watjai_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_watjai_black.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\logo_app.png",
@@ -28,12 +32,8 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_info_black_24dp.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_notic_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_notic_onclick.png"
-    },
-    {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_profile_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_profile_onclick.png"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pulse.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\pulse.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_help.png",
@@ -44,24 +44,20 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\btn_login.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_measure_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_measure_onclick.png"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pass_input.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\pass_input.png"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_profile_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_profile_black.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\user_input.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\user_input.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_notification.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_notification.png"
-    },
-    {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_setting_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_setting_onclick.png"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_noti_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_noti_black.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tile.9.png",
@@ -96,12 +92,12 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_pass_input.9.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_nonotification.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_nonotification.png"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_profile.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_profile.png"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_nonotification.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_nonotification.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_help_onclick.png",
@@ -112,16 +108,12 @@
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\logo.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_sync_black_24dp.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_sync_black_24dp.png"
-    },
-    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bg_notification_comment.9.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\bg_notification_comment.9.png"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_info_onclick.png",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_info_onclick.png"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_sync_black_24dp.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_sync_black_24dp.png"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\comment_line.png",
@@ -130,5 +122,9 @@
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_menu_history_onclick.png",
         "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\ic_menu_history_onclick.png"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\componet_history_black.png",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable-hdpi\\componet_history_black.png"
     }
 ]
