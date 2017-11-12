@@ -32,13 +32,22 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.IntDef;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
+import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.GlobalService;
+import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.jjoe64.graphview.series.DataPoint;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.example.android.bluetoothlegatt.GlobalService.ecgData;
 
@@ -74,6 +83,9 @@ public class BluetoothLeService extends Service {
 
     public final static UUID UUID_HEART_RATE_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
+
+    private WatjaiNormal watjaiNormal;
+    private WatjaiMeasureSendData watjaiMeasureSendData;
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -201,6 +213,7 @@ public class BluetoothLeService extends Service {
             }
             Log.e(TAG,"ECG SIZE : " + ecgData.size());
             if(GlobalService.ecgData.size() > 9600){
+                sendEcgData();
                 GlobalService.ecgData = null;
             }
 
@@ -210,6 +223,74 @@ public class BluetoothLeService extends Service {
 
 
     }
+
+    private void sendEcgData() {
+        if(watjaiNormal!=null){
+            watjaiNormal = null;
+        }
+        if(watjaiMeasureSendData!=null){
+            watjaiMeasureSendData = null;
+        }
+        watjaiNormal = new WatjaiNormal();
+        watjaiNormal.setMeasureData(GlobalService.ecgData);
+        watjaiNormal.setPatId("PA1709001");
+        watjaiNormal.setMeasureId(null);
+        watjaiNormal.setMeasureTime(null);
+        watjaiNormal.setId(null);
+
+        watjaiMeasureSendData = new WatjaiMeasureSendData();
+        watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
+        watjaiMeasureSendData.setPatId("PA1709001");
+
+        Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
+        call.enqueue(new Callback<WatjaiNormal>() {
+            @Override
+            public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "Stop Measure.", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    try {
+                        Toast.makeText(getApplicationContext(), response.errorBody().string()
+                                , Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
+                Toast.makeText(getApplicationContext(), throwable.toString()
+                        , Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Call<WatjaiMeasureSendData> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasureSendData);
+        detecing.enqueue(new Callback<WatjaiMeasureSendData>() {
+            @Override
+            public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "หยุดการวัดใจ", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    try {
+                        Toast.makeText(getApplicationContext(), response.errorBody().string()
+                                , Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<WatjaiMeasureSendData> call, Throwable throwable) {
+                Toast.makeText(getApplicationContext(), throwable.toString()
+                        , Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 
     public class LocalBinder extends Binder {
         public BluetoothLeService getService() {
@@ -306,9 +387,8 @@ public class BluetoothLeService extends Service {
      * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
      * callback.
      */
-    public void resetDevice(){
-        mBluetoothDeviceAddress = null;
-        mBluetoothDeviceName = null;
+    public int getConnectState(){
+        return mConnectionState;
     }
 
     public void disconnect() {
@@ -316,10 +396,14 @@ public class BluetoothLeService extends Service {
             Log.w(TAG, "BluetoothAdapter not initialized");
             return;
         }
-        resetDevice();
         mBluetoothGatt.disconnect();
+        resetDevice();
     }
 
+    public void resetDevice(){
+        mBluetoothDeviceAddress = null;
+        mBluetoothDeviceName = null;
+    }
     /**
      * After using a given BLE device, the app must call this method to ensure resources are
      * released properly.
@@ -401,10 +485,6 @@ public class BluetoothLeService extends Service {
         mBluetoothDeviceName = device.getName();
     }
 
-    public int getConnectState(){
-        return mConnectionState;
-    }
-
     public String getDeviceAddress(){
         return mBluetoothDeviceAddress;
     }
@@ -430,7 +510,7 @@ public class BluetoothLeService extends Service {
         }
         if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
             mNotifyCharacteristic = charac;
-            setCharacteristicNotification(charac, true);
+           setCharacteristicNotification(charac, true);
         }
 
         charac.setValue("C");
@@ -458,7 +538,7 @@ public class BluetoothLeService extends Service {
         }
 
         if(mNotifyCharacteristic != null){
-            setCharacteristicNotification(mNotifyCharacteristic, false);
+           setCharacteristicNotification(mNotifyCharacteristic, false);
             mNotifyCharacteristic = null;
         }
         if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
