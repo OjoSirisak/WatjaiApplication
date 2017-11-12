@@ -44,6 +44,7 @@ import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
 import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.Fragment.MainFragment;
+import com.example.android.bluetoothlegatt.GlobalService;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 
@@ -83,24 +84,21 @@ public class DeviceControlActivity extends AppCompatActivity {
     private String mDeviceName;
     private String mDeviceAddress;
     private ExpandableListView mGattServicesList;
-    private BluetoothLeService mBluetoothLeService;
+  //  private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
     private boolean mConnected = false;
-    private BluetoothGattCharacteristic mNotifyCharacteristic;
-    private BluetoothGattCharacteristic mWriteCharacteristic;
     private Button stButton;
     private Button soButton;
     private ArrayList<Float> ecgData;
-    WatjaiNormal watjaiNormal;
-    WatjaiMeasure watjaiMeasure;
-    WatjaiMeasureSendData watjaiMeasureSendData;
+    private WatjaiNormal watjaiNormal;
+    private WatjaiMeasureSendData watjaiMeasureSendData;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
 
     // Code to manage Service lifecycle.
-    private final ServiceConnection mServiceConnection = new ServiceConnection() {
+   /* private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
@@ -117,7 +115,7 @@ public class DeviceControlActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName componentName) {
             mBluetoothLeService = null;
         }
-    };
+    };*/
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -131,7 +129,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
-                // updateConnectionState(true);
+                 updateConnectionState(true);
                 invalidateOptionsMenu();
 
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
@@ -141,7 +139,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
-                displayGattServices(mBluetoothLeService.getSupportedGattServices());
+                displayGattServices(GlobalService.mBluetoothLeService.getSupportedGattServices());
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) {
                 displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
             }
@@ -186,64 +184,6 @@ public class DeviceControlActivity extends AppCompatActivity {
         // mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
         //  mDataField.setText(R.string.no_data);
     }
-    private void doStartService(){
-        BluetoothGattService serv = mBluetoothLeService.getUUID();
-        if(serv == null){
-            Log.e(TAG,"service not found");
-        }
-
-        BluetoothGattCharacteristic charac = serv.getCharacteristic(UUID.fromString("0000FFE1-0000-1000-8000-00805F9B34FB"));
-        if (charac == null) {
-            Log.e(TAG, "char not found!");
-
-        }
-
-        if(mNotifyCharacteristic != null){
-            mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, false);
-            mNotifyCharacteristic = null;
-        }
-        if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
-            mNotifyCharacteristic = charac;
-            mBluetoothLeService.setCharacteristicNotification(charac, true);
-        }
-
-        charac.setValue("C");
-        boolean status = mBluetoothLeService.writeCharacteristic(charac);
-        Log.e(TAG,"Write Status : " + status);
-
-
-
-        // mBluetoothLeService.readCharacteristic(charac);
-
-
-
-    }
-    private void doStopService(){
-        BluetoothGattService serv = mBluetoothLeService.getUUID();
-        if(serv == null){
-            Log.e(TAG,"service not found");
-        }
-
-        BluetoothGattCharacteristic charac = serv.getCharacteristic(UUID.fromString("0000FFE1-0000-1000-8000-00805F9B34FB"));
-        if (charac == null) {
-            Log.e(TAG, "char not found!");
-
-        }
-
-        if(mNotifyCharacteristic != null){
-            mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, false);
-            mNotifyCharacteristic = null;
-        }
-        if(
-                BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
-            mNotifyCharacteristic = charac;
-            mBluetoothLeService.setCharacteristicNotification(charac, false);
-        }
-
-        charac.setValue("F");
-        boolean status = mBluetoothLeService.writeCharacteristic(charac);
-        Log.e(TAG,"Write Status : " + status);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -251,8 +191,8 @@ public class DeviceControlActivity extends AppCompatActivity {
         setContentView(R.layout.gatt_services_characteristics);
 
         final Intent intent = getIntent();
-        mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
-        mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+        mDeviceName = GlobalService.mBluetoothLeService.getDeviceName();
+        mDeviceAddress = GlobalService.mBluetoothLeService.getDeviceAddress();
 
         // Sets up UI references.
         // ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
@@ -265,37 +205,36 @@ public class DeviceControlActivity extends AppCompatActivity {
 
         stButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                doStartService();
+                GlobalService.mBluetoothLeService.doStartService();
             }
         });
         soButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                doStopService();
+                GlobalService.mBluetoothLeService.doStopService();
 
                 if(watjaiNormal!=null){
                     watjaiNormal = null;
                 }
-                if(watjaiMeasure!=null){
-                    watjaiMeasure = null;
+                if(watjaiMeasureSendData!=null){
+                    watjaiMeasureSendData = null;
                 }
                 watjaiNormal = new WatjaiNormal();
-                watjaiNormal.setMeasureData(ecgData);
+                watjaiNormal.setMeasureData(GlobalService.ecgData);
                 watjaiNormal.setPatId("PA1709001");
                 watjaiNormal.setMeasureId(null);
                 watjaiNormal.setMeasureTime(null);
                 watjaiNormal.setId(null);
 
-                /*watjaiMeasure = new WatjaiMeasure();
-                watjaiMeasure.setMeasuringData(ecgData);
-                watjaiMeasure.setPatId("PA1709001");*/
                 watjaiMeasureSendData = new WatjaiMeasureSendData();
-                watjaiMeasureSendData.setMeasuringData(ecgData);
+                watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
                 watjaiMeasureSendData.setPatId("PA1709001");
+
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override
                     public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                         if (response.isSuccessful()) {
+                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {
@@ -342,17 +281,20 @@ public class DeviceControlActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(R.string.watjai);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+      //  Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+       // bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<DataPoint>();
+        if (series == null) {
+            series = new LineGraphSeries<DataPoint>();
+        }
+
         graph.addSeries(series);
         Viewport viewport = graph.getViewport();
         viewport.setYAxisBoundsManual(true);
         viewport.setMinY(0);
         viewport.setMaxY(5);
-        viewport.setMinX(0);
+        viewport.setMinX(lastX);
         viewport.setMaxX(700);
         viewport.setScrollable(true);
         graph.getViewport().setScalableY(true);
@@ -362,8 +304,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-        if (mBluetoothLeService != null) {
-            final boolean result = mBluetoothLeService.connect(mDeviceAddress);
+        if (GlobalService.mBluetoothLeService != null) {
+            final boolean result = GlobalService.mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
         }
     }
@@ -377,8 +319,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(mServiceConnection);
-        mBluetoothLeService = null;
+      //  unbindService(mServiceConnection);
+       // mBluetoothLeService = null;
     }
 
     @Override
@@ -396,9 +338,9 @@ public class DeviceControlActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(status){
-                    doStartService();
+                    System.out.println("Connected");
                 }{
-                    doStopService();
+                    System.out.println("NOT CONNECTED");
                 }
             }
         });
@@ -415,14 +357,14 @@ public class DeviceControlActivity extends AppCompatActivity {
     int numCount =0;
     String temp = "";
     private void collectData(String data){
-        if(ecgData == null){
-            ecgData = new ArrayList<Float>();
+        if(GlobalService.ecgData == null){
+            GlobalService.ecgData = new ArrayList<Float>();
         }
         try{
             if(numCount > 0){
                 temp += data.substring(0,numCount);
                 ecg = Float.parseFloat(temp);
-                ecgData.add(ecg);
+                GlobalService.ecgData.add(ecg);
                 series.appendData(new DataPoint(lastX++, ecg), true, 700);
                 temp = "";
                 numCount = 0;
@@ -435,7 +377,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 if(i+4 <= k-1){
 
                     ecg = Float.parseFloat(data.substring(i+1,i+5));
-                    ecgData.add(ecg);
+                    GlobalService.ecgData.add(ecg);
                     series.appendData(new DataPoint(lastX++, ecg), true, 700);
                 }else{
                     temp = data.substring(i+1,k);
@@ -443,7 +385,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 }
                 i = data.indexOf(';',i+1);
             }
-            Log.e(TAG,"ECG SIZE : " + ecgData.size());
+            Log.e(TAG,"ECG SIZE : " + GlobalService.ecgData.size());
 
         }catch(Exception e){
             Log.e(TAG,"error : " + e + "\n DATA : " + data);

@@ -25,7 +25,6 @@ import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity;
-import com.example.android.bluetoothlegatt.Activity.HelpActivity;
 import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.NotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
@@ -33,6 +32,7 @@ import com.example.android.bluetoothlegatt.Activity.SettingActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
+import com.example.android.bluetoothlegatt.GlobalService;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
@@ -66,7 +66,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private TextView countNotification;
     private boolean isBluetoothStatus = false;
     private ArrayList<WatjaiMeasure> watjaiMeasure;
-    private Thread t;
+    Thread t;
     private int countNoti;
 
     public MainFragment() {
@@ -137,14 +137,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                                     } else {
                                         hideCountNotification();
                                     }
-                                    NetworkCall notification = new NetworkCall();
-                                    notification.execute();
+                                    NetworkCall task = new NetworkCall();
+                                    task.execute();
                                 }
                             });
                         } else {
                             isInterrupted();
                         }
-                        Thread.sleep(500);
+                        Thread.sleep(1000);
                     }
                 } catch (InterruptedException e) {
                 }
@@ -173,7 +173,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         } else if (v == buttonMeasure) {
             Intent intent = new Intent(getContext(), DeviceScanActivity.class);
 
-            if (isBluetoothStatus) {
+            if (GlobalService.mBluetoothLeService.getDeviceAddress() != null) {
                 Intent watjai = new Intent(getContext(), DeviceControlActivity.class);
                 startActivity(watjai);
             } else {
@@ -194,11 +194,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(blank);
             }
         } else if (v == buttonHelp) {
-            Intent intent = new Intent(getContext(), HelpActivity.class);
-            startActivity(intent);
+
         } else if (v == buttonSetting) {
-            Intent intent = new Intent(getContext(), SettingActivity.class);
-            startActivity(intent);
+            Intent setting = new Intent(getContext(), SettingActivity.class);
+            startActivity(setting);
         }
 
     }

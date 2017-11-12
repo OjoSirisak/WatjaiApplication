@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HistoryActivity extends AppCompatActivity {
@@ -38,29 +39,40 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        historyListView = (ListView)findViewById(R.id.historyList);
+        historyListView = (ListView) findViewById(R.id.historyList);
         historyListAdapter = new HistoryListAdapter();
-        NetworkCall networkCall = new NetworkCall();
-        networkCall.execute();
-        try {
-            Thread.sleep(195);
-            historyListAdapter.addHistory(history);
-            historyListView.setAdapter(historyListAdapter);
-            historyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    WatjaiMeasure historyDetail = history.get(position);
-                    if  (historyDetail != null) {
-                        Intent intent = new Intent(HistoryActivity.this, HistoryDetailActivity.class);
-                        intent.putExtra("historyDetail", historyDetail.getMeasuringId());
-                        System.out.println(historyDetail.getMeasuringId());
-                        startActivity(intent);
-                    }
+
+        /*NetworkCall networkCall = new NetworkCall();
+        networkCall.execute();*/
+        Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadHistory("PA1709001");
+        call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
+            @Override
+            public void onResponse(Call<ArrayList<WatjaiMeasure>> call, Response<ArrayList<WatjaiMeasure>> response) {
+                if (response.isSuccessful()) {
+                    history = response.body();
+                    historyListAdapter.addHistory(history);
+                    historyListView.setAdapter(historyListAdapter);
+                    historyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            WatjaiMeasure historyDetail = history.get(position);
+                            if (historyDetail != null) {
+                                Intent intent = new Intent(HistoryActivity.this, HistoryDetailActivity.class);
+                                intent.putExtra("historyDetail", historyDetail.getMeasuringId());
+                                intent.putExtra("historyData", historyDetail);
+                                startActivity(intent);
+                            }
+                        }
+                    });
                 }
-            });
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<WatjaiMeasure>> call, Throwable throwable) {
+
+            }
+        });
+
 
     }
 
@@ -117,40 +129,23 @@ public class HistoryActivity extends AppCompatActivity {
             }
 
             WatjaiMeasure watjaiMeasure = historys.get(position);
-            String date = watjaiMeasure.getAlertTime();
-            date = date.substring(2,10);
+            String year = watjaiMeasure.getAlertTime();
+            String month = watjaiMeasure.getAlertTime();
+            String day = watjaiMeasure.getAlertTime();
+
+            year = year.substring(0,4);
+            int yearr = Integer.parseInt(year) + 543;
+            month = month.substring(5,7);
+            day = day.substring(8,10);
             String time = watjaiMeasure.getAlertTime();
-            time = time.substring(11,19);
-            String dateNotification = date + " " + time;
+            time = time.substring(11,16);
+            String dateNotification = day + "/"  + month +  "/" + yearr + " " + time;
 
             if (watjaiMeasure != null) {
                 item.setMeasuringId(watjaiMeasure.getMeasuringId());
                 item.setHeartRate(watjaiMeasure.getHeartRate()+" ครั้ง/นาที");
                 item.setDateTime(dateNotification);
             }
-
-            //Date currentTime = Calendar.getInstance().getTime();
-
-
-            // sub str แยกวัน แยกเวลา ล้ะค่อยลบกัน
-
-            /*SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-            Date d2 = null;
-            try {
-                d2 = format.parse(dateNotification);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            // Get msec from each, and subtract.
-            long diff = currentTime.getTime() - d2.getTime();
-            long diffSeconds = diff / 1000 % 60;
-            long diffMinutes = diff / (60 * 1000) % 60;
-            long diffHours = diff / (60 * 60 * 1000);
-            long diffDay = diff / (24 * 60 * 60 * 1000);
-            System.out.println("Time in seconds: " + diffSeconds + " seconds.");
-            System.out.println("Time in minutes: " + diffMinutes + " minutes.");
-            System.out.println("Time in hours: " + diffHours + " hours.");
-            System.out.println("Time in Day: " + diffDay + " days.");*/
 
             return item;
         }

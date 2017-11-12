@@ -25,11 +25,19 @@ public class DescriptionNotificationActivity extends AppCompatActivity {
         watjaiMeasure = new WatjaiMeasure();
         watjaiMeasure = getIntent().getParcelableExtra("measure");
         tvComment.setText(watjaiMeasure.getComment());
-        date = watjaiMeasure.getAlertTime();
-        date = date.substring(0,10);
-        time = watjaiMeasure.getAlertTime();
+
+        String year = watjaiMeasure.getAlertTime();
+        String month = watjaiMeasure.getAlertTime();
+        String day = watjaiMeasure.getAlertTime();
+
+        year = year.substring(0,4);
+        int yearr = Integer.parseInt(year) + 543;
+        month = month.substring(5,7);
+        day = day.substring(8,10);
+        String time = watjaiMeasure.getAlertTime();
         time = time.substring(11,16);
-        tvDate.setText(date);
+        String dateNotification = day + "/"  + month +  "/" + yearr;
+        tvDate.setText(dateNotification);
         tvTime.setText(time);
     }
 

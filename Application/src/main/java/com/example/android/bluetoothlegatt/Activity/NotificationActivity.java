@@ -54,16 +54,22 @@ public class NotificationActivity extends AppCompatActivity {
         listView.setAdapter(notificationListAdapter);
         listView.setOnItemClickListener(listNotification);
         notificationListAdapter = new NotificationListAdapter();
-        NetworkCall task = new NetworkCall();
-        task.execute();
-        try {
-            Thread.sleep(0);
+        if (watjaiMeasure == null) {
+            NetworkCall task = new NetworkCall();
+            task.execute();
+            try {
+                Thread.sleep(1000);
+                listView.setAdapter(notificationListAdapter);
+                listView.setOnItemClickListener(listNotification);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        } else {
             notificationListAdapter.addNotification(watjaiMeasure);
             listView.setAdapter(notificationListAdapter);
             listView.setOnItemClickListener(listNotification);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
+
 
         /*t = new Thread() {
             @Override
@@ -152,6 +158,7 @@ public class NotificationActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
             watjaiMeasure = result;
+            notificationListAdapter.addNotification(watjaiMeasure);
         }
 
         @Override
@@ -215,11 +222,17 @@ public class NotificationActivity extends AppCompatActivity {
 
             WatjaiMeasure watjaiMeasure = notifications.get(position);
 
-            String date = watjaiMeasure.getAlertTime();
-            date = date.substring(2,10);
+            String year = watjaiMeasure.getAlertTime();
+            String month = watjaiMeasure.getAlertTime();
+            String day = watjaiMeasure.getAlertTime();
+
+            year = year.substring(0,4);
+            int yearr = Integer.parseInt(year) + 543;
+            month = month.substring(5,7);
+            day = day.substring(8,10);
             String time = watjaiMeasure.getAlertTime();
-            time = time.substring(11,19);
-            String dateNotification = date + " " + time;
+            time = time.substring(11,16);
+            String dateNotification = day + "/"  + month +  "/" + yearr + " " + time;
 
             if (watjaiMeasure != null) {
                 item.setTimeText(dateNotification);

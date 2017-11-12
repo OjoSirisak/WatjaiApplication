@@ -1,4 +1,4 @@
-#Sun Nov 12 02:10:31 ICT 2017
+#Sun Nov 12 19:58:15 ICT 2017
 base.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ffb94134dfa95cb4270aea92054a8dad505f64ea
 renamed.1=classes.dex
 renamed.0=classes2.dex
