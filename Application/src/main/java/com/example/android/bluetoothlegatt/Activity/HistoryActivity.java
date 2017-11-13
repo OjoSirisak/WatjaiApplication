@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,19 +33,23 @@ public class HistoryActivity extends AppCompatActivity {
     private ListView historyListView;
     private ArrayList<WatjaiMeasure> history;
     private HistoryListAdapter historyListAdapter;
-    private Thread t;
-    private ProgressBar progressBar;
+    private SharedPreferences prefs;
+    private String patId;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
         historyListView = (ListView) findViewById(R.id.historyList);
         historyListAdapter = new HistoryListAdapter();
 
         /*NetworkCall networkCall = new NetworkCall();
         networkCall.execute();*/
-        Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadHistory("PA1709001");
+        Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadHistory(patId);
         call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
             @Override
             public void onResponse(Call<ArrayList<WatjaiMeasure>> call, Response<ArrayList<WatjaiMeasure>> response) {

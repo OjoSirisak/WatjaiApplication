@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
+import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.GlobalService;
+import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.R;
 
 public class SettingActivity extends AppCompatActivity {
@@ -17,6 +19,7 @@ public class SettingActivity extends AppCompatActivity {
     private Button ScanButton;
     private Button DisconnectButton;
     private TextView text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,7 @@ public class SettingActivity extends AppCompatActivity {
         if(GlobalService.mBluetoothLeService.getConnectState() == 2){
             text.setText(GlobalService.mBluetoothLeService.getDeviceName());
         }else{
-            text.setText("Please Scan a Device first");
+            text.setText("ไม่มีการเชื่อมต่ออุปกรณ์ กรุณาเชื่อต่อ");
         }
 
         ScanButton.setOnClickListener(new View.OnClickListener(){
@@ -43,6 +46,8 @@ public class SettingActivity extends AppCompatActivity {
         DisconnectButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 GlobalService.mBluetoothLeService.disconnect();
+                onPause();
+                onResume();
             }
         });
     }
@@ -54,5 +59,15 @@ public class SettingActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(GlobalService.mBluetoothLeService.getConnectState() == 2){
+            text.setText(GlobalService.mBluetoothLeService.getDeviceName());
+        }else{
+            text.setText("กรุณาเชื่อต่ออุปกรณ์");
+        }
     }
 }

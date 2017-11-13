@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,11 +26,17 @@ public class EditProfileActivity extends AppCompatActivity {
             edtDistrict, edtProvince, edtMobile;
     Button btnSubmit;
     PatientItemDao dao;
+    private SharedPreferences prefs;
+    String patId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
         dao = getIntent().getParcelableExtra("dao");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findId();
@@ -89,7 +96,7 @@ public class EditProfileActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             setUpdateData();
-            Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao, dao.getPatId());
+            Call<PatientItemDao> call = HttpManager.getInstance().getService().updatePatient(dao, patId);
             call.enqueue(new Callback<PatientItemDao>() {
                 @Override
                 public void onResponse(Call<PatientItemDao> call, Response<PatientItemDao> response) {

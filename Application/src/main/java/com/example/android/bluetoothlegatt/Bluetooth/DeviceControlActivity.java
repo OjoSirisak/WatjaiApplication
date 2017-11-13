@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
@@ -93,6 +94,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     private ArrayList<Float> ecgData;
     private WatjaiNormal watjaiNormal;
     private WatjaiMeasureSendData watjaiMeasureSendData;
+    private SharedPreferences prefs;
+    private String patId;
 
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
@@ -190,6 +193,11 @@ public class DeviceControlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gatt_services_characteristics);
 
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
+
         final Intent intent = getIntent();
         mDeviceName = GlobalService.mBluetoothLeService.getDeviceName();
         mDeviceAddress = GlobalService.mBluetoothLeService.getDeviceAddress();
@@ -220,21 +228,20 @@ public class DeviceControlActivity extends AppCompatActivity {
                 }
                 watjaiNormal = new WatjaiNormal();
                 watjaiNormal.setMeasureData(GlobalService.ecgData);
-                watjaiNormal.setPatId("PA1709001");
+                watjaiNormal.setPatId(patId);
                 watjaiNormal.setMeasureId(null);
                 watjaiNormal.setMeasureTime(null);
                 watjaiNormal.setId(null);
 
                 watjaiMeasureSendData = new WatjaiMeasureSendData();
                 watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
-                watjaiMeasureSendData.setPatId("PA1709001");
+                watjaiMeasureSendData.setPatId(patId);
 
                 Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
                 call.enqueue(new Callback<WatjaiNormal>() {
                     @Override
                     public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                         if (response.isSuccessful()) {
-                            Toast.makeText(DeviceControlActivity.this, "Stop Measure.", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {
@@ -258,7 +265,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
                         if (response.isSuccessful()) {
-                            Toast.makeText(DeviceControlActivity.this, "หยุดการวัดใจ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeviceControlActivity.this, "หยุดการวัดคลื่นหัวใจเรียบร้อยแล้ว", Toast.LENGTH_SHORT).show();
 
                         } else {
                             try {

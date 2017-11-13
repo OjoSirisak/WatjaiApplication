@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.MyNotificationOpenedHandler;
@@ -14,6 +15,9 @@ import com.onesignal.OneSignal;
 
 public class MainApplication extends Application {
 
+    private SharedPreferences prefs;
+    private String patId;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -21,8 +25,12 @@ public class MainApplication extends Application {
         // Restore Singleton data here
 
         // initialize ting(s) here
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
         Contextor.getInstance().init(getApplicationContext());
-        OneSignal.sendTag("patId", "PA1709001");
+        OneSignal.sendTag("patId", patId);
 
         OneSignal.startInit(getApplicationContext())
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)

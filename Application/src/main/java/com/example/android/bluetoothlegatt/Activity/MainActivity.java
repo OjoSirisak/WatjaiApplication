@@ -3,6 +3,7 @@ package com.example.android.bluetoothlegatt.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,8 @@ import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static boolean isLoginStatus = false;
+    private SharedPreferences prefs;
+    private static int isLoginStatus = 1;
     private final static String TAG = MainActivity.class.getSimpleName();
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
@@ -48,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        isLoginStatus = prefs.getInt("LoginStatus", 1);
 
-        isLoginStatus = getIntent().getBooleanExtra("loginStatus", false);
-
-        if (isLoginStatus) {
+        if (isLoginStatus != 1) {
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.contentContainer, MainFragment.newInstance())

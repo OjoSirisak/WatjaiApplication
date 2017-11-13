@@ -6,22 +6,58 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.bluetoothlegatt.Activity.SettingActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
-    <Button
-        android:id="@+id/scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
-    <Button
-        android:id="@+id/disconnect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="8pt"
+            android:text="สถานะการเชื่อมต่อ: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="8pt"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/scan"
+            android:text="ค้นหาอุปกรณ์"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
+        <Button
+            android:id="@+id/disconnect"
+            android:text="ตัดการเชื่อมต่อบลูทูธ"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </LinearLayout>
 </LinearLayout>

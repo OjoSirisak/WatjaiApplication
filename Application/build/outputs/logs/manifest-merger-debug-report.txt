@@ -61,7 +61,6 @@ MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.and
 MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:31:5-20
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\SirisakPks\.android\build-cache\acd09da328c4a618f3c2053086f4ea8e4e60d55f\output\AndroidManifest.xml:9:5-20
 MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\SirisakPks\.android\build-cache\b7305f986dc7d8aa9ee66676e48eeb20271112c2\output\AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.ATHBK:SlidingTabLayout:1.2.0] C:\Users\SirisakPks\.android\build-cache\cec0b85fb8286aefc25bcfc791a0304b71ba9d14\output\AndroidManifest.xml:11:5-14:19
@@ -83,6 +82,7 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:25:5-29:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from E:\Project\WatjaiApplication\Application\src\main\AndroidManifest.xml:44:9-39
 	android:supportsRtl
@@ -260,7 +260,6 @@ MERGED from [com.crashlytics.sdk.android:answers:1.4.1] C:\Users\SirisakPks\.and
 MERGED from [io.fabric.sdk.android:fabric:1.4.1] C:\Users\SirisakPks\.android\build-cache\4e11d57c0c9fed1577cd3fac0a0e0eaf4985329d\output\AndroidManifest.xml:27:5-43
 MERGED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:21:5-23:55
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\SirisakPks\.android\build-cache\e72fdf194ff7d107c0c953b4bb8b7be2920f5eb5\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\SirisakPks\.android\build-cache\acd09da328c4a618f3c2053086f4ea8e4e60d55f\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\SirisakPks\.android\build-cache\b7305f986dc7d8aa9ee66676e48eeb20271112c2\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.ATHBK:SlidingTabLayout:1.2.0] C:\Users\SirisakPks\.android\build-cache\cec0b85fb8286aefc25bcfc791a0304b71ba9d14\output\AndroidManifest.xml:7:5-9:41
@@ -282,6 +281,7 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\SirisakPks\
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\SirisakPks\.android\build-cache\45b5dbc32bc543e5a307435eb513f48e2b1e2cae\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\SirisakPks\.android\build-cache\2c40b1ae35b6f018986e9830b5ae93f73c83fc38\output\AndroidManifest.xml:21:5-23:58
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\SirisakPks\.android\build-cache\f27b89f8df490048baed418d9e3fd2b36dd5f840\output\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\SirisakPks\.android\build-cache\3db691d81933a541a7cd66b29518a117efeb26b9\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v13:25.3.1] C:\Users\SirisakPks\.android\build-cache\cdb47c3fd45839c3b9283fe9a347ca69fb3f3adc\output\AndroidManifest.xml:23:9-52
 	android:targetSdkVersion

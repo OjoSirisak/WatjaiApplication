@@ -2,6 +2,7 @@
 <resources>
     <string name="address">ที่อยู่</string>
     <string name="age">อายุ</string>
+    <string name="app_name">OnBoardingDemo</string>
     <string name="blanknoti">ไม่พบการแจ้งเตือน</string>
     <string name="blood_type">หมู่เลือด</string>
     <string name="btn_login">เข้าสู่ระบบ</string>
@@ -23,6 +24,15 @@
     <string name="menu_setting">ตั้งค่า</string>
     <string name="mobile_number">เบอร์โทรศัพท์</string>
     <string name="notification">การแจ้งเตือน</string>
+    <string name="ob_desc1">แปะแผ่น electrode จุดสีแดงแปะบริเวณเหนือหน้าอกด้านขวาของท่าน จุดสีเหลืองแปะบริเวณเหนือหน้าอกด้านขวาของท่าน จุดสีเขียวแปะบริเวณด้านล่างของหน้าอกด้านซ้ายของท่าน</string>
+    <string name="ob_desc2">เข้าแอปพลิเคชั่น วัดใจ หลังจากนั้น กดเลือกเมนู “วัดใจ” เพื่อทำการวัด</string>
+    <string name="ob_desc3">หน้าจอจะแสดงรายชื่อบลูทูธต่างๆที่โทรศัพท์มือถือของท่านแสกนเจอให้กดเลือก “E-Health” เพื่อทำการเชื่อต่อระหว่างโทณศัพท์มือถือและเครื่องวัด</string>
+    <string name="ob_desc4">เมื่อทำการเชื่อต่อบลูทูธเสร็จ จะขึ้นแสดงหน้านี้ กดปุ่ม “เริ่มวัดคลื่นหัวใจ” เพื่อทำการวัดสัญญาณหัวใจ กดปุ่ม “หยุดวัดคลื่นหัวใจ” เพื่อทำการหยุดโปรแกรม </string>
+    <string name="ob_get_started">เสร็จสิ้น</string>
+    <string name="ob_header1">ขั้นตอนที่ 1</string>
+    <string name="ob_header2">ขั้นตอนที่ 2</string>
+    <string name="ob_header3">ขั้นตอนที่ 3</string>
+    <string name="ob_header4">ขั้นตอนที่ 4</string>
     <string name="postcode">รหัสไปรษณีย์</string>
     <string name="province">จังหวัด</string>
     <string name="scandevice">ค้นหาอุปกรณ์</string>

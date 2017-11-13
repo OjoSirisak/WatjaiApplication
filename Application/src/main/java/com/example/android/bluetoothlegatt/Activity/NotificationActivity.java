@@ -1,6 +1,7 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,13 +39,18 @@ public class NotificationActivity extends AppCompatActivity {
     private ListView listView;
     private NotificationListAdapter notificationListAdapter;
     private ArrayList<WatjaiMeasure> watjaiMeasure;
-    private Thread t;
+    private SharedPreferences prefs;
+    private String patId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
         watjaiMeasure = new ArrayList<>();
         watjaiMeasure = (ArrayList<WatjaiMeasure>) getIntent().getSerializableExtra("notification");
         listView = (ListView) findViewById(R.id.notificationList);
@@ -165,7 +171,7 @@ public class NotificationActivity extends AppCompatActivity {
         protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
 
             try {
-                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001", "");
+                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert(patId, "");
                 Response<ArrayList<WatjaiMeasure>> response = call.execute();
                 watjaiMeasure = response.body();
                 return watjaiMeasure;
@@ -242,31 +248,6 @@ public class NotificationActivity extends AppCompatActivity {
             if  (watjaiMeasure.getReadStatus().equalsIgnoreCase("read")) {
                 item.setReadStatus();
             }
-
-            //Date currentTime = Calendar.getInstance().getTime();
-
-
-            // sub str แยกวัน แยกเวลา ล้ะค่อยลบกัน
-
-            /*SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-
-            Date d2 = null;
-            try {
-                d2 = format.parse(dateNotification);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            // Get msec from each, and subtract.
-            long diff = currentTime.getTime() - d2.getTime();
-            long diffSeconds = diff / 1000 % 60;
-            long diffMinutes = diff / (60 * 1000) % 60;
-            long diffHours = diff / (60 * 60 * 1000);
-            long diffDay = diff / (24 * 60 * 60 * 1000);
-            System.out.println("Time in seconds: " + diffSeconds + " seconds.");
-            System.out.println("Time in minutes: " + diffMinutes + " minutes.");
-            System.out.println("Time in hours: " + diffHours + " hours.");
-            System.out.println("Time in Day: " + diffDay + " days.");*/
 
             return item;
         }

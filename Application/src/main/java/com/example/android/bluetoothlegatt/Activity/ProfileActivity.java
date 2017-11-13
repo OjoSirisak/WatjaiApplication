@@ -1,6 +1,8 @@
 package com.example.android.bluetoothlegatt.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,9 +27,12 @@ import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private SharedPreferences prefs;
+    private String patId;
     TextView tvFirstName, tvLastName, tvAge, tvAddress, tvTel, tvBloodType, tvUnderlyingDisease, tvDoctor;
     Button btnEditProfile, btnLogout;
     PatientItemDao dao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         dao = null;
         setContentView(R.layout.activity_profile);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+            System.out.println(patId+"******************************");
+        }
+
         initInstances();
     }
 
@@ -45,7 +56,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void getProfile() {
-        Call<PatientItemDao> call = HttpManager.getInstance().getService().loadPatient("PA1709001");
+        Call<PatientItemDao> call = HttpManager.getInstance().getService().loadPatient(patId);
         call.enqueue(new Callback<PatientItemDao>() {
             @Override
             public void onResponse(Call<PatientItemDao> call,
@@ -105,6 +116,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         btnLogout = (Button) findViewById(R.id.btnLogout);
 
         btnEditProfile.setOnClickListener(this);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("LoginStatus",1);
+                editor.putString("PatID",null);
+                editor.apply();
+                Intent logout = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(logout);
+                finish();
+                finish();
+            }
+        });
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

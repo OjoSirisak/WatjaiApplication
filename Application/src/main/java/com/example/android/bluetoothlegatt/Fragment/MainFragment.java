@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity;
+import com.example.android.bluetoothlegatt.Activity.HelpActivity;
 import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.NotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
@@ -56,6 +58,7 @@ import java.util.TimerTask;
 import retrofit2.Call;
 import retrofit2.Response;
 
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -66,8 +69,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private TextView countNotification;
     private boolean isBluetoothStatus = false;
     private ArrayList<WatjaiMeasure> watjaiMeasure;
-    Thread t;
+    private Thread t;
     private int countNoti;
+    private SharedPreferences prefs;
+    private String patId;
 
     public MainFragment() {
         super();
@@ -105,6 +110,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
+        prefs = getActivity().getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
+
         buttonProfile = (ImageButton) rootView.findViewById(R.id.btnProfile);
         buttonMeasure = (ImageButton) rootView.findViewById(R.id.btnMeasure);
         buttonHistory = (ImageButton) rootView.findViewById(R.id.btnHistory);
@@ -194,7 +204,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(blank);
             }
         } else if (v == buttonHelp) {
-
+            Intent help = new Intent(getContext(), HelpActivity.class);
+            startActivity(help);
         } else if (v == buttonSetting) {
             Intent setting = new Intent(getContext(), SettingActivity.class);
             startActivity(setting);
@@ -232,7 +243,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
 
             try {
-                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert("PA1709001","");
+                System.out.println(patId+"----------------------------------");
+                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert(patId,"");
                 Response<ArrayList<WatjaiMeasure>> response = call.execute();
                 watjaiMeasure = response.body();
                 return watjaiMeasure;

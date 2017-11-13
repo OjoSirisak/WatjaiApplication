@@ -41,7 +41,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
         viewport.setMinY(0);
         viewport.setMaxY(5);
         viewport.setMinX(0);
-        viewport.setMaxX(80);
+        viewport.setMaxX(700);
         viewport.setScrollable(true);
         graph.getViewport().setScalableY(true);
     }

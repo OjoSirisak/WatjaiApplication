@@ -3,11 +3,21 @@
     <color name="colorPrimary">#85d5fa</color>
     <color name="colorPrimaryDark">#6dccf7</color>
     <color name="colorAccent">#26b8ce</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="white_text">#FFFFFF</color>
     <color name="overlay_color">#80000000</color>
     <color name="bg_btn_blank_color">#00000000</color>
     <color name="over_overlay_color">#54000000</color>
     <color name="black_color">#000000</color>
+    <color name="btn_green">#9eef6f</color>
+    <color name="btn_green_hover">#86c761</color>
+    <color name="btn_red">#ef736f</color>
+    <color name="btn_red_hover">#d25a56</color>
+
+    <color name="selected_dot">#2D9CDB</color>
+    <color name="idle_dot">#662D9CDB</color>
+    <color name="ob_header">#4A4A4A</color>
+    <color name="ob_desc">#4A4A4A</color>
 
 </resources>

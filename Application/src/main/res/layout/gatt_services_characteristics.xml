@@ -20,20 +20,29 @@
             android:id="@+id/graph" />
             <LinearLayout
                 android:orientation="horizontal"
+                android:weightSum="2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/btnstart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Start" />
-
-                <Button
-                    android:id="@+id/stopbt"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stop" />
+                    android:textSize="8pt"
+                    android:background="@drawable/selector_btn_start"
+                    android:layout_margin="5dp"
+                    android:text="เริ่มวัดคลื่นหัวใจ" />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/stopbt"
+                    android:textSize="8pt"
+                    android:background="@drawable/selector_btn_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="หยุดวัดคลื่นหัวใจ" />
             </LinearLayout>
 
         </LinearLayout>

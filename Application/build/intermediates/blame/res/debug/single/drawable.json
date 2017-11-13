@@ -1,15 +1,19 @@
 [
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_start.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_start.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
@@ -56,6 +60,10 @@
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
     {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_stop.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_stop.xml"
+    },
+    {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_bg_low.xml"
     },
@@ -98,6 +106,10 @@
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selected_item_dot.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selected_item_dot.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
@@ -194,6 +206,10 @@
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\non_selected_item_dot.xml",
+        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\non_selected_item_dot.xml"
     },
     {
         "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",

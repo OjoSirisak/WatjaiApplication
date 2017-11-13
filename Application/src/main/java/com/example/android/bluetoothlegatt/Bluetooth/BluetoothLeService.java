@@ -28,6 +28,7 @@ import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.IntDef;
@@ -86,6 +87,8 @@ public class BluetoothLeService extends Service {
 
     private WatjaiNormal watjaiNormal;
     private WatjaiMeasureSendData watjaiMeasureSendData;
+    private SharedPreferences prefs;
+    private String patId;
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -225,6 +228,11 @@ public class BluetoothLeService extends Service {
     }
 
     private void sendEcgData() {
+        prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+        }
+
         if(watjaiNormal!=null){
             watjaiNormal = null;
         }
@@ -233,36 +241,29 @@ public class BluetoothLeService extends Service {
         }
         watjaiNormal = new WatjaiNormal();
         watjaiNormal.setMeasureData(GlobalService.ecgData);
-        watjaiNormal.setPatId("PA1709001");
+        watjaiNormal.setPatId(patId);
         watjaiNormal.setMeasureId(null);
         watjaiNormal.setMeasureTime(null);
         watjaiNormal.setId(null);
 
         watjaiMeasureSendData = new WatjaiMeasureSendData();
         watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
-        watjaiMeasureSendData.setPatId("PA1709001");
+        watjaiMeasureSendData.setPatId(patId);
 
         Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
         call.enqueue(new Callback<WatjaiNormal>() {
             @Override
             public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Stop Measure.", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    try {
-                        Toast.makeText(getApplicationContext(), response.errorBody().string()
-                                , Toast.LENGTH_LONG).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+
                 }
             }
 
             @Override
             public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
-                Toast.makeText(getApplicationContext(), throwable.toString()
-                        , Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -271,22 +272,15 @@ public class BluetoothLeService extends Service {
             @Override
             public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "หยุดการวัดใจ", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    try {
-                        Toast.makeText(getApplicationContext(), response.errorBody().string()
-                                , Toast.LENGTH_LONG).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+
                 }
             }
 
             @Override
             public void onFailure(Call<WatjaiMeasureSendData> call, Throwable throwable) {
-                Toast.makeText(getApplicationContext(), throwable.toString()
-                        , Toast.LENGTH_LONG).show();
+
             }
         });
     }
