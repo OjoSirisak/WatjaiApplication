@@ -25,7 +25,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class
+ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private SharedPreferences prefs;
     private String patId;

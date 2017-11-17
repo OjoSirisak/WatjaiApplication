@@ -178,10 +178,12 @@ public class LoginActivity extends AppCompatActivity {
             prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
 
-            if(result.getSuccess()){
-                System.out.println("onPost : "+result.getSuccess());
-                editor.putInt("LoginStatus",0);
-                editor.putString("PatID",login.getPatId());
+            if (login != null && result != null) {
+                if(result.getSuccess()){
+                    System.out.println("onPost : "+result.getSuccess());
+                    editor.putInt("LoginStatus",0);
+                    editor.putString("PatID",login.getPatId());
+                }
             }
 
             editor.apply();
@@ -195,7 +197,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }else{
-                Toast.makeText(LoginActivity.this, login.getStatus() , Toast.LENGTH_LONG).show();
+                if (login != null && result != null)
+                    Toast.makeText(LoginActivity.this, login.getStatus() , Toast.LENGTH_LONG).show();
 
             }
         }

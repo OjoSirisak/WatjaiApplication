@@ -243,7 +243,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
 
             try {
-                System.out.println(patId+"----------------------------------");
                 Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert(patId,"");
                 Response<ArrayList<WatjaiMeasure>> response = call.execute();
                 watjaiMeasure = response.body();

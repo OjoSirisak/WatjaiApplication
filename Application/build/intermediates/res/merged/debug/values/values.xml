@@ -570,7 +570,7 @@
     <string name="ble_not_supported">BLE is not supported</string>
     <string name="blood_type">Blood type</string>
     <string name="btn_login">Log in</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">d3fd8bff-88c6-4d0e-b990-63e67cb6cdc7</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">21c94842-0c83-4237-aa96-e21cdcce16ea</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
