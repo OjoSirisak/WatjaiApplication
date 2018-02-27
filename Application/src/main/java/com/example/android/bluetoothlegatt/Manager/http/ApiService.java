@@ -1,13 +1,12 @@
 package com.example.android.bluetoothlegatt.Manager.http;
 
+import com.example.android.bluetoothlegatt.Dao.GetTotalMeasure;
 import com.example.android.bluetoothlegatt.Dao.Login;
 import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
-import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -30,13 +29,9 @@ public interface ApiService {
     @Headers({"Content-Type: application/json"})
     Call<PatientItemDao> updatePatient(@Body PatientItemDao dao, @Path("patId") String id);
 
-    @POST("watjainormal" )
-    @Headers({"Content-Type: application/json"})
-    Call<WatjaiNormal> insertECG(@Body WatjaiNormal ecg);
-
     @POST("watjaimeasure" )
     @Headers({"Content-Type: application/json"})
-    Call<WatjaiMeasureSendData> insertECGtoDetecing(@Body WatjaiMeasureSendData ecg);
+    Call<WatjaiMeasureSendData> insertECGtoDetecting(@Body WatjaiMeasureSendData ecg);
 
     @GET("patients/{patId}/history")
     Call<ArrayList<WatjaiMeasure>> loadHistory(@Path("patId") String id);
@@ -44,9 +39,12 @@ public interface ApiService {
     @GET("watjaimeasure/showabnormal/{patId}/after/{measuringId}")
     Call<ArrayList<WatjaiMeasure>> loadWatjaiMeasureAlert(@Path("patId") String patId, @Path("measuringId") String measuringId);
 
-    @PATCH("watjaimeasure/changereadstatus/{measuringId}")
+    @GET("watjaimeasure/getTotalAbnormal/{patId}")
+    Call<GetTotalMeasure> totalMeasureAlert(@Path("patId") String patId);
+
+    @GET("watjaimeasure/changereadstatus/{measuringId}")
     @Headers({"Content-Type: application/json"})
-    Call<WatjaiMeasure> chageReadStatus(@Body WatjaiMeasure dao,@Path("measuringId") String measuringId);
+    Call<Object> changeReadStatus(@Path("measuringId") String measuringId);
 
     @GET("watjaimeasure/{measuringId}")
     Call<ArrayList<WatjaiMeasure>> findMeasuring(@Path("measuringId") String id);

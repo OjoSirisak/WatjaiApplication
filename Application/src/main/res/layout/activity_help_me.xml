@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_help"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.bluetoothlegatt.Activity.HelpMeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnCall"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:gravity="center"
+        android:text="ต้องการขอรับ\nความช่วยเหลือหรือไม่"
+        android:textColor="@color/colorPrimary"
+        android:textSize="11pt" />
+
+    <ImageButton
+        android:id="@+id/btnCall"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="133dp"
+        android:background="@drawable/selector_btn_helpme" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnCall"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="ช่วย\nด้วย"
+        android:textColor="@color/white_text"
+        android:textSize="20pt"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/cancel"
+        android:textColor="@color/red_notification"
+        android:textSize="9pt" />
+</RelativeLayout>

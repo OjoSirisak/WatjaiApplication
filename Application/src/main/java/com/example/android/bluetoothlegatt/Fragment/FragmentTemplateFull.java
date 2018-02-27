@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 
 import com.example.android.bluetoothlegatt.R;
 
-
-/**
- * Created by nuuneoi on 11/16/2014.
- */
 public class FragmentTemplateFull extends Fragment {
 
     public FragmentTemplateFull() {

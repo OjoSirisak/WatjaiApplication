@@ -23,18 +23,18 @@ public class DescriptionNotificationActivity extends AppCompatActivity {
         tvTime = (TextView) findViewById(R.id.tvTime);
         tvComment = (TextView) findViewById(R.id.tvComment);
         watjaiMeasure = new WatjaiMeasure();
-        watjaiMeasure = getIntent().getParcelableExtra("measure");
+        watjaiMeasure = getIntent().getParcelableExtra("notification");
         tvComment.setText(watjaiMeasure.getComment());
 
-        String year = watjaiMeasure.getAlertTime();
-        String month = watjaiMeasure.getAlertTime();
-        String day = watjaiMeasure.getAlertTime();
+        String year = watjaiMeasure.getMeasuringTime();
+        String month = watjaiMeasure.getMeasuringTime();
+        String day = watjaiMeasure.getMeasuringTime();
 
         year = year.substring(0,4);
         int yearr = Integer.parseInt(year) + 543;
         month = month.substring(5,7);
         day = day.substring(8,10);
-        String time = watjaiMeasure.getAlertTime();
+        String time = watjaiMeasure.getMeasuringTime();
         time = time.substring(11,16);
         String dateNotification = day + "/"  + month +  "/" + yearr;
         tvDate.setText(dateNotification);

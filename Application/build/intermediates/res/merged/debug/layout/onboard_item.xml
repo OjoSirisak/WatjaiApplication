@@ -13,6 +13,7 @@
         android:id="@+id/iv_onboard"
         android:layout_width="302dp"
         android:layout_height="@dimen/ob_banner_height"
+        android:layout_gravity="center"
         android:gravity="center"
 
         android:scaleType="fitXY"

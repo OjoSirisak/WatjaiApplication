@@ -1,4 +1,4 @@
-#Mon Nov 13 15:26:34 ICT 2017
-base.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8
+#Wed Feb 28 00:02:29 ICT 2018
+base.0=C\:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
 renamed.0=classes.dex
-file.0=E\:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_8\\classes.dex

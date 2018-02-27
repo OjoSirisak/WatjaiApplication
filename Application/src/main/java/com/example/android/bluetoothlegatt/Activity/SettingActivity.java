@@ -9,9 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
-import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.GlobalService;
-import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.R;
 
 public class SettingActivity extends AppCompatActivity {

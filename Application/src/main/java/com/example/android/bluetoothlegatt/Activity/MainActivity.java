@@ -8,15 +8,11 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 import com.example.android.bluetoothlegatt.GlobalService;
 
 import com.example.android.bluetoothlegatt.Bluetooth.BluetoothLeService;
 import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.R;
-
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -68,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-
     }
-
-
-
 
 }

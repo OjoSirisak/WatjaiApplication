@@ -35,6 +35,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -43,22 +44,20 @@
         android:icon="@drawable/logo_app"
         android:label="@string/watjai"
         android:theme="@style/AppThemeNoActionBar">
-
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/watjai"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Bluetooth.DeviceScanActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
-
         <activity
             android:name=".Bluetooth.DeviceControlActivity"
             android:label="@string/watjai"
@@ -74,20 +73,17 @@
             android:name=".Activity.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
         <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/menu_profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
-
         <activity
             android:name=".Activity.EditProfileActivity"
             android:label="@string/edit_profile"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
         <activity
             android:name=".Activity.HistoryActivity"
             android:label="@string/menu_history"
@@ -98,13 +94,11 @@
             android:label="@string/notification"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
-
         <activity
             android:name=".Activity.NotificationActivity"
             android:label="@string/notification"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithActionBar" />
-
         <activity
             android:name=".Activity.DescriptionNotificationActivity"
             android:label="แจ้งเตือนการตรวจพบ"
@@ -123,17 +117,19 @@
             android:label="@string/menu_history"
             android:screenOrientation="landscape"
             android:theme="@style/AppThemeWithActionBar" />
-
-        <activity android:name=".Activity.SettingActivity"
+        <activity
+            android:name=".Activity.SettingActivity"
             android:label="@string/menu_setting"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWithActionBar"/>
-
-        <activity android:name=".Activity.HelpActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".Activity.HelpActivity"
             android:label="@string/menu_help"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeWithActionBar"/>
-
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity android:name=".Activity.HelpMeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

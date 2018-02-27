@@ -19,34 +19,22 @@ package com.example.android.bluetoothlegatt.Bluetooth;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.bluetoothlegatt.Activity.EditProfileActivity;
-import com.example.android.bluetoothlegatt.Activity.MainActivity;
-import com.example.android.bluetoothlegatt.Dao.PatientItemDao;
-import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
-import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
-import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.GlobalService;
-import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 
 
@@ -60,7 +48,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -85,14 +72,12 @@ public class DeviceControlActivity extends AppCompatActivity {
     private String mDeviceName;
     private String mDeviceAddress;
     private ExpandableListView mGattServicesList;
-  //  private BluetoothLeService mBluetoothLeService;
+    //  private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
     private boolean mConnected = false;
     private Button stButton;
     private Button soButton;
-    private ArrayList<Float> ecgData;
-    private WatjaiNormal watjaiNormal;
     private WatjaiMeasureSendData watjaiMeasureSendData;
     private SharedPreferences prefs;
     private String patId;
@@ -132,7 +117,7 @@ public class DeviceControlActivity extends AppCompatActivity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
-                 updateConnectionState(true);
+                updateConnectionState(true);
                 invalidateOptionsMenu();
 
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
@@ -220,48 +205,18 @@ public class DeviceControlActivity extends AppCompatActivity {
             public void onClick(View v){
                 GlobalService.mBluetoothLeService.doStopService();
 
-                if(watjaiNormal!=null){
-                    watjaiNormal = null;
-                }
+
                 if(watjaiMeasureSendData!=null){
                     watjaiMeasureSendData = null;
                 }
-                watjaiNormal = new WatjaiNormal();
-                watjaiNormal.setMeasureData(GlobalService.ecgData);
-                watjaiNormal.setPatId(patId);
-                watjaiNormal.setMeasureId(null);
-                watjaiNormal.setMeasureTime(null);
-                watjaiNormal.setId(null);
 
                 watjaiMeasureSendData = new WatjaiMeasureSendData();
                 watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
                 watjaiMeasureSendData.setPatId(patId);
 
-                Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
-                call.enqueue(new Callback<WatjaiNormal>() {
-                    @Override
-                    public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
-                        if (response.isSuccessful()) {
 
-                        } else {
-                            try {
-                                Toast.makeText(DeviceControlActivity.this, response.errorBody().string()
-                                        , Toast.LENGTH_LONG).show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
-                        Toast.makeText(DeviceControlActivity.this, throwable.toString()
-                                , Toast.LENGTH_LONG).show();
-                    }
-                });
-
-                Call<WatjaiMeasureSendData> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasureSendData);
-                detecing.enqueue(new Callback<WatjaiMeasureSendData>() {
+                Call<WatjaiMeasureSendData> detecting = HttpManager.getInstance().getService().insertECGtoDetecting(watjaiMeasureSendData);
+                detecting.enqueue(new Callback<WatjaiMeasureSendData>() {
                     @Override
                     public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
                         if (response.isSuccessful()) {
@@ -288,8 +243,8 @@ public class DeviceControlActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(R.string.watjai);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-      //  Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-       // bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        //  Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+        // bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         if (series == null) {
@@ -326,8 +281,8 @@ public class DeviceControlActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-      //  unbindService(mServiceConnection);
-       // mBluetoothLeService = null;
+        //  unbindService(mServiceConnection);
+        // mBluetoothLeService = null;
     }
 
     @Override

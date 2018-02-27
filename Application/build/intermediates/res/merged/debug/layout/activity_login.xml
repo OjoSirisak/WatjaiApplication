@@ -9,13 +9,13 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bglogin"
+            android:background="@drawable/bg_loginn"
             android:scaleType="centerCrop" />
 
         <ScrollView
             android:fillViewport="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -25,19 +25,13 @@
                 android:paddingRight="30dp"
                 android:weightSum="5">
 
-                <ImageView
-                    android:layout_width="292.5dp"
-                    android:layout_height="278dp"
-                    android:src="@drawable/logo"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp" />
 
                 <EditText
                     android:id="@+id/edtUsername"
-                    android:background="@drawable/bg_user_input"
+                    android:background="@drawable/username_field"
                     android:layout_width="match_parent"
                     android:layout_height="54.5dp"
                     android:hint="@string/hint_user"
@@ -45,25 +39,24 @@
                     android:singleLine="true"
                     android:paddingTop="16dp"
                     android:imeOptions="actionNext"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="15dp"/>
 
                 <EditText
                     android:id="@+id/edtPassword"
-                    android:background="@drawable/bg_pass_input"
+                    android:background="@drawable/password_field"
                     android:layout_width="match_parent"
                     android:layout_height="54.5dp"
                     android:inputType="textPassword"
                     android:paddingTop="16dp"
-                    android:minEms="10"
                     android:singleLine="true"
                     android:hint="@string/hint_pass"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="30dp"/>
 
                 <Button
                     android:id="@+id/btnLogin"
-                    android:background="@drawable/btn_login"
                     android:text="@string/btn_login"
-                    android:textColor="#4f4f4f"
+                    android:background="@drawable/selector_btn_login"
+                    android:textColor="@color/white_text"
                     android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="54.5dp"/>

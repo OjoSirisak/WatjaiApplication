@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -34,6 +35,7 @@ public class HistoryActivity extends AppCompatActivity {
     private ArrayList<WatjaiMeasure> history;
     private HistoryListAdapter historyListAdapter;
     private SharedPreferences prefs;
+    private ProgressBar progressBar;
     private String patId;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +47,9 @@ public class HistoryActivity extends AppCompatActivity {
             patId = prefs.getString("PatID", "DEFAULT");
         }
         historyListView = (ListView) findViewById(R.id.historyList);
+        progressBar = findViewById(R.id.historyProgressBar);
         historyListAdapter = new HistoryListAdapter();
 
-        /*NetworkCall networkCall = new NetworkCall();
-        networkCall.execute();*/
         Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadHistory(patId);
         call.enqueue(new Callback<ArrayList<WatjaiMeasure>>() {
             @Override
@@ -56,19 +57,9 @@ public class HistoryActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     history = response.body();
                     historyListAdapter.addHistory(history);
+                    progressBar.setVisibility(View.GONE);
                     historyListView.setAdapter(historyListAdapter);
-                    historyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            WatjaiMeasure historyDetail = history.get(position);
-                            if (historyDetail != null) {
-                                Intent intent = new Intent(HistoryActivity.this, HistoryDetailActivity.class);
-                                intent.putExtra("historyDetail", historyDetail.getMeasuringId());
-                                intent.putExtra("historyData", historyDetail);
-                                startActivity(intent);
-                            }
-                        }
-                    });
+                    historyListView.setOnItemClickListener(clickHistory);
                 }
             }
 
@@ -77,7 +68,6 @@ public class HistoryActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
@@ -89,6 +79,28 @@ public class HistoryActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    /***
+     *  Variable
+     */
+
+    AdapterView.OnItemClickListener clickHistory = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            ImageView imageView = findViewById(R.id.heartRateStatus);
+            WatjaiMeasure historyDetail = history.get(position);
+            if (historyDetail != null) {
+                Intent intent = new Intent(HistoryActivity.this, HistoryDetailActivity.class);
+                intent.putExtra("historyDetail", historyDetail.getMeasuringId());
+                intent.putExtra("historyData", historyDetail);
+                startActivity(intent);
+            }
+        }
+    };
+
+    /***
+     *  Inner class
+     */
 
     private class HistoryListAdapter extends BaseAdapter {
         ArrayList<WatjaiMeasure> historys;
@@ -134,15 +146,15 @@ public class HistoryActivity extends AppCompatActivity {
             }
 
             WatjaiMeasure watjaiMeasure = historys.get(position);
-            String year = watjaiMeasure.getAlertTime();
-            String month = watjaiMeasure.getAlertTime();
-            String day = watjaiMeasure.getAlertTime();
+            String year = watjaiMeasure.getMeasuringTime();
+            String month = watjaiMeasure.getMeasuringTime();
+            String day = watjaiMeasure.getMeasuringTime();
 
             year = year.substring(0,4);
             int yearr = Integer.parseInt(year) + 543;
             month = month.substring(5,7);
             day = day.substring(8,10);
-            String time = watjaiMeasure.getAlertTime();
+            String time = watjaiMeasure.getMeasuringTime();
             time = time.substring(11,16);
             String dateNotification = day + "/"  + month +  "/" + yearr + " " + time;
 
@@ -152,32 +164,17 @@ public class HistoryActivity extends AppCompatActivity {
                 item.setDateTime(dateNotification);
             }
 
+            if (watjaiMeasure.getHeartRate() < 60) {
+                item.setImageView(R.drawable.history_low);
+            } else if (watjaiMeasure.getHeartRate() > 200) {
+                item.setImageView(R.drawable.history_fast);
+            } else if (watjaiMeasure.getHeartRate() > 60 && watjaiMeasure.getHeartRate() < 200 && watjaiMeasure.getMeasuringId().indexOf("ME") != -1) {
+                item.setImageView(R.drawable.history_abnormal);
+            }
+
             return item;
         }
     }
-
-    private class NetworkCall extends AsyncTask<Call, Integer, ArrayList<WatjaiMeasure>> {
-
-        @Override
-        protected void onPostExecute(ArrayList<WatjaiMeasure> result) {
-            history = result;
-        }
-
-        @Override
-        protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
-            try {
-                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadHistory("PA1709001");
-                Response<ArrayList<WatjaiMeasure>> response = call.execute();
-                history = response.body();
-                return history;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
-
-
 
 }
 

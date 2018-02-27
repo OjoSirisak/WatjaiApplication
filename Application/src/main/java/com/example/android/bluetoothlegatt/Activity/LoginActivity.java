@@ -1,10 +1,8 @@
 package com.example.android.bluetoothlegatt.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,18 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Dao.Login;
-import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
-
-import static java.security.AccessController.getContext;
 
 public class LoginActivity extends AppCompatActivity {
     private Login login;
@@ -41,13 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         edtUsername = (EditText) findViewById(R.id.edtUsername);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-
-
-
-
-
-
-
         onClickButton();
     }
 
@@ -81,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, checkInput, Toast.LENGTH_LONG).show();
                     }
                 } else if (username.length() < 8 && password.length() < 9) {
-                    checkInput = "กรุณากรอกชื่อผู้ใช้งานไม่น้อยกว่า 9 ตัวอักษร \nและ \nรหัสผ่านให้ครบ 10 ตัวอักษร";
+                    checkInput = "กรุณากรอกชื่อผู้ใช้งานไม่น้อยกว่า 9 ตัวอักษร \nและ \nรหัสผ่านให้ครบ";
                     Toast.makeText(LoginActivity.this, checkInput, Toast.LENGTH_LONG).show();
                 } else if (username.length() < 8 || password.length() < 9) {
                     if (username.length() < 8) {
@@ -89,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, checkInput, Toast.LENGTH_LONG).show();
                     }
                     else {
-                        checkInput = "กรุณากรอกรหัสผ่านให้ครบ 10 ตัวอักษร";
+                        checkInput = "กรุณากรอกรหัสผ่านให้ครบ";
                         Toast.makeText(LoginActivity.this, checkInput, Toast.LENGTH_LONG).show();
                     }
                 } else {

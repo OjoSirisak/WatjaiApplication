@@ -18,10 +18,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Dao.OnBoardItem;
-import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.R;
 
 

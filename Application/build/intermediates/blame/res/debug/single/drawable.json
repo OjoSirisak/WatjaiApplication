@@ -1,262 +1,286 @@
 [
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_start.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_start.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_alert.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_alert.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_btn_radio_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\non_selected_item_dot.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\non_selected_item_dot.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_focused.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\3905a466903b51c02fa7b8846e452d8d\\res\\drawable\\notification_bg_low.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_stop.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_stop.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_bg_low.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_alert_overlay.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_alert_overlay.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_measure.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_measure.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_login.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_login.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_overlay.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_overlay.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_start.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_start.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_notic.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_notic.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selected_item_dot.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selected_item_dot.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\3905a466903b51c02fa7b8846e452d8d\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_edit_text_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_helpme.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_helpme.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_btn_check_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_read.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_read.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ratingbar_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_setting.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_setting.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_dialog_material_background.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_info.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_info.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_logout.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_logout.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_read.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_read.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_history.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_history.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_notic.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_notic.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_overlay.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_overlay.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_history.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_history.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_icon_background.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_vector_test.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_setting.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_setting.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_bg.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\non_selected_item_dot.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\non_selected_item_dot.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_profile.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_profile.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_textfield_search_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\3905a466903b51c02fa7b8846e452d8d\\res\\drawable\\notification_tile_bg.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_measure.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_measure.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\3905a466903b51c02fa7b8846e452d8d\\res\\drawable\\notification_bg.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_ic_clear_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_stop.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_stop.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\b11bd6d54e7b8f9f58196b854efb15abbb6b5f43\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\shap_circle_status_alert.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\shap_circle_status_alert.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\SirisakPks\\.android\\build-cache\\5df96e97d73daba91ae8739d6d3a21a1e14a3822\\output\\res\\drawable\\notification_tile_bg.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selected_item_dot.xml",
+        "source": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selected_item_dot.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_info.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_info.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
     {
-        "merged": "E:\\Project\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_btn_profile.xml",
-        "source": "E:\\Project\\WatjaiApplication\\Application\\src\\main\\res\\drawable\\selector_btn_profile.xml"
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_focused.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\d4ea8b321c5a7e38e18a035efc7ff917\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\SirisakPks\\Desktop\\WatjaiApplication\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\SirisakPks\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32ed8440e255c5ce2ceafc20f37a9577\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     }
 ]

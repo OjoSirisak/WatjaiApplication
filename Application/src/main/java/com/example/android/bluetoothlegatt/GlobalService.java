@@ -3,9 +3,6 @@ package com.example.android.bluetoothlegatt;
 import android.app.Application;
 
 import com.example.android.bluetoothlegatt.Bluetooth.BluetoothLeService;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
-
 import java.util.ArrayList;
 
 /**

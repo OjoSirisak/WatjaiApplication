@@ -2,10 +2,6 @@ package com.example.android.bluetoothlegatt.Manager;
 
 import android.content.Context;
 
-/**
- * Created by SirisakPks on 24/8/2560.
- */
-
 public class Contextor {
 
     private static Contextor instance;

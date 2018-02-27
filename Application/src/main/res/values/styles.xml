@@ -2,6 +2,6 @@
 <resources>
 
     <style name="SizeTextviewProfile">
-        <item name="android:textSize">8pt</item>
+        <item name="android:textSize">9pt</item>
     </style>
 </resources>

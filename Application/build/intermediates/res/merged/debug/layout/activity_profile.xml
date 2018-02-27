@@ -6,20 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    android:padding="20dp"
+    android:padding="10dp"
     tools:context="com.example.android.bluetoothlegatt.Activity.ProfileActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_weight="1"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profileImage"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:src="@drawable/user"
         android:layout_gravity="center_horizontal"
         app:civ_border_width="3dp"
         android:layout_marginBottom="5dp"
         app:civ_border_color="@color/colorAccent"/>
+
     <LinearLayout
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -170,14 +171,15 @@
 
     <Button
         android:id="@+id/btnEditProfile"
-        android:layout_weight="1"
+        android:background="@drawable/selector_btn_login"
+        android:textColor="@color/white_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/edit_profile"/>
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_weight="1"
+        android:background="@drawable/selector_btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/menu_logout"/>

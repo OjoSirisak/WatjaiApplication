@@ -2,6 +2,8 @@ package com.example.android.bluetoothlegatt.View;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -9,13 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.R;
-import com.example.android.bluetoothlegatt.View.BaseCustomViewGroup;
 import com.example.android.bluetoothlegatt.View.state.BundleSavedState;
 
-
-/**
- * Created by nuuneoi on 11/16/2014.
- */
 public class NotificationListItem extends BaseCustomViewGroup {
 
     TextView tvTime;
@@ -118,6 +115,11 @@ public class NotificationListItem extends BaseCustomViewGroup {
     }
 
     public void setReadStatus() {
-        readStatus.setImageResource(R.drawable.bg_listnotificationpng);
+        readStatus.setImageResource(R.drawable.bg_noti_read);
     }
+
+    public void setColorDescriptionText(String color) {
+        tvDescription.setTextColor(Color.parseColor(color));
+    }
+
 }

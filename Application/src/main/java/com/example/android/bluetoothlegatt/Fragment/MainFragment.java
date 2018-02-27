@@ -1,23 +1,11 @@
 package com.example.android.bluetoothlegatt.Fragment;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +13,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.android.bluetoothlegatt.Activity.BlankNotificationActivity;
-import com.example.android.bluetoothlegatt.Activity.DescriptionNotificationActivity;
 import com.example.android.bluetoothlegatt.Activity.HelpActivity;
 import com.example.android.bluetoothlegatt.Activity.HistoryActivity;
 import com.example.android.bluetoothlegatt.Activity.NotificationActivity;
@@ -33,43 +20,28 @@ import com.example.android.bluetoothlegatt.Activity.ProfileActivity;
 import com.example.android.bluetoothlegatt.Activity.SettingActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceControlActivity;
 import com.example.android.bluetoothlegatt.Bluetooth.DeviceScanActivity;
+import com.example.android.bluetoothlegatt.Dao.GetTotalMeasure;
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasure;
 import com.example.android.bluetoothlegatt.GlobalService;
-import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.Manager.CounterNotification;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
 import com.example.android.bluetoothlegatt.R;
-import com.onesignal.OSNotification;
-import com.onesignal.OSNotificationAction;
-import com.onesignal.OSNotificationOpenResult;
-import com.onesignal.OneSignal;
-
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Response;
 
 import static android.content.Context.MODE_PRIVATE;
 
-
-/**
- * Created by nuuneoi on 11/16/2014.
- */
 public class MainFragment extends Fragment implements View.OnClickListener {
     private ImageButton buttonProfile, buttonMeasure, buttonHistory, buttonSetting, buttonHelp, buttonNotification;
     private TextView countNotification;
-    private boolean isBluetoothStatus = false;
     private ArrayList<WatjaiMeasure> watjaiMeasure;
+    private GetTotalMeasure getTotalMeasure;
     private Thread t;
+    private int totalMeasure;
     private int countNoti;
     private SharedPreferences prefs;
     private String patId;
@@ -106,6 +78,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @SuppressWarnings("UnusedParameters")
     private void init(Bundle savedInstanceState) {
         watjaiMeasure = new ArrayList<WatjaiMeasure>();
+        getTotalMeasure = new GetTotalMeasure();
     }
 
     @SuppressWarnings("UnusedParameters")
@@ -168,6 +141,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
+        if (prefs != null) {
+            patId = prefs.getString("PatID", "DEFAULT");
+            if (patId.equalsIgnoreCase("DEFAULT")) {
+                getActivity().finish();
+            }
+        }
+
         if (countNoti>0) {
             showCountNotification();
         } else {
@@ -193,9 +173,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getContext(), HistoryActivity.class);
             startActivity(intent);
         } else if (v == buttonNotification) {
-            if  (watjaiMeasure.size() > 0 ) {
+            if  (totalMeasure > 0 ) {
                 Intent noti = new Intent(getContext(), NotificationActivity.class);
-                noti.putExtra("notification", watjaiMeasure);
                 startActivity(noti);
                 countNoti = 0;
                 CounterNotification.getInstance().resetCountNotification();
@@ -243,9 +222,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         protected ArrayList<WatjaiMeasure> doInBackground(Call... params) {
 
             try {
-                Call<ArrayList<WatjaiMeasure>> call = HttpManager.getInstance().getService().loadWatjaiMeasureAlert(patId,"");
-                Response<ArrayList<WatjaiMeasure>> response = call.execute();
-                watjaiMeasure = response.body();
+                Call<GetTotalMeasure> call = HttpManager.getInstance().getService().totalMeasureAlert(patId);
+                Response<GetTotalMeasure> response = call.execute();
+                getTotalMeasure = response.body();
+                totalMeasure = getTotalMeasure.getTotal();
                 return watjaiMeasure;
             } catch (IOException e) {
                 e.printStackTrace();

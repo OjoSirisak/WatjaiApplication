@@ -23,24 +23,27 @@ public class WatjaiMeasure implements Parcelable {
     @SerializedName("patId")
     @Expose
     private String patId;
-    @SerializedName("alertTime")
+    @SerializedName("measuringTime")
     @Expose
-    private String alertTime;
-    @SerializedName("measuringId")
-    @Expose
-    private String measuringId;
+    private String measuringTime;
     @SerializedName("heartRate")
     @Expose
-    private int heartRate;
+    private Integer heartRate;
     @SerializedName("abnormalStatus")
     @Expose
     private Boolean abnormalStatus;
     @SerializedName("abnormalDetail")
     @Expose
     private String abnormalDetail;
+    @SerializedName("measuringId")
+    @Expose
+    private String measuringId;
     @SerializedName("readStatus")
     @Expose
-    private String readStatus;
+    private Boolean readStatus;
+    @SerializedName("commentStatus")
+    @Expose
+    private Boolean commentStatus;
     @SerializedName("comment")
     @Expose
     private String comment;
@@ -48,12 +51,51 @@ public class WatjaiMeasure implements Parcelable {
     public WatjaiMeasure(Parcel in) {
         id = in.readString();
         patId = in.readString();
-        alertTime = in.readString();
-        measuringId = in.readString();
+        measuringTime = in.readString();
+        if (in.readByte() == 0) {
+            heartRate = null;
+        } else {
+            heartRate = in.readInt();
+        }
+        byte tmpAbnormalStatus = in.readByte();
+        abnormalStatus = tmpAbnormalStatus == 0 ? null : tmpAbnormalStatus == 1;
         abnormalDetail = in.readString();
-        readStatus = in.readString();
-        comment = in.readString();
+        measuringId = in.readString();
+        byte tmpReadStatus = in.readByte();
+        readStatus = tmpReadStatus == 0 ? null : tmpReadStatus == 1;
+        byte tmpCommentStatus = in.readByte();
+        commentStatus = tmpCommentStatus == 0 ? null : tmpCommentStatus == 1;
         measuringData = (ArrayList<Float>) in.readSerializable();
+        comment = in.readString();
+    }
+
+    public WatjaiMeasure() {
+
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(patId);
+        dest.writeString(measuringTime);
+        if (heartRate == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(heartRate);
+        }
+        dest.writeByte((byte) (abnormalStatus == null ? 0 : abnormalStatus ? 1 : 2));
+        dest.writeString(abnormalDetail);
+        dest.writeString(measuringId);
+        dest.writeByte((byte) (readStatus == null ? 0 : readStatus ? 1 : 2));
+        dest.writeByte((byte) (commentStatus == null ? 0 : commentStatus ? 1 : 2));
+        dest.writeSerializable(measuringData);
+        dest.writeString(comment);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<WatjaiMeasure> CREATOR = new Creator<WatjaiMeasure>() {
@@ -67,10 +109,6 @@ public class WatjaiMeasure implements Parcelable {
             return new WatjaiMeasure[size];
         }
     };
-
-    public WatjaiMeasure() {
-
-    }
 
     public String getId() {
         return id;
@@ -96,27 +134,19 @@ public class WatjaiMeasure implements Parcelable {
         this.patId = patId;
     }
 
-    public String getAlertTime() {
-        return alertTime;
+    public String getMeasuringTime() {
+        return measuringTime;
     }
 
-    public void setAlertTime(String alertTime) {
-        this.alertTime = alertTime;
+    public void setMeasuringTime(String measuringTime) {
+        this.measuringTime = measuringTime;
     }
 
-    public String getMeasuringId() {
-        return measuringId;
-    }
-
-    public void setMeasuringId(String measuringId) {
-        this.measuringId = measuringId;
-    }
-
-    public int getHeartRate() {
+    public Integer getHeartRate() {
         return heartRate;
     }
 
-    public void setHeartRate(int heartRate) {
+    public void setHeartRate(Integer heartRate) {
         this.heartRate = heartRate;
     }
 
@@ -136,12 +166,28 @@ public class WatjaiMeasure implements Parcelable {
         this.abnormalDetail = abnormalDetail;
     }
 
-    public String getReadStatus() {
+    public String getMeasuringId() {
+        return measuringId;
+    }
+
+    public void setMeasuringId(String measuringId) {
+        this.measuringId = measuringId;
+    }
+
+    public Boolean getReadStatus() {
         return readStatus;
     }
 
-    public void setReadStatus(String readStatus) {
+    public void setReadStatus(Boolean readStatus) {
         this.readStatus = readStatus;
+    }
+
+    public Boolean getCommentStatus() {
+        return commentStatus;
+    }
+
+    public void setCommentStatus(Boolean commentStatus) {
+        this.commentStatus = commentStatus;
     }
 
     public String getComment() {
@@ -150,22 +196,5 @@ public class WatjaiMeasure implements Parcelable {
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
-        dest.writeString(patId);
-        dest.writeString(alertTime);
-        dest.writeString(measuringId);
-        dest.writeString(abnormalDetail);
-        dest.writeString(readStatus);
-        dest.writeString(comment);
-        dest.writeSerializable(measuringData);
     }
 }

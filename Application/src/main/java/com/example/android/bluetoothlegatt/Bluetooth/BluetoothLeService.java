@@ -31,17 +31,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.Dao.WatjaiMeasureSendData;
-import com.example.android.bluetoothlegatt.Dao.WatjaiNormal;
 import com.example.android.bluetoothlegatt.GlobalService;
 import com.example.android.bluetoothlegatt.Manager.HttpManager;
-import com.jjoe64.graphview.series.DataPoint;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -85,7 +80,6 @@ public class BluetoothLeService extends Service {
     public final static UUID UUID_HEART_RATE_MEASUREMENT =
             UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
 
-    private WatjaiNormal watjaiNormal;
     private WatjaiMeasureSendData watjaiMeasureSendData;
     private SharedPreferences prefs;
     private String patId;
@@ -233,42 +227,17 @@ public class BluetoothLeService extends Service {
             patId = prefs.getString("PatID", "DEFAULT");
         }
 
-        if(watjaiNormal!=null){
-            watjaiNormal = null;
-        }
         if(watjaiMeasureSendData!=null){
             watjaiMeasureSendData = null;
         }
-        watjaiNormal = new WatjaiNormal();
-        watjaiNormal.setMeasureData(GlobalService.ecgData);
-        watjaiNormal.setPatId(patId);
-        watjaiNormal.setMeasureId(null);
-        watjaiNormal.setMeasureTime(null);
-        watjaiNormal.setId(null);
 
         watjaiMeasureSendData = new WatjaiMeasureSendData();
         watjaiMeasureSendData.setMeasuringData(GlobalService.ecgData);
         watjaiMeasureSendData.setPatId(patId);
 
-        Call<WatjaiNormal> call = HttpManager.getInstance().getService().insertECG(watjaiNormal);
-        call.enqueue(new Callback<WatjaiNormal>() {
-            @Override
-            public void onResponse(Call<WatjaiNormal> call, Response<WatjaiNormal> response) {
-                if (response.isSuccessful()) {
 
-                } else {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<WatjaiNormal> call, Throwable throwable) {
-
-            }
-        });
-
-        Call<WatjaiMeasureSendData> detecing = HttpManager.getInstance().getService().insertECGtoDetecing(watjaiMeasureSendData);
-        detecing.enqueue(new Callback<WatjaiMeasureSendData>() {
+        Call<WatjaiMeasureSendData> detecting = HttpManager.getInstance().getService().insertECGtoDetecting(watjaiMeasureSendData);
+        detecting.enqueue(new Callback<WatjaiMeasureSendData>() {
             @Override
             public void onResponse(Call<WatjaiMeasureSendData> call, Response<WatjaiMeasureSendData> response) {
                 if (response.isSuccessful()) {
@@ -504,7 +473,7 @@ public class BluetoothLeService extends Service {
         }
         if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){
             mNotifyCharacteristic = charac;
-           setCharacteristicNotification(charac, true);
+            setCharacteristicNotification(charac, true);
         }
 
         charac.setValue("C");
@@ -532,7 +501,7 @@ public class BluetoothLeService extends Service {
         }
 
         if(mNotifyCharacteristic != null){
-           setCharacteristicNotification(mNotifyCharacteristic, false);
+            setCharacteristicNotification(mNotifyCharacteristic, false);
             mNotifyCharacteristic = null;
         }
         if(BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0){

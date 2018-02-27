@@ -28,9 +28,10 @@ public class MainApplication extends Application {
         prefs = getSharedPreferences("loginStatus", MODE_PRIVATE);
         if (prefs != null) {
             patId = prefs.getString("PatID", "DEFAULT");
+            System.out.println(patId);
         }
         Contextor.getInstance().init(getApplicationContext());
-        OneSignal.sendTag("patId", patId);
+
 
         OneSignal.startInit(getApplicationContext())
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
@@ -38,6 +39,8 @@ public class MainApplication extends Application {
                 .setNotificationReceivedHandler(new MyNotificationReceivedHandler())
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+
+        OneSignal.sendTag("patId", patId);
     }
 
     @Override

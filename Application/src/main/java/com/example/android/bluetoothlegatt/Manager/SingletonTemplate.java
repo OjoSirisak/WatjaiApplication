@@ -2,10 +2,6 @@ package com.example.android.bluetoothlegatt.Manager;
 
 import android.content.Context;
 
-
-/**
- * Created by nuuneoi on 11/16/2014.
- */
 public class SingletonTemplate {
 
     private static SingletonTemplate instance;

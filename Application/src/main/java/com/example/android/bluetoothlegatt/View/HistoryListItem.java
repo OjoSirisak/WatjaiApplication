@@ -11,15 +11,11 @@ import android.widget.TextView;
 import com.example.android.bluetoothlegatt.R;
 import com.example.android.bluetoothlegatt.View.state.BundleSavedState;
 
-
-/**
- * Created by nuuneoi on 11/16/2014.
- */
 public class HistoryListItem extends BaseCustomViewGroup {
 
-    TextView tvMeasuringId;
-    TextView tvHeartRate;
-    TextView tvDateTime;
+    TextView tvMeasuringId, tvHeartRate, tvDateTime;
+    ImageView imageView;
+
 
     public HistoryListItem(Context context) {
         super(context);
@@ -58,6 +54,7 @@ public class HistoryListItem extends BaseCustomViewGroup {
         tvMeasuringId = (TextView) findViewById(R.id.tvMeasuringId);
         tvHeartRate = (TextView) findViewById(R.id.tvHeartRate);
         tvDateTime = (TextView) findViewById(R.id.tvDateTime);
+        imageView = findViewById(R.id.heartRateStatus);
 
     }
 
@@ -118,6 +115,10 @@ public class HistoryListItem extends BaseCustomViewGroup {
 
     public void setDateTime(String text){
         tvDateTime.setText(text);
+    }
+
+    public void setImageView(int resource) {
+        imageView.setImageResource(resource);
     }
 
 }

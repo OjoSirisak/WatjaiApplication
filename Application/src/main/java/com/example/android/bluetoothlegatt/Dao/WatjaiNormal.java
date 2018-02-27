@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by SirisakPks on 27/8/2560.
@@ -15,18 +14,21 @@ public class WatjaiNormal {
     @SerializedName("_id")
     @Expose
     private String id;
-    @SerializedName("measureData")
+    @SerializedName("measuringData")
     @Expose
-    private ArrayList<Float> measureData = null;
+    private ArrayList<Float> measuringData = null;
     @SerializedName("patId")
     @Expose
     private String patId;
-    @SerializedName("measureTime")
+    @SerializedName("measuringTime")
     @Expose
-    private String measureTime;
-    @SerializedName("measureId")
+    private String measuringTime;
+    @SerializedName("heartRate")
     @Expose
-    private String measureId;
+    private Integer heartRate;
+    @SerializedName("measuringId")
+    @Expose
+    private String measuringId;
 
     public String getId() {
         return id;
@@ -36,12 +38,12 @@ public class WatjaiNormal {
         this.id = id;
     }
 
-    public ArrayList<Float> getMeasureData() {
-        return measureData;
+    public ArrayList<Float> getMeasuringData() {
+        return measuringData;
     }
 
-    public void setMeasureData(ArrayList<Float> measureData) {
-        this.measureData = measureData;
+    public void setMeasuringData(ArrayList<Float> measuringData) {
+        this.measuringData = measuringData;
     }
 
     public String getPatId() {
@@ -52,20 +54,28 @@ public class WatjaiNormal {
         this.patId = patId;
     }
 
-    public String getMeasureTime() {
-        return measureTime;
+    public String getMeasuringTime() {
+        return measuringTime;
     }
 
-    public void setMeasureTime(String measureTime) {
-        this.measureTime = measureTime;
+    public void setMeasuringTime(String measuringTime) {
+        this.measuringTime = measuringTime;
     }
 
-    public String getMeasureId() {
-        return measureId;
+    public Integer getHeartRate() {
+        return heartRate;
     }
 
-    public void setMeasureId(String measureId) {
-        this.measureId = measureId;
+    public void setHeartRate(Integer heartRate) {
+        this.heartRate = heartRate;
+    }
+
+    public String getMeasuringId() {
+        return measuringId;
+    }
+
+    public void setMeasuringId(String measuringId) {
+        this.measuringId = measuringId;
     }
 
 }

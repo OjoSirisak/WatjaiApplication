@@ -20,7 +20,6 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
@@ -34,18 +33,14 @@ import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.bluetoothlegatt.Activity.MainActivity;
-import com.example.android.bluetoothlegatt.Fragment.MainFragment;
 import com.example.android.bluetoothlegatt.GlobalService;
 import com.example.android.bluetoothlegatt.Manager.Contextor;
 import com.example.android.bluetoothlegatt.R;
@@ -69,7 +64,7 @@ public class DeviceScanActivity extends AppCompatActivity {
     private static final long SCAN_PERIOD = 2000;
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
 
-    @TargetApi(Build.VERSION_CODES.M)
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,19 +91,21 @@ public class DeviceScanActivity extends AppCompatActivity {
             finish();
             return;
         }
-        if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("This app needs location access");
-            builder.setMessage("Please grant location access so this app can detect peripherals.");
-            builder.setPositiveButton(android.R.string.ok, null);
-            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @TargetApi(Build.VERSION_CODES.M)
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
-                }
-            });
-            builder.show();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("This app needs location access");
+                builder.setMessage("Please grant location access so this app can detect peripherals.");
+                builder.setPositiveButton(android.R.string.ok, null);
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @TargetApi(Build.VERSION_CODES.M)
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
+                    }
+                });
+                builder.show();
+            }
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -141,8 +138,8 @@ public class DeviceScanActivity extends AppCompatActivity {
                 final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
                 if (device == null) return ;
                 final Intent intent = new Intent(getApplicationContext(), DeviceControlActivity.class);
-               // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
-               // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+                // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
+                // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
                 if (mScanning) {
                     mBluetoothAdapter.stopLeScan(mLeScanCallback);
                     mScanning = false;
@@ -284,18 +281,18 @@ public class DeviceScanActivity extends AppCompatActivity {
     private BluetoothAdapter.LeScanCallback mLeScanCallback =
             new BluetoothAdapter.LeScanCallback() {
 
-        @Override
-        public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
-            runOnUiThread(new Runnable() {
                 @Override
-                public void run() {
-                    if(device.getName() != null && device.getName().equalsIgnoreCase("ehealth")) {
-                        mLeDeviceListAdapter.addDevice(device);
-                        mLeDeviceListAdapter.notifyDataSetChanged();
-                    }
+                public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(device.getName() != null && device.getName().equalsIgnoreCase("ehealth")) {
+                                mLeDeviceListAdapter.addDevice(device);
+                                mLeDeviceListAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
                 }
-            });
-        }
-    };
+            };
 
 }

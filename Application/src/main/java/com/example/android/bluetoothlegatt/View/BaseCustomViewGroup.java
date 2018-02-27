@@ -11,10 +11,6 @@ import android.widget.FrameLayout;
 
 import com.example.android.bluetoothlegatt.View.state.BundleSavedState;
 
-
-/**
- * Created by nuuneoi on 1/9/2016.
- */
 public class BaseCustomViewGroup extends FrameLayout {
 
     public BaseCustomViewGroup(Context context) {
